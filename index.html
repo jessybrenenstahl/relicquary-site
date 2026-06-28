@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relicquary — A local memory OS for AI agents</title>
+  <meta name="description" content="Relicquary is a local-first, MCP-native memory and orchestration system for AI agents. Durable, explainable memory that runs entirely on your machine — SQLite + Markdown on disk, fully auditable. A product of RQ MCP LLC." />
+  <meta name="theme-color" content="#0b0c0e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <meta property="og:title" content="Relicquary — A local memory OS for AI agents" />
+  <meta property="og:description" content="Durable, explainable, local-first memory for AI agents. MCP-native. Runs entirely on your machine." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://relicquary.com" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <span class="glyph">R</span>
+        <span>Relicquary</span>
+      </a>
+      <nav>
+        <a href="#what" class="hide-sm">What it is</a>
+        <a href="#capabilities" class="hide-sm">Capabilities</a>
+        <a href="#apps">Apps</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" style="border-top:none">
+      <div class="wrap">
+        <span class="eyebrow">● Local-first · MCP-native · fully auditable</span>
+        <h1>The memory OS for <span class="accent">AI agents</span>.</h1>
+        <p class="lead">
+          Relicquary gives agents durable, explainable memory and auto-orchestration that runs
+          entirely on your machine — no hosted service, no hidden controller. SQLite&nbsp;+&nbsp;Markdown
+          on disk, every change auditable, your data never leaves your hardware.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#apps">Get the app</a>
+          <a class="btn ghost" href="#what">How it works</a>
+        </div>
+        <p class="note">Native apps for macOS &amp; iPhone — coming soon. The engine is open and runs today via MCP &amp; CLI.</p>
+      </div>
+    </section>
+
+    <!-- What it is -->
+    <section id="what">
+      <div class="wrap">
+        <div class="two-col">
+          <div>
+            <p class="kicker">What it is</p>
+            <h2 style="margin-top:0">A durable memory layer that lives on your disk.</h2>
+            <p style="color:var(--text-muted)">
+              Relicquary is a single, local binary that stores typed memory, a knowledge graph,
+              retrieval, synthesis, and receipts as plain SQLite and Markdown files. Agents reach it
+              over the Model Context Protocol; humans use the CLI. Nothing is hosted, nothing is hidden,
+              and every mutation leaves an auditable trail you can read by hand.
+            </p>
+            <p style="color:var(--text-muted)">
+              It's built for work that spans many sessions: backlogs route, sessions open and close with
+              durable receipts, and context packs &amp; handoffs are generated from local state — so an
+              agent can pick up exactly where it left off.
+            </p>
+          </div>
+          <div class="code" aria-label="Example CLI usage">
+<span class="c"># capture a memory</span>
+<span class="k">relicquary</span> remember mystore <span class="s">"API keys live in 1Password, vault: Eng"</span>
+
+<span class="c"># recall it later — hybrid, explainable</span>
+<span class="k">relicquary</span> recall mystore <span class="s">"where are the api keys"</span>
+<span class="c">→ [fact · current · 0.94] API keys live in 1Password…</span>
+
+<span class="c"># or expose it to any agent over MCP</span>
+<span class="k">relicquary</span> mcp-server
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Capabilities</p>
+          <h2>Memory that's structured, explainable, and yours.</h2>
+          <p>Not a chat log — a typed, graph-linked store with retrieval you can audit.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <span class="ico">🗂️</span>
+            <h3>Typed memory</h3>
+            <p>Facts, decisions, tasks, procedures, episodes and more — each with tags, confidence, provenance, and trust tier.</p>
+          </div>
+          <div class="card">
+            <span class="ico">🕸️</span>
+            <h3>Knowledge graph</h3>
+            <p>Typed edges link memories — supersession, dependencies, conflicts — with automatic conflict detection.</p>
+          </div>
+          <div class="card">
+            <span class="ico">🔎</span>
+            <h3>Explainable recall</h3>
+            <p>Hybrid lexical + on-device semantic ranking, with currentness labels and a per-result “why it ranked.”</p>
+          </div>
+          <div class="card">
+            <span class="ico">🔒</span>
+            <h3>Local-first &amp; private</h3>
+            <p>SQLite + Markdown on your disk. No hosted service, no telemetry — your memory never leaves your machine.</p>
+          </div>
+          <div class="card">
+            <span class="ico">🧾</span>
+            <h3>Receipts for everything</h3>
+            <p>Every capture, edit, and resolution is recorded. The full history is auditable as files on disk.</p>
+          </div>
+          <div class="card">
+            <span class="ico">🔌</span>
+            <h3>MCP &amp; CLI first</h3>
+            <p>Agents connect over the Model Context Protocol; people use the CLI for setup, import/export, and diagnostics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <section id="apps">
+      <div class="wrap apps">
+        <p class="kicker">Apps</p>
+        <h2 style="margin-top:0">Relicquary for Mac &amp; iPhone</h2>
+        <p style="color:var(--text-muted); max-width:600px; margin:0 auto">
+          A native app that puts your agent's memory in front of you — capture, search, browse the
+          graph, and review relics — with on-device recall and private sync across your devices.
+          No servers, no account required.
+        </p>
+        <div class="platforms">
+          <span class="pill"><span class="dot">◆</span> macOS — coming soon</span>
+          <span class="pill"><span class="dot">◆</span> iPhone &amp; iPad — coming soon</span>
+        </div>
+        <p class="note" style="margin-top:22px">Want to know when it ships? <a href="support.html">Get in touch.</a></p>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section>
+      <div class="wrap">
+        <div class="band">
+          <h2>Own your agent's memory.</h2>
+          <p>Local-first, explainable, auditable — built for agents that do real work across time.</p>
+          <a class="btn primary" href="support.html">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot">
+        <div class="col">
+          <div class="brand" style="margin-bottom:12px"><span class="glyph">R</span><span>Relicquary</span></div>
+          <p style="color:var(--text-faint); max-width:280px; font-size:0.92rem; margin:0">
+            A local memory OS for AI agents. A product of <span style="color:var(--text-muted)">RQ MCP LLC</span>.
+          </p>
+        </div>
+        <div class="col">
+          <h4>Product</h4>
+          <a href="#what">How it works</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#apps">Apps</a>
+        </div>
+        <div class="col">
+          <h4>Company</h4>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
+        </div>
+      </div>
+      <div class="legal">
+        <span class="entity">© <span id="year">2026</span> RQ MCP LLC. All rights reserved.</span>
+        <span>Relicquary® is a product of RQ MCP LLC.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
