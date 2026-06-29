@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIM — governed autonomy, built on Relicquary | RQ MCP</title>
+<meta name="description" content="AIM is RQ MCP LLC's governance architecture for verifiable autonomy, built on Relicquary: one actuation chokepoint, a fail-safe fence, a deterministic conscience, receipt-bound actions." />
+<meta name="theme-color" content="#070809" />
+<link rel="canonical" href="https://relicquary.com/stack.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://relicquary.com/stack.html" />
+<meta property="og:title" content="AIM — a governance architecture for verifiable autonomy" />
+<meta property="og:description" content="Relicquary is the core; AIM is that core given hands and a deterministic floor — RQ MCP LLC's stack for autonomy you can actually audit." />
+<meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RQ MCP LLC",
+  "alternateName": "Relicquary",
+  "url": "https://relicquary.com",
+  "email": "hello@relicquary.com",
+  "logo": "https://relicquary.com/assets/brand/relicquary-mark.png",
+  "description": "RQ MCP LLC builds local-first cognitive infrastructure for AI agents: Relicquary, a memory operating system in a single Rust binary; TouchLink, a native macOS touchscreen driver; and AIM, a governance architecture for verifiable autonomy built on Relicquary.",
+  "founder": { "@type": "Person", "name": "Jessy Brenenstahl" },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "Relicquary", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, iOS" } },
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "TouchLink", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS" } },
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "AIM", "applicationCategory": "DeveloperApplication" } }
+  ]
+}
+</script>
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="signalLine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8b35e"/><stop offset="1" stop-color="#a87f33"/></linearGradient>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="topnav">
+  <div class="nav-inner">
+    <a class="brand" href="stack.html" aria-label="RQ MCP LLC home">
+      <img class="mark" src="assets/brand/rq-mark.png" alt="" />
+      <span>RQ&nbsp;MCP<small>LLC</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="index.html">Relicquary</a>
+      <a href="touchlink.html">TouchLink</a>
+      <a href="#aim">AIM</a>
+      <a href="#trust">The floor</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>RQ MCP LLC · local-first AI, on your machine</span></div>
+      <h1 class="hero-title">Relicquary is the core. <span class="signal">AIM</span> is Relicquary writ large — given hands, and the discipline to prove every move.</h1>
+      <p class="hero-sub"><b>Relicquary</b> (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory <b>plus orchestration</b> — the cognitive OS an agent thinks out of. <b>AIM</b> wraps that same core in a governance architecture aimed at <b>verifiable autonomy</b>, and only then gives it a body and a voice.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="index.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          Start with Relicquary
+        </a>
+        <a class="btn-ghost" href="#aim">
+          How AIM is governed
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="honesty"><span class="pip" aria-hidden="true"></span><span>Relicquary runs today. AIM is a working prototype; the autonomy it aims toward is research ahead of us — and we mark that line, not blur it.</span></div>
+    </div>
+
+    <!-- Relicquary "runs today" terminal -->
+    <div class="terminal" role="img" aria-label="A terminal showing Relicquary running from one binary: remember a decision (a receipt is written and it is indexed), recall it in plain language (ranked, dated, explainable), and serve memory to agents over MCP — with nothing leaving the machine.">
+      <div class="term-bar">
+        <div class="term-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="term-title">relicquary — mystore</span>
+        <span class="term-tag">runs today</span>
+      </div>
+      <div class="term-body">
+        <div class="term-comment"># one Rust binary · SQLite + Markdown on your disk</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary remember mystore "decided: ship local-first"</span></div>
+        <div class="term-comment" style="color:var(--signal-dim);margin:2px 0 12px">✓ stored decision · receipt written · indexed</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary recall mystore "what did we decide?"</span></div>
+        <div class="term-comment" style="margin:2px 0 12px">→ ranked, dated, explainable — from your own store</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary mcp-server</span></div>
+        <div class="term-comment" style="color:var(--signal-dim);margin:2px 0 0">✓ listening · memory + orchestration, served over MCP</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROOF STRIP -->
+<section class="proof" aria-label="What's verifiable">
+  <div class="wrap">
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg><b>One Rust binary</b></span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg>SQLite + Markdown <b>on your disk</b></span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l3 3v15l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4Z"/><line x1="9" y1="9" x2="15" y2="9"/></svg><b>A receipt</b> for every mutation</span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 109 9"/><line x1="12" y1="3" x2="12" y2="12"/><path d="M16 5l-4 7"/></svg>Your model — <b>local or your own provider</b></span>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD TO -->
+<section class="whatis" id="believe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">01 / WHAT WE BUILD TO</span>
+        <h2>One company, one discipline.</h2>
+      </div>
+      <p>A cognitive OS, an operator, a touch driver, a control stack — held together by three commitments that show up in the code, not just the copy.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="5" width="20" height="14" rx="2"/><path d="M11 24h10M16 19v5"/><circle cx="16" cy="12" r="3.2"/></svg>
+        <h3>Sovereign by construction</h3>
+        <p>Your store lives on your disk — no hosted service, no telemetry. And the model is your choice: run it fully local, or connect your own provider account (you bring the OAuth). Either way, your data and audit trail stay yours.</p>
+        <span class="tag">your machine · your files</span>
+      </div>
+      <div class="pillar">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 L26 8 V15 C26 22 21 26 16 28 C11 26 6 22 6 15 V8 Z"/><path d="M12 16 l3 3 l5 -6" stroke-width="1.7"/></svg>
+        <h3>Bounded, not unsupervised</h3>
+        <p>Exactly one action per tick, through one audited chokepoint, behind a fail-safe fence. A deterministic conscience can halt a degenerate loop. Destructive, irreversible actions are retained by the human by design.</p>
+        <span class="tag">one chokepoint · one conscience</span>
+      </div>
+      <div class="pillar">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 6 h12 l4 4 v16 H8 Z"/><path d="M12 14 h8 M12 18 h8 M12 22 h5"/></svg>
+        <h3>Receipt-bound honesty</h3>
+        <p>No capability exists until a receipt backs it. If a proof didn't run, the system says so — never a green result a verifier didn't confirm. We publish honest NULLs. <b>A result only counts when it survives a test it could have failed.</b></p>
+        <span class="tag">receipts over rhetoric</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHIPPING TODAY -->
+<section class="caps" id="shipping">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">02 / THE PRODUCTS</span>
+        <h2>Start with the core.</h2>
+      </div>
+      <p>Relicquary is the core, and it runs today. TouchLink is a virtual touchscreen driver you can use on its own — or fold into a stack, the way AIM does.</p>
+    </div>
+
+    <!-- Relicquary feature -->
+    <div class="feature-grid reveal" style="margin-bottom:40px">
+      <div class="feature-copy">
+        <span class="status shipping">Runnable today · v0.9.0</span>
+        <h3>Relicquary — the cognitive OS for AI agents</h3>
+        <p class="lead">A local-first cognitive operating system in a single Rust binary. Durable typed memory and a knowledge graph — <b>plus the orchestration an agent works out of</b>: what to do next, synthesis, handoff, continuity across sessions — all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.</p>
+        <a class="pc-cta" href="index.html">Explore Relicquary <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="why-card" style="margin-top:0">
+        <div class="why-top">
+          <div class="q">recall <b>"what did we decide about storage?"</b></div>
+          <span class="badge"><span class="pip" aria-hidden="true"></span>current</span>
+        </div>
+        <div class="why-body">
+          <p class="res-line"><b>Decision:</b> Ship local-first — SQLite + Markdown on the operator's own disk.</p>
+          <div class="why-meta">
+            <span>kind: <em>decision</em></span>
+            <span>trust: <em>verified</em></span>
+            <span>confidence: <em>0.9</em></span>
+            <span>edges: <em>supersedes ×1</em></span>
+          </div>
+          <div class="scorebars" aria-hidden="true">
+            <div class="sb"><span>lexical (BM25)</span><span class="track"><span class="fill f1" style="width:86%"></span></span><span class="val">.86</span></div>
+            <div class="sb"><span>semantic</span><span class="track"><span class="fill f2" style="width:92%"></span></span><span class="val">.92</span></div>
+            <div class="sb"><span>currentness</span><span class="track"><span class="fill f4" style="width:98%"></span></span><span class="val">.98</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TouchLink card -->
+    <div class="product-grid reveal" style="grid-template-columns:1fr">
+      <a class="product-card" href="touchlink.html" aria-label="TouchLink — virtual touchscreen driver, learn more">
+        <div class="pc-top"><h3>TouchLink — a virtual touchscreen driver</h3><span class="status prototype">Working prototype</span></div>
+        <p class="pc-sub">On its own, it makes a USB touchscreen on a Mac behave like a touchscreen — taps land where you touch, and your mouse stays a mouse. Folded into a stack, it becomes a programmable control surface — the way AIM uses it to drive a workspace by touch.</p>
+        <span class="pc-cta">Explore TouchLink <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AIM — governance architecture -->
+<section class="recall" id="aim">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">03 / THE FLAGSHIP</span>
+        <h2>AIM: a governance architecture for verifiable autonomy.</h2>
+      </div>
+      <p><b>AIM — Accurate, Immediate, Minimal; AGRO in motion.</b> Relicquary writ large: the cognitive core given hands and a voice, aimed at autonomy you can audit.</p>
+    </div>
+    <div class="recall-note reveal" style="border-style:solid;border-left:2px solid var(--signal)">
+      What sets AIM apart is its floor: a deterministic, receipt-checkable layer that decides what an autonomous agent is <em>allowed</em> to do — and proves what it <em>did</em>. The floor isn't another model second-guessing the first — <b>it's mechanism</b>. Because it's deterministic and receipt-checkable, you can verify the property rather than take it on faith.
+    </div>
+
+    <div class="pipe-figure reveal" style="margin:28px 0 0">
+      <div class="terminal" role="img" aria-label="One governed AIM tick: perceive the desktop and recall lessons; the model proposes a single action in a read-only sandbox; a deterministic conscience checks it and can halt and correct; the action runs through one audited chokepoint behind a fail-safe fence; a receipt is written, and if no proof ran it says so; the lesson is persisted to Relicquary." style="box-shadow:none">
+        <div class="term-bar">
+          <div class="term-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="term-title">aim — one governed tick</span>
+          <span class="term-tag">bounded</span>
+        </div>
+        <div class="term-body">
+          <div class="term-comment"># the brain stays plan-only; exactly one action reaches the world</div>
+          <div class="wire">
+            <div class="step"><span class="k">perceive</span><span class="v">read desktop state <b>+</b> recall prior capability</span></div>
+            <div class="step"><span class="k">plan</span><span class="v">model proposes <b>one</b> action <span class="note">· read-only sandbox</span></span></div>
+            <div class="step"><span class="k gate">conscience</span><span class="v">deterministic checks <span class="note">· halt &amp; correct, then continue</span></span></div>
+            <div class="step"><span class="k">act</span><span class="v">one audited chokepoint <span class="note">· behind a fail-safe fence</span></span></div>
+            <div class="step"><span class="k">verify</span><span class="v">receipt written <span class="note">· no proof ran → it says so</span></span></div>
+            <div class="step"><span class="k">remember</span><span class="v">capability persisted <b>→</b> Relicquary</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recall-note reveal" style="margin-top:24px">
+      <b>How the loop is governed.</b> The runtime is a <em>perceive → plan → execute</em> loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes. A floor you can audit.
+    </div>
+  </div>
+</section>
+
+<!-- THE DETERMINISTIC FLOOR -->
+<section class="caps" id="trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">04 / THE DETERMINISTIC FLOOR</span>
+        <h2>A floor you can verify — not take on faith.</h2>
+      </div>
+      <p>Five mechanisms, none of them another model's opinion. They hold whether or not the brain behaves.</p>
+    </div>
+    <p class="floor-line reveal" style="margin:0 0 34px">The floor is mechanism — so it holds <span class="signal">even when the models agree.</span></p>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-num">FLOOR_01</div>
+        <h3>One actuation chokepoint</h3>
+        <p>Exactly one place where the agent acts on the world — governed and inspectable, not scattered tool calls. A standard agent is a loop wired to many tools, with many places intent becomes effect; AIM has one. That single gate is the structural break from while-loop-plus-tools.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOOR_02</div>
+        <h3>A fail-safe fence</h3>
+        <p>The chokepoint sits behind a hard boundary that blocks catastrophic operations outright, independent of what the model decides. The safe state is the default; the agent is never trusted past the fence for those operations.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-num">FLOOR_03</div>
+        <h3>A deterministic conscience</h3>
+        <p>Not a second model grading the first — rule-based checks (we call them theodicytes) that can halt the agent on fixation, on no-op churn, or on an ungrounded assertion. The judgment is mechanism, and a halt is correct-and-continue, not a crash.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOOR_04</div>
+        <h3>Receipt-bound actions</h3>
+        <p>Every mutation emits an append-only receipt. Actions aren't just claimed in the agent's narration — each leaves a record you can audit independently, after the fact, without trusting how the agent described what it did.</p>
+      </article>
+      <article class="cap reveal" style="grid-column:1 / -1">
+        <div class="cap-num">FLOOR_05</div>
+        <h3>An untrusted-memory model</h3>
+        <p>Everything the agent writes to memory is untrusted by default and carries its provenance. Trust is earned through governance, never assumed because the model said so — the same discipline that makes Relicquary's memory auditable, applied to an operator that acts.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RELICQUARY WRIT LARGE — the parts -->
+<section class="whatis" id="architecture">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">05 / THE FULL STACK</span>
+        <h2>Relicquary, writ large.</h2>
+      </div>
+      <p>One core, embodied. Relicquary is the cognitive OS at the center; AIM wraps it in the floor above, then gives it organs. Each part is graded for where it actually stands.</p>
+    </div>
+    <div class="recall-note reveal" style="border-style:solid;border-left:2px solid var(--signal);margin-bottom:28px">
+      <b>AGRO — the soil.</b> The name is both an acronym and an older root: <em>Always Growing Recursive Optimizer</em>, and <em>agros</em>, cultivated ground. AGRO is the plot the cognitive core is planted in — a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward — the ambition of the stack, stated plainly, not a feature claimed today.
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE CORE</div><span class="status shipping">runs today · v0.9.0</span></div>
+        <h3>Relicquary — memory + orchestration</h3>
+        <p>The cognitive OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop — under receipt-bound governance. <a href="index.html" style="color:var(--signal)">Standalone&nbsp;→</a></p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE DRIVE</div><span class="status prototype">working prototype</span></div>
+        <h3>AGRO — planning loop</h3>
+        <p>Proposes one action, runs it bounded, verifies it against receipts, checkpoints, repeats. It plans; it never actuates directly.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE BODY</div><span class="status prototype">working prototype</span></div>
+        <h3>The operator substrate</h3>
+        <p>The Rust substrate that runs a model as a persistent operator, and carries the one audited actuation chokepoint behind the fence.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE CONSCIENCE</div><span class="status prototype">working prototype</span></div>
+        <h3>Ultimentality — the doctrine</h3>
+        <p>The bounding doctrine made executable: the deterministic detectors that halt and correct a degenerate loop. The only part that can halt.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE HANDS</div><span class="status prototype">working prototype</span></div>
+        <h3>AI Control Stack + TouchLink</h3>
+        <p>How the operator touches a real machine: a local command bus of explicit, named adapters that return verifiable results — plus TouchLink's focus-preserving touch surface.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE DRIVER</div><span class="status roadmap">external · swappable</span></div>
+        <h3>The brain — a hosted model</h3>
+        <p>A capable frontier model drives the loop from outside, plan-only. It has no weights we can touch — so it never improves itself; it authors capability <em>into</em> AIM. Swappable by design.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT GROWS -->
+<section class="recall" id="frontier">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">06 / HOW IT GROWS</span>
+        <h2>The brain never grows. The stack accumulates.</h2>
+      </div>
+      <p>The brain is a model whose weights we don't touch — so it never trains on your use. Capability accumulates in the stack instead. Here is exactly where it can live, and how we hold the line on what counts.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">WORKS TODAY</div><span class="status shipping">reuse · 8/8 held-out</span></div>
+        <h3>Reuse</h3>
+        <p>Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored — a tool, a procedure, a receipted artifact — and re-applies it. The capability-reuse path passed all 8 of 8 held-out trials, on novel instances, not memorized ones.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">OPEN FRONTIER</div><span class="status research">unbuilt · gated</span></div>
+        <h3>Synthesis</h3>
+        <p>The next phase is capability <b>synthesis</b> — authoring a genuinely new durable capability for a blocker it has <b>never seen</b>, gated behind a hard held-out test. Clearing a blocker is the entry ticket, not the verdict: a capability is real only once it passes a held-out execution on a novel instance. Model opinions don't count — only the test does.</p>
+      </article>
+    </div>
+    <div class="recall-note reveal" style="margin-top:24px">
+      <b>The stack accumulates what the brain authors</b> — receipt-bound capability written as it hits friction, capability that re-applies through the same governed chokepoint as any other action. In one milestone run, the operator drove a real build-repair task down to a handful of compile errors and authored the fix itself: <b>bounded, receipted work under governance</b>. The model itself does not change. <span class="status roadmap" style="vertical-align:middle">DPACA — two-model cross-audit · on the roadmap</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT VISION / THE ROAD AHEAD -->
+<section class="recall" id="vision">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">07 / THE ROAD AHEAD</span>
+        <h2>Memory you own, becoming an operator you can trust.</h2>
+      </div>
+      <p>Every capable agent eventually hits the same wall: it forgets. We're building the other way — a foundation that remembers on your terms, governed so every move can be checked. The core runs today; the destination is an autonomous system whose every action leaves a receipt.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">MOVE_01</div><span class="status shipping">runs today</span></div>
+        <h3>Relicquary — memory you own</h3>
+        <p>A single Rust binary, CLI and MCP, with your memory living as SQLite and Markdown on your own disk. Typed memory, a linked knowledge graph, local search and reranking — nothing routes through a model provider. Writes are untrusted by default, every mutation leaves a receipt, and it already reuses capability it has stored — demonstrated by passing 8 of 8 held-out trials on a capability it had banked before, not memorized. The foundation everything else stands on.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">MOVE_02</div><span class="status roadmap">App Store · soon</span></div>
+        <h3>The apps — Relicquary for everyone</h3>
+        <p>The same local-first core is coming to Mac and iPhone through the Apple App Store — a one-time purchase, no subscription. Your memory stays on your devices and in your hands. The durable memory that has lived on the command line becomes something anyone running capable agents can buy once and own outright.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">MOVE_03</div><span class="status prototype">working prototype</span></div>
+        <h3>AIM — a deterministic floor</h3>
+        <p>AIM wraps Relicquary in governance. A single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks mean a questionable move is held and corrected rather than silently executed — a floor that holds even when a model is confident it's right. This is how a memory system becomes an operator you can let act: bounded, auditable, answerable for every step.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">MOVE_04</div><span class="status roadmap">on the roadmap</span></div>
+        <h3>Cross-audit — reliability by design</h3>
+        <p>DPACA puts two models in a four-eyes arrangement — one proposes, the other only approves or rejects — behind a deterministic, hash-bound publish step. Its purpose is reliability, not magic: to make it far harder for a single confident model to push a mistake through. Named here as direction, built toward acceptance gates — not something already shipping.</p>
+      </article>
+      <article class="cap reveal" style="grid-column:1 / -1">
+        <div class="cap-head"><div class="cap-num">THE DESTINATION</div><span class="status research">open frontier</span></div>
+        <h3>AGRO — the soil it all grows toward</h3>
+        <p>AGRO is the soil: cultivated ground, <em>Always Growing Recursive Optimizer</em>. The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability — capability it can carry and reuse, with provenance attached. The hard, open frontier is capability <b>synthesis</b>: a genuinely new capability for a problem the system has never seen. That is unbuilt research, and we say so plainly. It is the work ahead — and it is the whole point. <b>AGRO in motion: Accurate, Immediate, Minimal.</b></p>
+      </article>
+    </div>
+    <div class="recall-note reveal" style="margin-top:24px;border-style:solid;border-left:2px solid var(--signal)">
+      <b>Owned, local, and accountable — by construction.</b> Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't. Build on the core today; grow into the rest as it earns its place.
+    </div>
+  </div>
+</section>
+
+<!-- MATURITY MAP -->
+<section class="whatis" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">08 / MATURITY</span>
+        <h2>Every claim, graded.</h2>
+      </div>
+      <p>So the credibility gradient is visible at a glance — what runs, what's prototype, what's research, what's only designed.</p>
+    </div>
+    <div class="tiers reveal">
+      <div class="tier t-now">
+        <h4>Runs today</h4>
+        <ul>
+          <li><b>Relicquary v0.9.0</b> — memory + orchestration, CLI + MCP</li>
+          <li><b>The deterministic floor</b> — chokepoint, fence, conscience — built &amp; tested</li>
+          <li><b>Capability reuse</b> — 8/8 held-out</li>
+        </ul>
+      </div>
+      <div class="tier t-proto">
+        <h4>Working prototype</h4>
+        <ul>
+          <li><b>AGRO</b> planning loop</li>
+          <li><b>Operator substrate</b> — persistent operator + chokepoint</li>
+          <li><b>TouchLink</b> (one verified device)</li>
+          <li><b>AI Control Stack</b> (single machine)</li>
+        </ul>
+      </div>
+      <div class="tier t-research">
+        <h4>Open research</h4>
+        <ul>
+          <li><b>Capability synthesis</b> — a new capability from a never-seen blocker; held-out test unbuilt</li>
+        </ul>
+      </div>
+      <div class="tier t-road">
+        <h4>Designed, not built</h4>
+        <ul>
+          <li><b>DPACA</b> two-model cross-audit</li>
+          <li><b>Durable backup/restore</b> — memory is volatile today</li>
+          <li><b>Signed, distributable</b> apps &amp; Relicquary v1.0</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / CONTACT -->
+<section class="cta" id="contact">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="wrap cta-inner">
+    <span class="index">09 / RQ MCP LLC</span>
+    <h2 style="margin-top:14px">Autonomy you can <span class="signal">actually audit.</span></h2>
+    <p>RQ MCP LLC builds Relicquary — the local-first cognitive OS — and AIM, the governance architecture that turns it into a verifiable operator. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed. The core runs today; the Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription.</p>
+    <blockquote class="reveal" style="max-width:780px;margin:34px auto 4px;font:italic 400 19px/1.62 var(--body);color:var(--ink)">
+      &ldquo;Agents forget. Every autonomous system we ran reset to zero between sessions — repeating mistakes, losing the context it had earned, asking us to trust actions we couldn't check afterward. The conviction was simple: memory and accountability aren't features you bolt on later — they're the floor everything else stands on. So we built the floor first. The core runs today on your own machine: one binary, your disk, a receipt for every action. That's the standard I want to be held to.&rdquo;
+      <cite style="display:block;margin-top:16px;font:600 13px/1.4 var(--mono);font-style:normal;color:var(--signal);letter-spacing:.02em">— Jessy Brenenstahl, Founder, RQ MCP LLC</cite>
+    </blockquote>
+    <div class="cta-actions">
+      <a class="btn-primary" href="mailto:hello@relicquary.com?subject=Relicquary%20waitlist">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        Join the App Store waitlist
+      </a>
+      <a class="btn-ghost" href="index.html">See how Relicquary works</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer aria-labelledby="foot-h">
+  <h2 id="foot-h" class="sr-only">RQ MCP LLC footer</h2>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand-row">
+          <img class="mark" src="assets/brand/rq-mark.png" alt="" />
+          <span>RQ&nbsp;MCP<small>LLC</small></span>
+        </div>
+        <p class="foot-about">RQ MCP LLC builds Relicquary, a local-first cognitive OS for AI agents — and AIM, the governance architecture that turns that core into an operator whose every move is verifiable.</p>
+        <p class="etymology"><b>AIM</b> — <em>Accurate, Immediate, Minimal</em>; <em>AGRO in motion</em>. <b>AGRO</b> is the soil — the cultivated ground (<em>agros</em>; Always Growing Recursive Optimizer) capability is grown in.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Products</h5>
+        <a href="index.html">Relicquary</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="#aim">AIM</a>
+        <a href="#shipping">The products</a>
+      </div>
+      <div class="foot-col">
+        <h5>The stack</h5>
+        <a href="#trust">The floor</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#vision">The road ahead</a>
+        <a href="#frontier">How it grows</a>
+        <a href="#roadmap">Maturity</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="mailto:hello@relicquary.com">Contact</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="support.html">Support</a>
+        <a href="#contact">About RQ MCP</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span class="yr">2026</span> RQ MCP LLC. AIM is a working prototype in active construction. Local-first, receipt-bound, on your own machine.</p>
+      <div class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
+        <span class="lat">Memoria custodita</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){ el.textContent = new Date().getFullYear(); });
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navlinks');
+  if(navToggle && navLinks){
+    var closeNav = function(focusToggle){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); if(focusToggle){ navToggle.focus(); } };
+    navToggle.addEventListener('click', function(){ var open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){ a.addEventListener('click', function(){ closeNav(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); } });
+  }
+  var revs = document.querySelectorAll('.reveal');
+  function showAll(){ Array.prototype.forEach.call(revs, function(el){ el.classList.add('in'); }); }
+  if(reduce || !('IntersectionObserver' in window)){ showAll(); }
+  else {
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+    Array.prototype.forEach.call(revs, function(el){ io.observe(el); });
+    window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
+    setTimeout(showAll, 2500);
+  }
+})();
+</script>
+
+</body>
+</html>
