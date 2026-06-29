@@ -16,6 +16,7 @@
   --ink-3:#6b7886;
   --signal:#c6ff3a;
   --signal-dim:#9bd118;
+  --signal-btn:#a6e22e;   /* toned lime for filled buttons: less glare than --signal, still on-brand */
   --cyan:#3ad6ff;
   --amber:#ffb454;
   --red:#ff6b6b;
@@ -82,14 +83,14 @@ nav.nav, header.nav{
 .nav-links a{font-size:13px;color:var(--ink-2);transition:color .18s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a[aria-current="page"]{color:var(--signal)}
-.nav-cta{
-  font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.04em;
-  color:#0a0c00;background:var(--signal);
+.nav-links a.nav-cta{
+  font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  color:#0a0c00;background:var(--signal-btn);
   padding:9px 16px;border-radius:var(--radius);
-  border:1px solid var(--signal);
+  border:1px solid var(--signal-btn);
   transition:transform .15s, box-shadow .2s;
 }
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 22px -8px var(--signal)}
+.nav-links a.nav-cta:hover{color:#0a0c00;transform:translateY(-1px);box-shadow:0 6px 22px -8px var(--signal)}
 .nav-toggle{display:none;background:none;border:1px solid var(--line-2);color:var(--ink);border-radius:var(--radius);padding:7px 9px;cursor:pointer}
 
 /* eyebrow / labels */
@@ -116,9 +117,9 @@ h1.hero-title .stroke{color:transparent;-webkit-text-stroke:1.4px var(--ink-2)}
 .hero-sub b{color:var(--ink);font-weight:500}
 .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center}
 .btn-primary{
-  font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.02em;
-  color:#0a0c00;background:var(--signal);padding:13px 22px;border-radius:var(--radius);
-  border:1px solid var(--signal);display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.02em;
+  color:#0a0c00;background:var(--signal-btn);padding:13px 22px;border-radius:var(--radius);
+  border:1px solid var(--signal-btn);display:inline-flex;align-items:center;gap:10px;
   transition:transform .15s,box-shadow .2s;
 }
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px var(--signal)}
