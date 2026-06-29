@@ -3,51 +3,66 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Relicquary — A local memory OS for AI agents</title>
-<meta name="description" content="Relicquary is a local-first, MCP-native memory operating system for AI agents. Typed memory, a knowledge graph, explainable hybrid recall, and receipts — stored as SQLite and Markdown on your own machine. A product of RQ MCP LLC." />
+<title>Relicquary — the cognitive OS for AI agents | RQ MCP</title>
+<meta name="description" content="Relicquary is the local-first cognitive OS for AI agents: durable, receipt-bound memory and orchestration in one Rust binary. AIM is that core, governed." />
 <meta name="theme-color" content="#070809" />
+<link rel="canonical" href="https://relicquary.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://relicquary.com/" />
+<meta property="og:title" content="Relicquary — the cognitive OS for AI agents" />
+<meta property="og:description" content="Local-first, receipt-bound memory and orchestration for MCP agents — one Rust binary on your own disk. AIM is that core, given hands and a discipline." />
+<meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RQ MCP LLC",
+  "alternateName": "Relicquary",
+  "url": "https://relicquary.com",
+  "email": "hello@relicquary.com",
+  "logo": "https://relicquary.com/assets/brand/relicquary-mark.png",
+  "description": "RQ MCP LLC builds local-first cognitive infrastructure for AI agents: Relicquary, a memory operating system in a single Rust binary; TouchLink, a native macOS touchscreen driver; and AIM, a governance architecture for verifiable autonomy built on Relicquary.",
+  "founder": { "@type": "Person", "name": "Jessy Brenenstahl" },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "Relicquary", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS, iOS" } },
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "TouchLink", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS" } },
+    { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "AIM", "applicationCategory": "DeveloperApplication" } }
+  ]
+}
+</script>
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
 <body>
 
 <a href="#main" class="skip">Skip to content</a>
 
-<!-- ===== shared inline SVG gradient defs (dark palette) ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="signalLine" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c6ff3a"/><stop offset="1" stop-color="#9bd118"/>
-    </linearGradient>
-    <linearGradient id="markG" x1="3" y1="3" x2="29" y2="29" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#c6ff3a"/><stop offset="1" stop-color="#9bd118"/>
-    </linearGradient>
+    <linearGradient id="signalLine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8b35e"/><stop offset="1" stop-color="#a87f33"/></linearGradient>
   </defs>
 </svg>
 
 <!-- NAV -->
 <header class="nav" id="topnav">
   <div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="Relicquary home">
-      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="26" height="26" rx="4" stroke="var(--signal)" stroke-width="1.6"/>
-        <path d="M16 7 L24 11.5 V20.5 L16 25 L8 20.5 V11.5 Z" stroke="var(--ink-2)" stroke-width="1.3" fill="none"/>
-        <circle cx="16" cy="16" r="3.4" fill="var(--signal)"/>
-        <path d="M16 7 V12.6 M16 19.4 V25 M8 11.5 L13 14.4 M24 11.5 L19 14.4" stroke="var(--ink-3)" stroke-width="1.1"/>
-      </svg>
-      <span>Relicquary<small>RQ MCP LLC</small></span>
+    <a class="brand" href="index.html" aria-label="RQ MCP LLC home">
+      <img class="mark" src="assets/brand/rq-mark.png" alt="" />
+      <span>RQ&nbsp;MCP<small>LLC</small></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
-      <a href="#whatis">What it is</a>
-      <a href="#caps">Capabilities</a>
-      <a href="#recall">Recall</a>
-      <a href="#apps">Apps</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a class="nav-cta" href="#cta">Get started</a>
+      <a href="relicquary.html">Relicquary</a>
+      <a href="touchlink.html">TouchLink</a>
+      <a href="#aim">AIM</a>
+      <a href="#trust">The floor</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -57,481 +72,406 @@
 
 <main id="main">
 
-<!-- HERO (rendered visible immediately — not gated by scroll-reveal) -->
+<!-- HERO -->
 <header class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>Local memory OS · MCP-native</span></div>
-      <h1 class="hero-title">Memory your agents<br>can <span class="signal">recall</span>,<br><span class="stroke">explain</span>, and trust.</h1>
-      <p class="hero-sub">Relicquary is a <b>local-first memory operating system</b> for AI agents — a SQLite database and Markdown files on your own disk. Typed memory, a knowledge graph, and explainable recall. <b>No hosted service. No telemetry. Fully auditable.</b></p>
+      <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>RQ MCP LLC · local-first AI, on your machine</span></div>
+      <h1 class="hero-title">Relicquary is the core. <span class="signal">AIM</span> is Relicquary writ large — given hands, and the discipline to prove every move.</h1>
+      <p class="hero-sub"><b>Relicquary</b> (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory <b>plus orchestration</b> — the cognitive OS an agent thinks out of. <b>AIM</b> wraps that same core in a governance architecture aimed at <b>verifiable autonomy</b>, and only then gives it a body and a voice.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#cta">
+        <a class="btn-primary" href="relicquary.html">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-          Start with the CLI
+          Start with Relicquary
         </a>
-        <a class="btn-ghost" href="#recall">
-          See how recall works
+        <a class="btn-ghost" href="#aim">
+          How AIM is governed
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-      <div class="hero-meta">
-        <div class="item"><span class="k">Storage</span><span class="v"><b>SQLite</b> + Markdown</span></div>
-        <div class="item"><span class="k">Protocol</span><span class="v"><b>MCP</b> + CLI</span></div>
-        <div class="item"><span class="k">Memory kinds</span><span class="v"><b>14</b> typed</span></div>
-        <div class="item"><span class="k">Network</span><span class="v"><b>0</b> bytes leave disk</span></div>
-      </div>
+      <div class="honesty"><span class="pip" aria-hidden="true"></span><span>Relicquary runs today. AIM is a working prototype; the autonomy it aims toward is research ahead of us — and we mark that line, not blur it.</span></div>
     </div>
 
-    <!-- INTERACTIVE TERMINAL -->
-    <div class="terminal" role="img" aria-label="A live demonstration: the command 'relicquary recall' runs a natural-language query, then ranked typed-memory results appear with relevance scores, currentness labels, and a why-it-ranked breakdown.">
+    <!-- Relicquary "runs today" terminal -->
+    <div class="terminal" role="img" aria-label="A terminal showing Relicquary running from one binary: remember a decision (a receipt is written and it is indexed), recall it in plain language (ranked, dated, explainable), and serve memory to agents over MCP — with nothing leaving the machine.">
       <div class="term-bar">
         <div class="term-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-        <span class="term-title">relicquary — recall · mystore</span>
-        <span class="term-tag">live</span>
+        <span class="term-title">relicquary — mystore</span>
+        <span class="term-tag">runs today</span>
       </div>
       <div class="term-body">
-        <div class="term-comment"># hybrid recall · lexical BM25 + on-device embeddings</div>
-        <div class="term-line"><span class="prompt">$</span><span class="cmd" id="typedCmd"></span><span class="cursor" id="cursor" aria-hidden="true"></span></div>
-        <div class="results" id="results" aria-live="polite"></div>
+        <div class="term-comment"># one Rust binary · SQLite + Markdown on your disk</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary remember mystore "decided: ship local-first"</span></div>
+        <div class="term-comment" style="color:var(--signal-dim);margin:2px 0 12px">✓ stored decision · receipt written · indexed</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary recall mystore "what did we decide?"</span></div>
+        <div class="term-comment" style="margin:2px 0 12px">→ ranked, dated, explainable — from your own store</div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">relicquary mcp-server</span></div>
+        <div class="term-comment" style="color:var(--signal-dim);margin:2px 0 0">✓ listening · memory + orchestration, served over MCP</div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- WHAT IT IS -->
-<section class="whatis" id="whatis">
+<!-- PROOF STRIP -->
+<section class="proof" aria-label="What's verifiable">
+  <div class="wrap">
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg><b>One Rust binary</b></span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg>SQLite + Markdown <b>on your disk</b></span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l3 3v15l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4Z"/><line x1="9" y1="9" x2="15" y2="9"/></svg><b>A receipt</b> for every mutation</span>
+    <span class="pf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 109 9"/><line x1="12" y1="3" x2="12" y2="12"/><path d="M16 5l-4 7"/></svg>Your model — <b>local or your own provider</b></span>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD TO -->
+<section class="whatis" id="believe">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <span class="index">01 / WHAT IT IS</span>
-        <h2>Not chat history. A memory OS that lives on your machine.</h2>
+        <span class="index">01 / WHAT WE BUILD TO</span>
+        <h2>One company, one discipline.</h2>
       </div>
-      <p>The store is plain files you own. Embedding and ranking models run on-device. Nothing routes through a model provider — ever.</p>
+      <p>A cognitive OS, an operator, a touch driver, a control stack — held together by three commitments that show up in the code, not just the copy.</p>
     </div>
     <div class="pillars reveal">
       <div class="pillar">
-        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="5" y="6" width="22" height="6" rx="2"/><rect x="5" y="13" width="22" height="6" rx="2"/><rect x="5" y="20" width="22" height="6" rx="2"/>
-          <circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="16" r="1.2" fill="currentColor"/><circle cx="9" cy="23" r="1.2" fill="currentColor"/>
-        </svg>
-        <h3>Local-first by design</h3>
-        <p>A SQLite database plus human-readable Markdown relics, sitting in a folder on your disk. Open them, grep them, version them. The operator owns the store.</p>
-        <span class="tag">~/.relicquary/mystore</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="5" width="20" height="14" rx="2"/><path d="M11 24h10M16 19v5"/><circle cx="16" cy="12" r="3.2"/></svg>
+        <h3>Sovereign by construction</h3>
+        <p>Your store lives on your disk — no hosted service, no telemetry. And the model is your choice: run it fully local, or connect your own provider account (you bring the OAuth). Either way, your data and audit trail stay yours.</p>
+        <span class="tag">your machine · your files</span>
       </div>
       <div class="pillar">
-        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="8" cy="16" r="3.5"/><circle cx="24" cy="8" r="3.5"/><circle cx="24" cy="24" r="3.5"/>
-          <path d="M11 14.5 L21 9.2 M11 17.5 L21 22.8"/>
-        </svg>
-        <h3>MCP-native, CLI for humans</h3>
-        <p>Agents connect over the Model Context Protocol; you drive it from a terminal. One service, two front doors — no SDK lock-in, no daemon in the cloud.</p>
-        <span class="tag">mcp-server · cli</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 L26 8 V15 C26 22 21 26 16 28 C11 26 6 22 6 15 V8 Z"/><path d="M12 16 l3 3 l5 -6" stroke-width="1.7"/></svg>
+        <h3>Bounded, not unsupervised</h3>
+        <p>Exactly one action per tick, through one audited chokepoint, behind a fail-safe fence. A deterministic conscience can halt a degenerate loop. Destructive, irreversible actions are retained by the human by design.</p>
+        <span class="tag">one chokepoint · one conscience</span>
       </div>
       <div class="pillar">
-        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M16 4 L26 8 V15 C26 22 21 26 16 28 C11 26 6 22 6 15 V8 Z"/>
-          <path d="M12 16 l3 3 l5 -6" stroke-width="1.7"/>
-        </svg>
-        <h3>Auditable, no telemetry</h3>
-        <p>Every write is untrusted by default and produces a receipt — an append-only record you can read as a file. Memory never leaves the machine. Nothing phones home.</p>
-        <span class="tag">receipts · trust tiers</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 6 h12 l4 4 v16 H8 Z"/><path d="M12 14 h8 M12 18 h8 M12 22 h5"/></svg>
+        <h3>Receipt-bound honesty</h3>
+        <p>No capability exists until a receipt backs it. If a proof didn't run, the system says so — never a green result a verifier didn't confirm. We publish honest NULLs. <b>A result only counts when it survives a test it could have failed.</b></p>
+        <span class="tag">receipts over rhetoric</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LOCAL-FIRST DIAGRAM (adapted from v4 "everything stays on your machine") -->
-<section class="local" id="local">
+<!-- SHIPPING TODAY -->
+<section class="caps" id="shipping">
   <div class="wrap">
-    <div class="local-grid">
-      <div class="reveal">
-        <div class="diagram-card">
-          <svg viewBox="0 0 460 360" role="img" aria-labelledby="machine-t machine-d">
-            <title id="machine-t">Everything stays on your machine</title>
-            <desc id="machine-d">A diagram of one laptop containing the SQLite database, Markdown relics, and on-device models, with the connection to the cloud severed — nothing leaves the device.</desc>
-            <defs>
-              <linearGradient id="lapDark" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#11151b"/><stop offset="1" stop-color="#0b0d10"/>
-              </linearGradient>
-            </defs>
-            <!-- laptop -->
-            <rect x="70" y="40" width="320" height="206" rx="14" fill="url(#lapDark)" stroke="var(--line-2)" stroke-width="2"/>
-            <rect x="70" y="40" width="320" height="34" rx="14" fill="none" stroke="var(--line)" stroke-width="2"/>
-            <rect x="44" y="252" width="372" height="16" rx="8" fill="#0e1116" stroke="var(--line-2)" stroke-width="2"/>
-            <!-- DB -->
-            <g>
-              <ellipse cx="150" cy="118" rx="34" ry="10" fill="none" stroke="url(#signalLine)" stroke-width="2"/>
-              <path d="M116 118v34c0 5.5 15 10 34 10s34-4.5 34-10v-34" fill="none" stroke="url(#signalLine)" stroke-width="2"/>
-              <path d="M116 135c0 5.5 15 10 34 10s34-4.5 34-10" fill="none" stroke="url(#signalLine)" stroke-width="2" opacity=".55"/>
-              <text x="150" y="190" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#b6c2ce">SQLite</text>
-            </g>
-            <!-- Markdown -->
-            <g>
-              <rect x="232" y="98" width="78" height="64" rx="8" fill="#0e1116" stroke="var(--cyan)" stroke-width="2"/>
-              <path d="M246 116h50M246 128h50M246 140h32" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" opacity=".75"/>
-              <text x="271" y="190" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#b6c2ce">Markdown</text>
-            </g>
-            <!-- model chip -->
-            <g>
-              <rect x="146" y="204" width="146" height="30" rx="7" fill="rgba(198,255,58,.08)" stroke="var(--signal-dim)" stroke-width="1.6"/>
-              <path d="M162 204v-8M180 204v-8M198 204v-8M162 234v8M180 234v8M198 234v8" stroke="var(--signal-dim)" stroke-width="1.6"/>
-              <text x="219" y="223" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12.5" fill="#c6ff3a">on-device models</text>
-            </g>
-            <!-- severed cloud connection -->
-            <g>
-              <path d="M388 150c40 0 40 0 56 0" stroke="var(--red)" stroke-width="2" stroke-dasharray="6 6"/>
-              <path d="M414 140l-12 20M402 140l12 20" stroke="var(--red)" stroke-width="2.4" stroke-linecap="round"/>
-              <text x="408" y="188" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#ff6b6b">no cloud</text>
-            </g>
-          </svg>
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">02 / THE PRODUCTS</span>
+        <h2>Start with the core.</h2>
+      </div>
+      <p>Relicquary is the core, and it runs today. TouchLink is a virtual touchscreen driver you can use on its own — or fold into a stack, the way AIM does.</p>
+    </div>
+
+    <!-- Relicquary feature -->
+    <div class="feature-grid reveal" style="margin-bottom:40px">
+      <div class="feature-copy">
+        <span class="status shipping">Runnable today · v0.9.0</span>
+        <h3>Relicquary — the cognitive OS for AI agents</h3>
+        <p class="lead">A local-first cognitive operating system in a single Rust binary. Durable typed memory and a knowledge graph — <b>plus the orchestration an agent works out of</b>: what to do next, synthesis, handoff, continuity across sessions — all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.</p>
+        <a class="pc-cta" href="relicquary.html">Explore Relicquary <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="why-card" style="margin-top:0">
+        <div class="why-top">
+          <div class="q">recall <b>"what did we decide about storage?"</b></div>
+          <span class="badge"><span class="pip" aria-hidden="true"></span>current</span>
+        </div>
+        <div class="why-body">
+          <p class="res-line"><b>Decision:</b> Ship local-first — SQLite + Markdown on the operator's own disk.</p>
+          <div class="why-meta">
+            <span>kind: <em>decision</em></span>
+            <span>trust: <em>verified</em></span>
+            <span>confidence: <em>0.9</em></span>
+            <span>edges: <em>supersedes ×1</em></span>
+          </div>
+          <div class="scorebars" aria-hidden="true">
+            <div class="sb"><span>lexical (BM25)</span><span class="track"><span class="fill f1" style="width:86%"></span></span><span class="val">.86</span></div>
+            <div class="sb"><span>semantic</span><span class="track"><span class="fill f2" style="width:92%"></span></span><span class="val">.92</span></div>
+            <div class="sb"><span>currentness</span><span class="track"><span class="fill f4" style="width:98%"></span></span><span class="val">.98</span></div>
+          </div>
         </div>
       </div>
-      <div class="local-copy reveal d1">
-        <span class="index">A MEMORY OS THAT NEVER LEAVES YOUR DISK</span>
-        <h2 style="margin-top:14px">Your machine is the whole system.</h2>
-        <ul class="local-list">
-          <li>
-            <span class="pn">01</span>
-            <h3>Local-first by construction</h3>
-            <p>The entire store is a SQLite database plus human-readable Markdown files on your own machine. Embedding and reranking run on-device. Nothing routes through a model provider.</p>
-          </li>
-          <li>
-            <span class="pn">02</span>
-            <h3>MCP-native for agents</h3>
-            <p>Agents connect over the Model Context Protocol and read &amp; write memory like a first-class tool. You drive the same store from a clean CLI.</p>
-          </li>
-          <li>
-            <span class="pn">03</span>
-            <h3>Auditable to the byte</h3>
-            <p>Every mutation lands as a receipt and a file you can open in any editor. No telemetry, no opaque service — memory you can actually inspect.</p>
-          </li>
+    </div>
+
+    <!-- TouchLink card -->
+    <div class="product-grid reveal" style="grid-template-columns:1fr">
+      <a class="product-card" href="touchlink.html" aria-label="TouchLink — virtual touchscreen driver, learn more">
+        <div class="pc-top"><h3>TouchLink — a virtual touchscreen driver</h3><span class="status prototype">Working prototype</span></div>
+        <p class="pc-sub">On its own, it makes a USB touchscreen on a Mac behave like a touchscreen — taps land where you touch, and your mouse stays a mouse. Folded into a stack, it becomes a programmable control surface — the way AIM uses it to drive a workspace by touch.</p>
+        <span class="pc-cta">Explore TouchLink <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AIM — governance architecture -->
+<section class="recall" id="aim">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">03 / THE FLAGSHIP</span>
+        <h2>AIM: a governance architecture for verifiable autonomy.</h2>
+      </div>
+      <p><b>AIM — Accurate, Immediate, Minimal; AGRO in motion.</b> Relicquary writ large: the cognitive core given hands and a voice, aimed at autonomy you can audit.</p>
+    </div>
+    <div class="recall-note reveal" style="border-style:solid;border-left:2px solid var(--signal)">
+      What sets AIM apart is its floor: a deterministic, receipt-checkable layer that decides what an autonomous agent is <em>allowed</em> to do — and proves what it <em>did</em>. The floor isn't another model second-guessing the first — <b>it's mechanism</b>. Because it's deterministic and receipt-checkable, you can verify the property rather than take it on faith.
+    </div>
+
+    <div class="pipe-figure reveal" style="margin:28px 0 0">
+      <div class="terminal" role="img" aria-label="One governed AIM tick: perceive the desktop and recall lessons; the model proposes a single action in a read-only sandbox; a deterministic conscience checks it and can halt and correct; the action runs through one audited chokepoint behind a fail-safe fence; a receipt is written, and if no proof ran it says so; the lesson is persisted to Relicquary." style="box-shadow:none">
+        <div class="term-bar">
+          <div class="term-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="term-title">aim — one governed tick</span>
+          <span class="term-tag">bounded</span>
+        </div>
+        <div class="term-body">
+          <div class="term-comment"># the brain stays plan-only; exactly one action reaches the world</div>
+          <div class="wire">
+            <div class="step"><span class="k">perceive</span><span class="v">read desktop state <b>+</b> recall prior capability</span></div>
+            <div class="step"><span class="k">plan</span><span class="v">model proposes <b>one</b> action <span class="note">· read-only sandbox</span></span></div>
+            <div class="step"><span class="k gate">conscience</span><span class="v">deterministic checks <span class="note">· halt &amp; correct, then continue</span></span></div>
+            <div class="step"><span class="k">act</span><span class="v">one audited chokepoint <span class="note">· behind a fail-safe fence</span></span></div>
+            <div class="step"><span class="k">verify</span><span class="v">receipt written <span class="note">· no proof ran → it says so</span></span></div>
+            <div class="step"><span class="k">remember</span><span class="v">capability persisted <b>→</b> Relicquary</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recall-note reveal" style="margin-top:24px">
+      <b>How the loop is governed.</b> The runtime is a <em>perceive → plan → execute</em> loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes. A floor you can audit.
+    </div>
+  </div>
+</section>
+
+<!-- THE DETERMINISTIC FLOOR -->
+<section class="caps" id="trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">04 / THE DETERMINISTIC FLOOR</span>
+        <h2>A floor you can verify — not take on faith.</h2>
+      </div>
+      <p>Five mechanisms, none of them another model's opinion. They hold whether or not the brain behaves.</p>
+    </div>
+    <p class="floor-line reveal" style="margin:0 0 34px">The floor is mechanism — so it holds <span class="signal">even when the models agree.</span></p>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-num">FLOOR_01</div>
+        <h3>One actuation chokepoint</h3>
+        <p>Exactly one place where the agent acts on the world — governed and inspectable, not scattered tool calls. A standard agent is a loop wired to many tools, with many places intent becomes effect; AIM has one. That single gate is the structural break from while-loop-plus-tools.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOOR_02</div>
+        <h3>A fail-safe fence</h3>
+        <p>The chokepoint sits behind a hard boundary that blocks catastrophic operations outright, independent of what the model decides. The safe state is the default; the agent is never trusted past the fence for those operations.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-num">FLOOR_03</div>
+        <h3>A deterministic conscience</h3>
+        <p>Not a second model grading the first — rule-based checks (we call them theodicytes) that can halt the agent on fixation, on no-op churn, or on an ungrounded assertion. The judgment is mechanism, and a halt is correct-and-continue, not a crash.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOOR_04</div>
+        <h3>Receipt-bound actions</h3>
+        <p>Every mutation emits an append-only receipt. Actions aren't just claimed in the agent's narration — each leaves a record you can audit independently, after the fact, without trusting how the agent described what it did.</p>
+      </article>
+      <article class="cap reveal" style="grid-column:1 / -1">
+        <div class="cap-num">FLOOR_05</div>
+        <h3>An untrusted-memory model</h3>
+        <p>Everything the agent writes to memory is untrusted by default and carries its provenance. Trust is earned through governance, never assumed because the model said so — the same discipline that makes Relicquary's memory auditable, applied to an operator that acts.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RELICQUARY WRIT LARGE — the parts -->
+<section class="whatis" id="architecture">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">05 / THE FULL STACK</span>
+        <h2>Relicquary, writ large.</h2>
+      </div>
+      <p>One core, embodied. Relicquary is the cognitive OS at the center; AIM wraps it in the floor above, then gives it organs. Each part is graded for where it actually stands.</p>
+    </div>
+    <div class="recall-note reveal" style="border-style:solid;border-left:2px solid var(--signal);margin-bottom:28px">
+      <b>AGRO — the soil.</b> The name is both an acronym and an older root: <em>Always Growing Recursive Optimizer</em>, and <em>agros</em>, cultivated ground. AGRO is the plot the cognitive core is planted in — a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward — the ambition of the stack, stated plainly, not a feature claimed today.
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE CORE</div><span class="status shipping">runs today · v0.9.0</span></div>
+        <h3>Relicquary — memory + orchestration</h3>
+        <p>The cognitive OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop — under receipt-bound governance. <a href="relicquary.html" style="color:var(--signal)">Standalone&nbsp;→</a></p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE DRIVE</div><span class="status prototype">working prototype</span></div>
+        <h3>AGRO — planning loop</h3>
+        <p>Proposes one action, runs it bounded, verifies it against receipts, checkpoints, repeats. It plans; it never actuates directly.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE BODY</div><span class="status prototype">working prototype</span></div>
+        <h3>The operator substrate</h3>
+        <p>The Rust substrate that runs a model as a persistent operator, and carries the one audited actuation chokepoint behind the fence.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE CONSCIENCE</div><span class="status prototype">working prototype</span></div>
+        <h3>Ultimentality — the doctrine</h3>
+        <p>The bounding doctrine made executable: the deterministic detectors that halt and correct a degenerate loop. The only part that can halt.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">THE HANDS</div><span class="status prototype">working prototype</span></div>
+        <h3>AI Control Stack + TouchLink</h3>
+        <p>How the operator touches a real machine: a local command bus of explicit, named adapters that return verifiable results — plus TouchLink's focus-preserving touch surface.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">THE DRIVER</div><span class="status roadmap">external · swappable</span></div>
+        <h3>The brain — a hosted model</h3>
+        <p>A capable frontier model drives the loop from outside, plan-only. It has no weights we can touch — so it never improves itself; it authors capability <em>into</em> AIM. Swappable by design.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT GROWS -->
+<section class="recall" id="frontier">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">06 / HOW IT GROWS</span>
+        <h2>The brain never grows. The stack accumulates.</h2>
+      </div>
+      <p>The brain is a model whose weights we don't touch — so it never trains on your use. Capability accumulates in the stack instead. Here is exactly where it can live, and how we hold the line on what counts.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">WORKS TODAY</div><span class="status shipping">reuse · 8/8 held-out</span></div>
+        <h3>Reuse</h3>
+        <p>Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored — a tool, a procedure, a receipted artifact — and re-applies it. The capability-reuse path passed all 8 of 8 held-out trials, on novel instances, not memorized ones.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">OPEN FRONTIER</div><span class="status research">unbuilt · gated</span></div>
+        <h3>Synthesis</h3>
+        <p>The next phase is capability <b>synthesis</b> — authoring a genuinely new durable capability for a blocker it has <b>never seen</b>, gated behind a hard held-out test. Clearing a blocker is the entry ticket, not the verdict: a capability is real only once it passes a held-out execution on a novel instance. Model opinions don't count — only the test does.</p>
+      </article>
+    </div>
+    <div class="recall-note reveal" style="margin-top:24px">
+      <b>The stack accumulates what the brain authors</b> — receipt-bound capability written as it hits friction, capability that re-applies through the same governed chokepoint as any other action. In one milestone run, the operator drove a real build-repair task down to a handful of compile errors and authored the fix itself: <b>bounded, receipted work under governance</b>. The model itself does not change. <span class="status roadmap" style="vertical-align:middle">DPACA — two-model cross-audit · on the roadmap</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT VISION / THE ROAD AHEAD -->
+<section class="recall" id="vision">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">07 / THE ROAD AHEAD</span>
+        <h2>Memory you own, becoming an operator you can trust.</h2>
+      </div>
+      <p>Every capable agent eventually hits the same wall: it forgets. We're building the other way — a foundation that remembers on your terms, governed so every move can be checked. The core runs today; the destination is an autonomous system whose every action leaves a receipt.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">MOVE_01</div><span class="status shipping">runs today</span></div>
+        <h3>Relicquary — memory you own</h3>
+        <p>A single Rust binary, CLI and MCP, with your memory living as SQLite and Markdown on your own disk. Typed memory, a linked knowledge graph, local search and reranking — nothing routes through a model provider. Writes are untrusted by default, every mutation leaves a receipt, and it already reuses capability it has stored — demonstrated by passing 8 of 8 held-out trials on a capability it had banked before, not memorized. The foundation everything else stands on.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">MOVE_02</div><span class="status roadmap">App Store · soon</span></div>
+        <h3>The apps — Relicquary for everyone</h3>
+        <p>The same local-first core is coming to Mac and iPhone through the Apple App Store — a one-time purchase, no subscription. Your memory stays on your devices and in your hands. The durable memory that has lived on the command line becomes something anyone running capable agents can buy once and own outright.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-head"><div class="cap-num">MOVE_03</div><span class="status prototype">working prototype</span></div>
+        <h3>AIM — a deterministic floor</h3>
+        <p>AIM wraps Relicquary in governance. A single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks mean a questionable move is held and corrected rather than silently executed — a floor that holds even when a model is confident it's right. This is how a memory system becomes an operator you can let act: bounded, auditable, answerable for every step.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-head"><div class="cap-num">MOVE_04</div><span class="status roadmap">on the roadmap</span></div>
+        <h3>Cross-audit — reliability by design</h3>
+        <p>DPACA puts two models in a four-eyes arrangement — one proposes, the other only approves or rejects — behind a deterministic, hash-bound publish step. Its purpose is reliability, not magic: to make it far harder for a single confident model to push a mistake through. Named here as direction, built toward acceptance gates — not something already shipping.</p>
+      </article>
+      <article class="cap reveal" style="grid-column:1 / -1">
+        <div class="cap-head"><div class="cap-num">THE DESTINATION</div><span class="status research">open frontier</span></div>
+        <h3>AGRO — the soil it all grows toward</h3>
+        <p>AGRO is the soil: cultivated ground, <em>Always Growing Recursive Optimizer</em>. The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability — capability it can carry and reuse, with provenance attached. The hard, open frontier is capability <b>synthesis</b>: a genuinely new capability for a problem the system has never seen. That is unbuilt research, and we say so plainly. It is the work ahead — and it is the whole point. <b>AGRO in motion: Accurate, Immediate, Minimal.</b></p>
+      </article>
+    </div>
+    <div class="recall-note reveal" style="margin-top:24px;border-style:solid;border-left:2px solid var(--signal)">
+      <b>Owned, local, and accountable — by construction.</b> Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't. Build on the core today; grow into the rest as it earns its place.
+    </div>
+  </div>
+</section>
+
+<!-- MATURITY MAP -->
+<section class="whatis" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">08 / MATURITY</span>
+        <h2>Every claim, graded.</h2>
+      </div>
+      <p>So the credibility gradient is visible at a glance — what runs, what's prototype, what's research, what's only designed.</p>
+    </div>
+    <div class="tiers reveal">
+      <div class="tier t-now">
+        <h4>Runs today</h4>
+        <ul>
+          <li><b>Relicquary v0.9.0</b> — memory + orchestration, CLI + MCP</li>
+          <li><b>The deterministic floor</b> — chokepoint, fence, conscience — built &amp; tested</li>
+          <li><b>Capability reuse</b> — 8/8 held-out</li>
+        </ul>
+      </div>
+      <div class="tier t-proto">
+        <h4>Working prototype</h4>
+        <ul>
+          <li><b>AGRO</b> planning loop</li>
+          <li><b>Operator substrate</b> — persistent operator + chokepoint</li>
+          <li><b>TouchLink</b> (one verified device)</li>
+          <li><b>AI Control Stack</b> (single machine)</li>
+        </ul>
+      </div>
+      <div class="tier t-research">
+        <h4>Open research</h4>
+        <ul>
+          <li><b>Capability synthesis</b> — a new capability from a never-seen blocker; held-out test unbuilt</li>
+        </ul>
+      </div>
+      <div class="tier t-road">
+        <h4>Designed, not built</h4>
+        <ul>
+          <li><b>DPACA</b> two-model cross-audit</li>
+          <li><b>Durable backup/restore</b> — memory is volatile today</li>
+          <li><b>Signed, distributable</b> apps &amp; Relicquary v1.0</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAPABILITIES -->
-<section class="caps" id="caps">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <span class="index">02 / CAPABILITIES</span>
-        <h2>Structured memory, engineered for retrieval.</h2>
-      </div>
-      <p>Memory is typed, linked, and explainable — built so an agent can find the right thing and prove why it surfaced.</p>
-    </div>
-    <div class="cap-grid">
-      <article class="cap reveal">
-        <div class="cap-num">CAP_01</div>
-        <h3><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="11" height="4" rx="1"/><rect x="3" y="16" width="15" height="4" rx="1"/></svg>Typed memory — 14 kinds</h3>
-        <p>Fourteen kinds of memory object — each carrying tags, confidence, provenance, and a trust tier. No undifferentiated text blobs; every entry knows what it is.</p>
-        <div class="kinds">
-          <span class="hl">fact</span><span class="hl">decision</span><span>task</span><span>procedure</span><span>episode</span><span>observation</span><span>contradiction</span><span>preference</span><span>entity</span><span>handoff</span><span>claim</span><span>artifact</span><span>friction</span><span>summary</span>
-        </div>
-      </article>
-      <article class="cap reveal d1">
-        <div class="cap-num">CAP_02</div>
-        <h3><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7 L16 7 M7.4 8 L11 16 M16.6 8 L13 16"/></svg>Typed knowledge graph</h3>
-        <p>Typed edges link memories into a graph — <code>supersedes</code>, <code>depends_on</code>, <code>conflicts_with</code>, <code>blocks</code>, <code>mentions</code> — with automatic conflict detection so stale beliefs get flagged.</p>
-        <div class="kinds">
-          <span>supersedes</span><span>depends_on</span><span class="hl">conflicts_with</span><span>blocks</span><span>mentions</span>
-        </div>
-      </article>
-      <article class="cap reveal">
-        <div class="cap-num">CAP_03</div>
-        <h3><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/><path d="M8 11 h6 M11 8 v6" stroke-width="1.2"/></svg>Explainable recall</h3>
-        <p>Lexical BM25 fused with on-device semantic embeddings, then reranked. Results carry currentness labels and a per-result "why it ranked" breakdown — not raw text dumps.</p>
-        <div class="kinds">
-          <span class="hl">BM25</span><span class="hl">embeddings</span><span>rerank</span><span>currentness</span><span>why-it-ranked</span>
-        </div>
-      </article>
-      <article class="cap reveal d1">
-        <div class="cap-num">CAP_04</div>
-        <h3><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3 h9 l3 3 v15 l-2 -1.4 -2 1.4 -2 -1.4 -2 1.4 -2 -1.4 -2 1.4 Z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="13" y2="13"/></svg>Receipts for every mutation</h3>
-        <p>Every mutation is recorded as an append-only receipt you can audit as a file. Approve, supersede, or forget — the history of how memory changed is always there.</p>
-        <div class="kinds">
-          <span>append-only</span><span class="hl">auditable</span><span>provenance</span><span>trust tier</span>
-        </div>
-      </article>
-      <article class="cap reveal" style="grid-column:1 / -1">
-        <div class="cap-num">CAP_05</div>
-        <h3><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 11l3 2.5-3 2.5M12 16h5" stroke-linecap="round" stroke-linejoin="round"/></svg>One store, two front doors — MCP &amp; CLI</h3>
-        <p>Agents speak the Model Context Protocol; you run <code>relicquary remember</code>, <code>relicquary recall</code>, and <code>relicquary mcp-server</code> from your terminal. One source of truth, no SDK lock-in, no cloud daemon.</p>
-        <div class="kinds">
-          <span class="hl">relicquary remember</span><span class="hl">relicquary recall</span><span class="hl">relicquary mcp-server</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- HOW RECALL WORKS -->
-<section class="recall" id="recall">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <span class="index">03 / HOW RECALL WORKS</span>
-        <h2>A query becomes ranked, dated, defensible evidence.</h2>
-      </div>
-      <p>Four stages, all on-device. The agent gets ranked results it can act on — and a reason for each one.</p>
-    </div>
-
-    <!-- v4-adapted recall pipeline flowchart, dark palette -->
-    <!-- Wide horizontal flowchart: shown >=620px. Hidden + aria-hidden on phones,
-         where the legible vertical SVG below + the STAGE 01-04 grid carry the same content. -->
-    <div class="pipe-figure pipe-wide reveal">
-      <svg viewBox="0 0 1080 260" role="img" aria-labelledby="pipe-t pipe-d">
-        <title id="pipe-t">The recall pipeline</title>
-        <desc id="pipe-d">A natural-language query fans out to lexical BM25 search and on-device semantic embeddings, the results are fused and reranked, and each result is returned with a why-it-ranked explanation and a currentness label of current, stale, or superseded.</desc>
-        <defs>
-          <linearGradient id="pgDark" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#9bd118"/><stop offset="1" stop-color="#c6ff3a"/>
-          </linearGradient>
-          <marker id="ahDark" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
-            <path d="M0 0L9 4.5L0 9z" fill="#9bd118"/>
-          </marker>
-        </defs>
-        <!-- query -->
-        <g>
-          <rect x="14" y="96" width="160" height="64" rx="10" fill="#0e1116" stroke="var(--line-2)" stroke-width="2"/>
-          <text x="94" y="123" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="600" fill="#e8edf2">Query</text>
-          <text x="94" y="143" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">natural language</text>
-        </g>
-        <path d="M174 118 C 220 118 220 62 276 62" fill="none" stroke="url(#pgDark)" stroke-width="2" marker-end="url(#ahDark)"/>
-        <path d="M174 138 C 220 138 220 196 276 196" fill="none" stroke="url(#pgDark)" stroke-width="2" marker-end="url(#ahDark)"/>
-        <!-- BM25 -->
-        <g>
-          <rect x="280" y="32" width="196" height="62" rx="10" fill="#0e1116" stroke="var(--cyan)" stroke-width="2"/>
-          <text x="378" y="60" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="600" fill="#e8edf2">Lexical · BM25</text>
-          <text x="378" y="80" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">exact terms</text>
-        </g>
-        <!-- embeddings -->
-        <g>
-          <rect x="280" y="166" width="196" height="62" rx="10" fill="#0e1116" stroke="var(--signal)" stroke-width="2"/>
-          <text x="378" y="194" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="600" fill="#e8edf2">Semantic · on-device</text>
-          <text x="378" y="214" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">meaning, locally</text>
-        </g>
-        <path d="M476 63 C 528 63 528 120 584 120" fill="none" stroke="url(#pgDark)" stroke-width="2" marker-end="url(#ahDark)"/>
-        <path d="M476 197 C 528 197 528 130 584 130" fill="none" stroke="url(#pgDark)" stroke-width="2" marker-end="url(#ahDark)"/>
-        <!-- fuse -->
-        <g>
-          <rect x="588" y="92" width="186" height="72" rx="10" fill="rgba(198,255,58,.08)" stroke="url(#pgDark)" stroke-width="2"/>
-          <text x="681" y="122" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="600" fill="#e8edf2">Fuse + rerank</text>
-          <text x="681" y="142" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12.5" fill="#b6c2ce">+ connected evidence</text>
-        </g>
-        <path d="M774 128 C 800 128 800 128 824 128" fill="none" stroke="url(#pgDark)" stroke-width="2" marker-end="url(#ahDark)"/>
-        <!-- ranked, currentness-labelled results -->
-        <g>
-          <rect x="828" y="50" width="240" height="156" rx="12" fill="#0e1116" stroke="var(--line-2)" stroke-width="2"/>
-          <text x="848" y="82" font-family="Space Grotesk, sans-serif" font-size="16" font-weight="600" fill="#e8edf2">Ranked results</text>
-          <rect x="848" y="96" width="200" height="28" rx="6" fill="rgba(198,255,58,.1)"/>
-          <circle cx="864" cy="110" r="4.5" fill="#c6ff3a"/>
-          <text x="878" y="115" font-family="JetBrains Mono, monospace" font-size="13" fill="#c6ff3a">current</text>
-          <text x="1032" y="115" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#e8edf2">0.94</text>
-          <rect x="848" y="130" width="200" height="28" rx="6" fill="rgba(255,180,84,.1)"/>
-          <circle cx="864" cy="144" r="4.5" fill="#ffb454"/>
-          <text x="878" y="149" font-family="JetBrains Mono, monospace" font-size="13" fill="#ffb454">stale</text>
-          <text x="1032" y="149" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#e8edf2">0.71</text>
-          <rect x="848" y="164" width="200" height="28" rx="6" fill="rgba(255,107,107,.1)"/>
-          <circle cx="864" cy="178" r="4.5" fill="#ff6b6b"/>
-          <text x="878" y="183" font-family="JetBrains Mono, monospace" font-size="13" fill="#ff6b6b">superseded</text>
-          <text x="1032" y="183" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" fill="#e8edf2">0.40</text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Phone-only vertical re-author of the same pipeline: taller viewBox keeps every label >=12px effective. -->
-    <div class="pipe-figure pipe-tall reveal" aria-hidden="true">
-      <svg viewBox="0 0 360 720" role="img" aria-labelledby="pipev-t pipev-d">
-        <title id="pipev-t">The recall pipeline</title>
-        <desc id="pipev-d">A natural-language query fans out to lexical BM25 and on-device semantic search, the results are fused and reranked, and each result is returned with a currentness label of current, stale, or superseded.</desc>
-        <defs>
-          <linearGradient id="pgDarkV" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#9bd118"/><stop offset="1" stop-color="#c6ff3a"/>
-          </linearGradient>
-          <marker id="ahDarkV" markerWidth="10" markerHeight="10" refX="6.5" refY="5" orient="auto">
-            <path d="M0 0L10 5L0 10z" fill="#9bd118"/>
-          </marker>
-        </defs>
-        <!-- query -->
-        <rect x="80" y="14" width="200" height="64" rx="10" fill="#0e1116" stroke="var(--line-2)" stroke-width="2"/>
-        <text x="180" y="42" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="18" font-weight="600" fill="#e8edf2">Query</text>
-        <text x="180" y="64" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">natural language</text>
-        <path d="M180 78 V112" fill="none" stroke="url(#pgDarkV)" stroke-width="2.4" marker-end="url(#ahDarkV)"/>
-        <!-- BM25 -->
-        <rect x="36" y="118" width="288" height="66" rx="10" fill="#0e1116" stroke="var(--cyan)" stroke-width="2"/>
-        <text x="180" y="147" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#e8edf2">Lexical · BM25</text>
-        <text x="180" y="169" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">exact terms</text>
-        <path d="M180 184 V218" fill="none" stroke="url(#pgDarkV)" stroke-width="2.4" marker-end="url(#ahDarkV)"/>
-        <!-- embeddings -->
-        <rect x="36" y="224" width="288" height="66" rx="10" fill="#0e1116" stroke="var(--signal)" stroke-width="2"/>
-        <text x="180" y="253" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#e8edf2">Semantic · on-device</text>
-        <text x="180" y="275" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">meaning, locally</text>
-        <path d="M180 290 V324" fill="none" stroke="url(#pgDarkV)" stroke-width="2.4" marker-end="url(#ahDarkV)"/>
-        <!-- fuse -->
-        <rect x="36" y="330" width="288" height="72" rx="10" fill="rgba(198,255,58,.08)" stroke="url(#pgDarkV)" stroke-width="2"/>
-        <text x="180" y="362" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#e8edf2">Fuse + rerank</text>
-        <text x="180" y="384" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#b6c2ce">+ connected evidence</text>
-        <path d="M180 402 V436" fill="none" stroke="url(#pgDarkV)" stroke-width="2.4" marker-end="url(#ahDarkV)"/>
-        <!-- ranked results -->
-        <rect x="36" y="442" width="288" height="262" rx="12" fill="#0e1116" stroke="var(--line-2)" stroke-width="2"/>
-        <text x="56" y="478" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="600" fill="#e8edf2">Ranked results</text>
-        <rect x="56" y="494" width="248" height="56" rx="8" fill="rgba(198,255,58,.1)"/>
-        <circle cx="76" cy="522" r="6" fill="#c6ff3a"/>
-        <text x="92" y="528" font-family="JetBrains Mono, monospace" font-size="15" fill="#c6ff3a">current</text>
-        <text x="288" y="528" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="15" fill="#e8edf2">0.94</text>
-        <rect x="56" y="558" width="248" height="56" rx="8" fill="rgba(255,180,84,.1)"/>
-        <circle cx="76" cy="586" r="6" fill="#ffb454"/>
-        <text x="92" y="592" font-family="JetBrains Mono, monospace" font-size="15" fill="#ffb454">stale</text>
-        <text x="288" y="592" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="15" fill="#e8edf2">0.71</text>
-        <rect x="56" y="622" width="248" height="56" rx="8" fill="rgba(255,107,107,.1)"/>
-        <circle cx="76" cy="650" r="6" fill="#ff6b6b"/>
-        <text x="92" y="656" font-family="JetBrains Mono, monospace" font-size="15" fill="#ff6b6b">superseded</text>
-        <text x="288" y="656" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="15" fill="#e8edf2">0.40</text>
-      </svg>
-    </div>
-
-    <div class="pipeline reveal">
-      <div class="stage">
-        <div class="st-n">STAGE 01</div>
-        <h4>Lexical · BM25</h4>
-        <p>Exact-term matching over the full store catches names, IDs, and precise phrasing.</p>
-        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13 7 18 12 13 17"/></svg>
-      </div>
-      <div class="stage">
-        <div class="st-n">STAGE 02</div>
-        <h4>Semantic · embeddings</h4>
-        <p>On-device vector search surfaces meaning, even when the words don't match.</p>
-        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13 7 18 12 13 17"/></svg>
-      </div>
-      <div class="stage">
-        <div class="st-n">STAGE 03</div>
-        <h4>Fuse, rerank + graph</h4>
-        <p>Fused scores are reranked with connected-evidence and temporal-currentness signals.</p>
-        <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="13 7 18 12 13 17"/></svg>
-      </div>
-      <div class="stage">
-        <div class="st-n">STAGE 04</div>
-        <h4>Labelled results</h4>
-        <p>Each result ships with a score, a currentness label, and a why-it-ranked breakdown.</p>
-      </div>
-    </div>
-
-    <!-- why-card (adapted from v4, dark) -->
-    <div class="why-card reveal d1" id="whycard">
-      <div class="why-top">
-        <div class="q">recall mystore <b>"what did we decide about storage?"</b></div>
-        <span class="badge"><span class="pip" aria-hidden="true"></span>current</span>
-      </div>
-      <div class="why-body">
-        <p class="res-line"><b>Decision:</b> Ship Relicquary local-first — SQLite + Markdown on the operator's own disk.</p>
-        <div class="why-meta">
-          <span>kind: <em>decision</em></span>
-          <span>trust: <em>verified</em></span>
-          <span>confidence: <em>0.9</em></span>
-          <span>edges: <em>supersedes ×1</em></span>
-        </div>
-        <div class="scorebars" aria-hidden="true">
-          <div class="sb"><span>lexical (BM25)</span><span class="track"><span class="fill f1" data-w="86%"></span></span><span class="val">.86</span></div>
-          <div class="sb"><span>semantic</span><span class="track"><span class="fill f2" data-w="92%"></span></span><span class="val">.92</span></div>
-          <div class="sb"><span>connected evidence</span><span class="track"><span class="fill f3" data-w="64%"></span></span><span class="val">.64</span></div>
-          <div class="sb"><span>currentness</span><span class="track"><span class="fill f4" data-w="98%"></span></span><span class="val">.98</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="recall-note reveal" style="margin-top:24px">
-      <b>Currentness, not just relevance.</b> Every result is labelled <code>current</code>, <code>stale</code>, or <code>superseded</code> — so an agent never acts on a decision that's already been overruled. Ask in natural language; get back ranked, dated, explainable memory.
-    </div>
-  </div>
-</section>
-
-<!-- APPS -->
-<section class="apps" id="apps">
-  <div class="wrap apps-grid">
-    <div class="apps-copy reveal">
-      <span class="soon">Coming soon</span>
-      <h2>Your memory, <span class="stroke">in your pocket.</span></h2>
-      <p class="lead">Native macOS and iPhone apps are coming soon — bringing on-device recall to your desk and your phone, with private cross-device sync and no account required.</p>
-      <ul class="apps-list">
-        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>On-device recall</b> — search and surface memory locally, instantly, offline.</span></li>
-        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>Private cross-device sync</b> — Mac and iPhone stay in step, end to end.</span></li>
-        <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><b>No account required</b> — no sign-up, no server, no profile to harvest.</span></li>
-      </ul>
-    </div>
-    <div class="devices reveal d1">
-      <div class="device-figure">
-        <!-- v4-adapted Mac + iPhone device mock, dark palette -->
-        <svg viewBox="0 0 420 320" role="img" aria-labelledby="dev-t dev-d">
-          <title id="dev-t">Mac and iPhone apps</title>
-          <desc id="dev-d">A Mac desktop app beside an iPhone app, both showing the Relicquary memory interface with current and decision labels, coming soon.</desc>
-          <defs>
-            <linearGradient id="scrDark" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#0e1116"/><stop offset="1" stop-color="#090b0e"/>
-            </linearGradient>
-          </defs>
-          <!-- Mac -->
-          <g>
-            <rect x="20" y="46" width="280" height="180" rx="12" fill="#11151b" stroke="var(--line-2)" stroke-width="2"/>
-            <rect x="30" y="56" width="260" height="160" rx="5" fill="url(#scrDark)"/>
-            <circle cx="52" cy="78" r="6" fill="var(--signal)"/>
-            <rect x="66" y="74" width="80" height="8" rx="4" fill="#242c36"/>
-            <rect x="44" y="98" width="160" height="9" rx="4" fill="#1b2129"/>
-            <rect x="44" y="114" width="200" height="9" rx="4" fill="#1b2129"/>
-            <rect x="44" y="136" width="120" height="26" rx="6" fill="rgba(198,255,58,.12)"/>
-            <text x="56" y="153" font-family="JetBrains Mono, monospace" font-size="11" fill="#c6ff3a">● current</text>
-            <rect x="44" y="168" width="170" height="26" rx="6" fill="rgba(58,214,255,.12)"/>
-            <text x="56" y="185" font-family="JetBrains Mono, monospace" font-size="11" fill="#3ad6ff">decision · verified</text>
-            <path d="M140 226h40l10 22h-60z" fill="#11151b"/>
-            <rect x="120" y="248" width="80" height="6" rx="3" fill="#1b2129"/>
-          </g>
-          <!-- iPhone -->
-          <g>
-            <rect x="300" y="96" width="100" height="200" rx="22" fill="#11151b" stroke="var(--line-2)" stroke-width="2"/>
-            <rect x="308" y="104" width="84" height="184" rx="16" fill="url(#scrDark)"/>
-            <rect x="336" y="110" width="28" height="5" rx="2.5" fill="#1b2129"/>
-            <circle cx="328" cy="132" r="7" fill="var(--signal)"/>
-            <rect x="342" y="128" width="40" height="7" rx="3.5" fill="#242c36"/>
-            <rect x="318" y="150" width="64" height="7" rx="3.5" fill="#1b2129"/>
-            <rect x="318" y="164" width="50" height="7" rx="3.5" fill="#1b2129"/>
-            <rect x="316" y="182" width="72" height="24" rx="6" fill="rgba(198,255,58,.12)"/>
-            <text x="324" y="198" font-family="JetBrains Mono, monospace" font-size="10" fill="#c6ff3a">● current</text>
-            <rect x="316" y="212" width="72" height="24" rx="6" fill="rgba(58,214,255,.12)"/>
-            <text x="324" y="228" font-family="JetBrains Mono, monospace" font-size="10" fill="#3ad6ff">recall · 3</text>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="cta">
+<!-- ABOUT / CONTACT -->
+<section class="cta" id="contact">
   <div class="cta-glow" aria-hidden="true"></div>
   <div class="wrap cta-inner">
-    <h2>Give your agents memory that <span class="signal">stays put.</span></h2>
-    <p>Local. Auditable. Yours. Stand up a store, remember something, and recall it — three commands, zero cloud.</p>
-    <div class="cta-term" aria-label="Example command-line usage">
-      <div class="tbar"><i></i><i></i><i></i><span>relicquary — terminal</span><button class="copy" id="copyBtn" aria-label="Copy the remember command" aria-live="polite">copy</button></div>
-      <div class="tbody">
-<span class="cm"># write a memory to your local store</span><br>
-<span class="pr">$</span> <span id="ctaCmd">relicquary remember mystore "decided: ship local-first"</span><br>
-<span class="ok"><svg class="okmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> <span class="out">stored decision · receipt written · indexed</span><br><br>
-<span class="cm"># recall it later, in plain language</span><br>
-<span class="pr">$</span> relicquary recall mystore <span class="out">"what did we decide?"</span><br><br>
-<span class="cm"># serve memory to agents over MCP</span><br>
-<span class="pr">$</span> relicquary mcp-server<br>
-<span class="ok"><svg class="okmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span> <span class="out">listening · memory never leaves this machine</span>
-      </div>
-    </div>
+    <span class="index">09 / RQ MCP LLC</span>
+    <h2 style="margin-top:14px">Autonomy you can <span class="signal">actually audit.</span></h2>
+    <p>RQ MCP LLC builds Relicquary — the local-first cognitive OS — and AIM, the governance architecture that turns it into a verifiable operator. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed. The core runs today; the Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription.</p>
+    <blockquote class="reveal" style="max-width:780px;margin:34px auto 4px;font:italic 400 19px/1.62 var(--body);color:var(--ink)">
+      &ldquo;Agents forget. Every autonomous system we ran reset to zero between sessions — repeating mistakes, losing the context it had earned, asking us to trust actions we couldn't check afterward. The conviction was simple: memory and accountability aren't features you bolt on later — they're the floor everything else stands on. So we built the floor first. The core runs today on your own machine: one binary, your disk, a receipt for every action. That's the standard I want to be held to.&rdquo;
+      <cite style="display:block;margin-top:16px;font:600 13px/1.4 var(--mono);font-style:normal;color:var(--signal);letter-spacing:.02em">— Jessy Brenenstahl, Founder, RQ MCP LLC</cite>
+    </blockquote>
     <div class="cta-actions">
-      <a class="btn-primary" href="mailto:hello@relicquary.com?subject=Relicquary%20early%20access">
+      <a class="btn-primary" href="mailto:hello@relicquary.com?subject=Relicquary%20waitlist">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-        hello@relicquary.com
+        Join the App Store waitlist
       </a>
-      <a class="btn-ghost" href="support.html">Read the FAQ</a>
+      <a class="btn-ghost" href="relicquary.html">See how Relicquary works</a>
     </div>
   </div>
 </section>
@@ -540,48 +480,46 @@
 
 <!-- FOOTER -->
 <footer aria-labelledby="foot-h">
-  <h2 id="foot-h" class="sr-only">Relicquary footer</h2>
+  <h2 id="foot-h" class="sr-only">RQ MCP LLC footer</h2>
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand-row">
-          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect x="3" y="3" width="26" height="26" rx="4" stroke="var(--signal)" stroke-width="1.6"/>
-            <path d="M16 7 L24 11.5 V20.5 L16 25 L8 20.5 V11.5 Z" stroke="var(--ink-2)" stroke-width="1.3"/>
-            <circle cx="16" cy="16" r="3.4" fill="var(--signal)"/>
-          </svg>
-          <span>Relicquary<small>RQ MCP LLC</small></span>
+          <img class="mark" src="assets/brand/rq-mark.png" alt="" />
+          <span>RQ&nbsp;MCP<small>LLC</small></span>
         </div>
-        <p class="foot-about">A local memory operating system for AI agents. Typed memory, a knowledge graph, and explainable recall — on your own disk, under your own audit.</p>
-        <p class="etymology"><b>rel·i·quary</b> — an evolution of <em>reliquary</em>, a vessel that safeguards relics. Here, the relic is memory: memory, safeguarded.</p>
+        <p class="foot-about">RQ MCP LLC builds Relicquary, a local-first cognitive OS for AI agents — and AIM, the governance architecture that turns that core into an operator whose every move is verifiable.</p>
+        <p class="etymology"><b>AIM</b> — <em>Accurate, Immediate, Minimal</em>; <em>AGRO in motion</em>. <b>AGRO</b> is the soil — the cultivated ground (<em>agros</em>; Always Growing Recursive Optimizer) capability is grown in.</p>
       </div>
       <div class="foot-col">
-        <h5>Product</h5>
-        <a href="#whatis">What it is</a>
-        <a href="#caps">Capabilities</a>
-        <a href="#recall">How recall works</a>
-        <a href="#apps">macOS &amp; iPhone apps</a>
+        <h5>Products</h5>
+        <a href="relicquary.html">Relicquary</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="#aim">AIM</a>
+        <a href="#shipping">The products</a>
       </div>
       <div class="foot-col">
-        <h5>Resources</h5>
-        <a href="#cta">CLI quickstart</a>
-        <a href="#recall">MCP server</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
+        <h5>The stack</h5>
+        <a href="#trust">The floor</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#vision">The road ahead</a>
+        <a href="#frontier">How it grows</a>
+        <a href="#roadmap">Maturity</a>
       </div>
       <div class="foot-col">
         <h5>Company</h5>
         <a href="mailto:hello@relicquary.com">Contact</a>
         <a href="privacy.html">Privacy policy</a>
         <a href="support.html">Support</a>
-        <a href="#apps">Roadmap</a>
+        <a href="#contact">About RQ MCP</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>© <span class="yr">2026</span> RQ MCP LLC. Relicquary is a product of RQ MCP LLC. Memory never leaves your machine.</p>
+      <p>© <span class="yr">2026</span> RQ MCP LLC. AIM is a working prototype in active construction. Local-first, receipt-bound, on your own machine.</p>
       <div class="legal">
         <a href="privacy.html">Privacy</a>
         <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
         <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
         <span class="lat">Memoria custodita</span>
       </div>
@@ -592,165 +530,23 @@
 <script>
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){
-    el.textContent = new Date().getFullYear();
-  });
-
-  /* ---- mobile nav toggle ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){ el.textContent = new Date().getFullYear(); });
   var navToggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navlinks');
   if(navToggle && navLinks){
-    var closeNav = function(focusToggle){
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      if(focusToggle){ navToggle.focus(); }
-    };
-    navToggle.addEventListener('click', function(){
-      var open = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    /* close on link tap */
-    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){
-      a.addEventListener('click', function(){ closeNav(false); });
-    });
-    /* close on Escape, restoring focus to the toggle */
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); }
-    });
+    var closeNav = function(focusToggle){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); if(focusToggle){ navToggle.focus(); } };
+    navToggle.addEventListener('click', function(){ var open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){ a.addEventListener('click', function(){ closeNav(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); } });
   }
-
-  /* ---- copy button ---- */
-  var copyBtn = document.getElementById('copyBtn');
-  if(copyBtn){
-    copyBtn.addEventListener('click', function(){
-      var txt = document.getElementById('ctaCmd').textContent;
-      if(navigator.clipboard){ navigator.clipboard.writeText(txt).catch(function(){}); }
-      copyBtn.textContent = 'copied';
-      setTimeout(function(){ copyBtn.textContent = 'copy'; }, 1400);
-    });
-  }
-
-  /* ---- scroll reveal + FAILSAFE ---- */
   var revs = document.querySelectorAll('.reveal');
   function showAll(){ Array.prototype.forEach.call(revs, function(el){ el.classList.add('in'); }); }
-  if(reduce || !('IntersectionObserver' in window)){
-    showAll();
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  if(reduce || !('IntersectionObserver' in window)){ showAll(); }
+  else {
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
     Array.prototype.forEach.call(revs, function(el){ io.observe(el); });
-    /* FAILSAFE 1: if observer never fires (some headless / odd environments),
-       force everything visible shortly after load so no section is ever stuck hidden. */
     window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
-    /* FAILSAFE 2: hard backstop independent of the load event. */
     setTimeout(showAll, 2500);
-  }
-
-  /* ---- animate why-card score bars ---- */
-  var why = document.getElementById('whycard');
-  if(why){
-    var fillBars = function(){
-      why.querySelectorAll('.fill').forEach(function(f){
-        var w = f.getAttribute('data-w');
-        if(reduce){ f.style.width = w; }
-        else { requestAnimationFrame(function(){ requestAnimationFrame(function(){ f.style.width = w; }); }); }
-      });
-    };
-    if(reduce || !('IntersectionObserver' in window)){ fillBars(); }
-    else {
-      var io2 = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if(e.isIntersecting){ fillBars(); io2.unobserve(e.target); } });
-      }, {threshold:0.4});
-      io2.observe(why);
-    }
-  }
-
-  /* ---- hero terminal demo (NOT gated by scroll-reveal) ---- */
-  var cmdEl = document.getElementById('typedCmd');
-  var cursorEl = document.getElementById('cursor');
-  var resultsEl = document.getElementById('results');
-  var fullCmd = 'relicquary recall mystore "what did we decide about the auth rewrite?"';
-
-  var data = [
-    {kind:'decision', curr:'current', label:'current', score:'0.96',
-     text:'Auth rewrite uses passkeys + WebAuthn; passwords deprecated after Q2 migration.',
-     bm25:72, sem:91, why:'matches "auth rewrite" · 3 connected edges'},
-    {kind:'fact', curr:'current', label:'current', score:'0.89',
-     text:'Session tokens rotate every 15 min; refresh handled by the local MCP server.',
-     bm25:64, sem:83, why:'semantic match · mentions session policy'},
-    {kind:'procedure', curr:'stale', label:'stale', score:'0.74',
-     text:'Old runbook: rotate OAuth client secrets manually before each release.',
-     bm25:58, sem:61, why:'lexical only · last touched 94 days ago'},
-    {kind:'decision', curr:'superseded', label:'superseded', score:'0.61',
-     text:'Earlier plan kept password login as a fallback — superseded by passkeys.',
-     bm25:55, sem:67, why:'superseded_by -> result #1'}
-  ];
-
-  function buildResult(d, i){
-    var el = document.createElement('div');
-    el.className = 'res';
-    el.style.animationDelay = (i * 0.12) + 's';
-    el.innerHTML =
-      '<div class="res-top">' +
-        '<span class="kind ' + d.kind + '">' + d.kind + '</span>' +
-        '<span class="curr ' + d.curr + '"><span class="pip"></span>' + d.label + '</span>' +
-        '<span class="score">score <b>' + d.score + '</b></span>' +
-      '</div>' +
-      '<p class="res-text">' + d.text + '</p>' +
-      '<div class="res-why">' +
-        '<span class="lbl">why</span>' +
-        '<span class="why-tag">BM25<span class="bar bm25"><i data-w="'+d.bm25+'"></i></span></span>' +
-        '<span class="why-tag">sem<span class="bar sem"><i data-w="'+d.sem+'"></i></span></span>' +
-        '<span class="why-tag" style="margin-left:6px;color:var(--ink-3)">' + d.why + '</span>' +
-      '</div>';
-    return el;
-  }
-
-  function fillBars(scope){
-    scope.querySelectorAll('.bar i').forEach(function(bar){
-      var w = bar.getAttribute('data-w');
-      requestAnimationFrame(function(){ bar.style.width = w + '%'; });
-    });
-  }
-
-  function showResults(){
-    if(!resultsEl) return;
-    resultsEl.innerHTML = '';
-    data.forEach(function(d, i){ resultsEl.appendChild(buildResult(d, i)); });
-    setTimeout(function(){ fillBars(resultsEl); }, 260);
-    if(cursorEl) cursorEl.style.display = 'none';
-  }
-
-  if(reduce){
-    if(cmdEl) cmdEl.textContent = fullCmd;
-    showResults();
-  } else {
-    var idx = 0;
-    function type(){
-      if(!cmdEl) return;
-      if(idx <= fullCmd.length){
-        cmdEl.textContent = fullCmd.slice(0, idx);
-        idx++;
-        var ch = fullCmd[idx-1];
-        var delay = (ch === ' ') ? 34 : (28 + Math.random()*40);
-        setTimeout(type, delay);
-      } else {
-        setTimeout(showResults, 520);
-      }
-    }
-    var started = false;
-    function kick(){ if(started) return; started = true; setTimeout(type, 500); }
-    if('IntersectionObserver' in window){
-      var hio = new IntersectionObserver(function(es){
-        es.forEach(function(e){ if(e.isIntersecting){ kick(); hio.disconnect(); } });
-      }, {threshold:0.3});
-      hio.observe(document.querySelector('.terminal'));
-      /* failsafe: ensure the demo runs even if the terminal observer never fires */
-      setTimeout(kick, 2200);
-    } else { kick(); }
   }
 })();
 </script>
