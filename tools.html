@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relicquary tool catalog: 56 MCP tools your agent calls | RQ MCP</title>
+<meta name="description" content="Relicquary is MCP-first: its interface is a set of 56 tools an agent calls directly, from remember and recall to handoff, synthesis, and a one-call architecture spec. Here is every tool, what it does, and why it earns its place." />
+<meta name="theme-color" content="#070809" />
+<link rel="canonical" href="https://relicquary.com/tools.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://relicquary.com/tools.html" />
+<meta property="og:title" content="Relicquary tool catalog: 56 MCP tools" />
+<meta property="og:description" content="The interface is the product. 56 MCP tools an agent calls directly: memory, recall, orchestration, synthesis, governance, and a one-call spec of the whole system." />
+<meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav" id="topnav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Relicquary home">
+      <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
+      <span>Relicquary<small>RQ MCP LLC</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="index.html">Overview</a>
+      <a href="index.html#recall">Recall</a>
+      <a href="tools.html" aria-current="page">Tools</a>
+      <a href="stack.html">AIM &amp; the stack</a>
+      <a class="nav-cta" href="index.html#cta">Get Relicquary</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-copy" style="max-width:900px">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>The tool catalog · MCP-native</span></div>
+    <h1 class="hero-title">The interface is the product. <span class="signal">56 tools</span> your agent calls over MCP.</h1>
+    <p class="hero-sub">Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 56 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#catalog">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Jump to the catalog
+      </a>
+      <a class="btn-ghost" href="index.html">
+        Back to Relicquary
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- WHY MCP-FIRST -->
+<section class="whatis" id="mcp-first">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">WHY MCP-FIRST</span>
+        <h2>The tools are the API.</h2>
+      </div>
+      <p>Most memory systems ship an SDK you integrate and maintain. Relicquary ships tools an agent already knows how to call. That difference is the strength.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <h3>No glue to wrap</h3>
+        <p>Any MCP client, Claude, Cursor, or your own agent, connects and calls. Memory and the working loop are just tools it can already use. There is no adapter to write and nothing to keep in sync with a library version.</p>
+        <span class="tag">connect · call</span>
+      </div>
+      <div class="pillar">
+        <h3>Every call on the record</h3>
+        <p>The mutating tools write an append-only receipt, and memory is untrusted by default until governance earns it trust. The audit trail is not bolted on. It is how the tools behave, at the boundary where the agent acts.</p>
+        <span class="tag">receipts · untrusted-by-default</span>
+      </div>
+      <div class="pillar">
+        <h3>Local, and your model</h3>
+        <p>Retrieval and reranking run on-device, and nothing routes through a provider you did not choose. The tools operate on SQLite and Markdown files you own, so the whole surface stays inspectable.</p>
+        <span class="tag">on your disk</span>
+      </div>
+    </div>
+    <div class="recall-note reveal" style="border-style:solid;border-left:2px solid var(--signal);margin-top:28px">
+      <b>One call, and the agent understands the system.</b> A piloting agent cannot operate what it does not understand. So Relicquary exposes its own blueprint as a tool: <code>architecture</code> returns the full, reconstruction-grade spec in a single call, the storage schema, the retrieval pipeline, governance, the complete tool catalog, and a glossary, readable section by section. An agent orienting to the system reads it once and knows how every part fits together, well enough to actually pilot the system rather than guess at it. The interface documents itself, to the agent, at runtime.
+    </div>
+  </div>
+</section>
+
+<!-- THE CATALOG -->
+<section class="caps" id="catalog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">THE CATALOG</span>
+        <h2>All 56, grouped by what they are for.</h2>
+      </div>
+      <p>The name in each card is the exact verb an agent calls. Descriptions are drawn from the live tool schemas, so this stays true as the set evolves.</p>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:12px 0 16px">Capture</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">remember</div><h3>Store a typed memory</h3><p>Write a fact, decision, task, procedure, or episode as a typed object, mirrored to a plain Markdown relic, with a receipt and automatic dedupe of exact and near-duplicate content. The verb an agent reaches for first.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">remember_batch</div><h3>Store many at once</h3><p>Capture a cluster of typed memories in one call, skipping duplicates. Saves an agent from nine round-trips when it has a batch to record.</p></article>
+      <article class="cap reveal"><div class="cap-num">capture_thought</div><h3>Capture, auto-typed</h3><p>A lower-level capture that reads the kind from the content itself (prefix with Decision:, Fact:, Friction:, TODO:) and reindexes so it is searchable immediately.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">suggest_memory</div><h3>Propose, do not commit</h3><p>Stage a memory for later review instead of writing it live, so a cautious agent can surface a candidate that a promote step, or a human, later accepts or discards.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Retrieval</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">recall</div><h3>The default memory lane</h3><p>Ranked typed-memory retrieval, scoped per agent, project, user, or org, with connected-evidence reranking, currentness scoring, and embedding-first candidates that fall back to lexical BM25. Returns the memories with why-they-ranked explanations and any conflicts it spots.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">recall_report</div><h3>Grade your own recall</h3><p>Measures retrieval quality against the live store: recall@1, recall@3, MRR, stale-leak and distractor rates, worst queries. Memory quality becomes a number, not a hunch.</p></article>
+      <article class="cap reveal"><div class="cap-num">explain_memory</div><h3>Why did this match?</h3><p>Answers "what do I know about X?" by combining recall with the matched entities and the graph edges around them, so an agent sees the reasoning behind a result, not just the result.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">query_memory_objects</div><h3>Query the raw table</h3><p>Fetch memory objects directly by id, kind, tag, source, or status, with no ranking. For governance and introspection over exactly what is stored.</p></article>
+      <article class="cap reveal"><div class="cap-num">list_thoughts</div><h3>Recent memories</h3><p>List recent memories, optionally by kind or assigned agent. Quick orientation without composing a query.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">search_thoughts</div><h3>Raw thought search</h3><p>Lower-level search over raw memory rows, including browse-by-kind. For when you want the rows, not a ranked answer.</p></article>
+      <article class="cap reveal"><div class="cap-num">hybrid_search</div><h3>Semantic wiki search</h3><p>Search wiki relics with local embeddings fused with BM25, falling back to lexical when the model server is unavailable.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">search_wiki</div><h3>Keyword wiki search</h3><p>Fast lexical keyword search over wiki pages when you already know the term.</p></article>
+      <article class="cap reveal"><div class="cap-num">query_context</div><h3>A cited context bundle</h3><p>Builds a deterministic, cited retrieval pack for a question, lexical or hybrid. For when a model needs sourced context rather than scattered hits.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">context_pack</div><h3>The startup pack</h3><p>Compiles an 11-section briefing for an agent starting or resuming work: objective, constraints, canonical paths, recent decisions, open tasks, files, pitfalls, commands, receipts, conflicts, and next actions. One call to be oriented.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Lifecycle &amp; governance</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">edit_memory</div><h3>Edit in place</h3><p>Rewrite a memory's content, with a receipt recording the change and its reason.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">update_memory</div><h3>Change status or edges</h3><p>Move a memory's status or adjust its dependency edges without rewriting the content.</p></article>
+      <article class="cap reveal"><div class="cap-num">update_thought_status</div><h3>Advance a claim</h3><p>Set a memory's lifecycle status: active, in_progress, completed, superseded, verified, or stale.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">approve_memory</div><h3>Trust a draft</h3><p>Promote a draft or untrusted memory to trusted-active once it has been reviewed.</p></article>
+      <article class="cap reveal"><div class="cap-num">promote_memory</div><h3>Accept a suggestion</h3><p>Turn a staged suggestion, or a draft or stale memory, into trusted-active. The accept step for the passive-capture lane.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">forget / forget_memory</div><h3>Soft-delete</h3><p>Mark a memory invalid, a reversible soft delete, guarded by an explicit confirm.</p></article>
+      <article class="cap reveal"><div class="cap-num">feedback_memory</div><h3>Rate a result</h3><p>Tell the store a recalled memory was helpful, wrong, stale, or a duplicate. The signal that tunes future ranking.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">memory_export</div><h3>Export the store</h3><p>Write memories to a JSON or JSONL archive, with a receipt.</p></article>
+      <article class="cap reveal"><div class="cap-num">memory_import</div><h3>Import an archive</h3><p>Load memories back from a JSON or JSONL archive.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">list_drafts</div><h3>Pending review</h3><p>List draft and untrusted memories waiting for approval, kept out of recall until they earn trust.</p></article>
+      <article class="cap reveal"><div class="cap-num">list_suggestions</div><h3>Pending suggestions</h3><p>List staged suggestions by score, ready to promote or discard.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Graph, entities &amp; conflicts</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">add_memory_edge</div><h3>Link two memories</h3><p>Create a typed directed edge (supersedes, depends_on, supports, invalidates, same_as, and more) between memories.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">get_memory_edges</div><h3>Inspect the links</h3><p>Return the typed edges around a memory before graph-expanded recall or handoff reasoning.</p></article>
+      <article class="cap reveal"><div class="cap-num">get_entities</div><h3>Who and what</h3><p>List the file, tool, and person entities extracted from memory, with mention counts.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">graph_export</div><h3>Export the graph</h3><p>Emit the memory graph or the wiki-link graph as JSON, Graphviz DOT, or JSON-Canvas for visualization.</p></article>
+      <article class="cap reveal"><div class="cap-num">memory_conflicts</div><h3>Detected conflicts</h3><p>List the conflict and scope-drift items the store flagged when new memories overlapped older ones.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">flag_contradiction</div><h3>Mark a contradiction</h3><p>Explicitly declare two memories in conflict, adding conflicts_with edges in both directions.</p></article>
+      <article class="cap reveal"><div class="cap-num">resolve_conflict</div><h3>Close a conflict</h3><p>Resolve a flagged conflict, optionally naming the memory that wins and supersedes the rest.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Wiki, documents &amp; artifacts</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">write_relic</div><h3>Write a page</h3><p>Create or overwrite a wiki relic, reindexed on write, with a receipt. How synthesis drafts become canonical pages.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">read_relic</div><h3>Read a page</h3><p>Read a relic by path: content, parsed frontmatter, outline, and memory fields, no YAML wrangling.</p></article>
+      <article class="cap reveal"><div class="cap-num">ingest_document</div><h3>Bring in a doc</h3><p>Ingest a document body into the store, a raw copy plus a formatted source relic plus a reindex, no shell required. Bootstraps a store from project docs the agent already holds.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">lint_wiki</div><h3>Wiki health</h3><p>Check for duplicate titles, broken links, orphans, and TODO pages, with tag and property summaries.</p></article>
+      <article class="cap reveal"><div class="cap-num">list_artifacts</div><h3>List files</h3><p>List the files available to the agent across raw and attachment surfaces, or all relics.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">read_artifact</div><h3>Read evidence</h3><p>Read a bounded slice of an artifact by path, for pulling in evidence without loading a whole file.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Synthesis</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">synthesis_queue</div><h3>The work queue</h3><p>List and refresh the background synthesis queue, entities, concepts, memory compaction, conflicts, and staleness, with a per-lane count so a worker knows what to claim.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">claim_synthesis</div><h3>Take an item</h3><p>Claim the next pending synthesis item for a worker, prioritizing source work before housekeeping.</p></article>
+      <article class="cap reveal"><div class="cap-num">complete_synthesis</div><h3>Finish an item</h3><p>Complete a synthesis item and optionally write a draft relic, deterministic or model-generated, with receipts.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">retry_synthesis</div><h3>Requeue</h3><p>Return claimed or completed items to pending, one or many.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Tasks, sessions &amp; handoff</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">next_task</div><h3>What is next</h3><p>Return the highest-confidence unblocked task for the next step, and optionally claim it atomically so parallel workers do not collide.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">task_progress</div><h3>Where things stand</h3><p>Summarize task progress: active, in-progress, completed, stale, blocked, and percent done.</p></article>
+      <article class="cap reveal"><div class="cap-num">handoff</div><h3>Hand off cleanly</h3><p>Generate a deterministic project handoff from memory, status, and receipts, so the next agent continues without the chat history.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">session_start</div><h3>Begin, and recover</h3><p>Start a session and recover any stale in-progress tasks back to active, so a crashed run does not strand work.</p></article>
+      <article class="cap reveal"><div class="cap-num">session_end</div><h3>Close out</h3><p>End a session: write a handoff, record a receipt, and return the next-task snapshot for whoever comes next.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Health, recovery &amp; audit</h3>
+    <div class="cap-grid">
+      <article class="cap reveal"><div class="cap-num">status / reliquary_status</div><h3>Is it healthy?</h3><p>Inspect filesystem and SQLite health without writing. The first orientation or recovery call when something looks off.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">memory_status</div><h3>Memory health</h3><p>A memory-specific summary: runtime completeness, active kinds, receipt and index health.</p></article>
+      <article class="cap reveal"><div class="cap-num">thought_stats</div><h3>Counts and facets</h3><p>Memory counts by kind, plus the top topics and people, for quick orientation.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">list_receipts</div><h3>The audit trail</h3><p>List the append-only governance receipts, every mutation the system made, filterable for audit.</p></article>
+      <article class="cap reveal"><div class="cap-num">rebuild_index</div><h3>Rebuild the index</h3><p>Rebuild the SQLite index from the wiki files, backing up the old database first. Recovery when the index is damaged but the files survive.</p></article>
+      <article class="cap reveal d1"><div class="cap-num">restore_memory_relics</div><h3>Restore memory</h3><p>Rebuild runtime memory rows from the durable relics after an index rebuild. Explicit recovery, never a silent repair.</p></article>
+    </div>
+
+    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">The whole system</h3>
+    <div class="cap-grid">
+      <article class="cap reveal" style="grid-column:1 / -1"><div class="cap-num">architecture</div><h3>The whole system, one call</h3><p>Returns Relicquary's full, reconstruction-grade spec as Markdown: the storage schema, the model stack, the retrieval pipeline, governance, the complete tool catalog, and a glossary, read section by section. A piloting agent can call this once and understand the entire system well enough to operate it, or to rebuild it from scratch. This is the tool that turns a memory store into something an agent can actually drive.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THEY WORK TOGETHER -->
+<section class="recall" id="together">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">HOW THEY COMPOSE</span>
+        <h2>The tools are useful together, not just one at a time.</h2>
+      </div>
+      <p>Four flows that show the catalog working as a system. Each is real: every step is a single tool call.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap reveal">
+        <div class="cap-num">FLOW · ORIENT &amp; CONTINUE</div>
+        <h3>Pick up where the last agent stopped</h3>
+        <p><code>session_start</code> recovers any stranded work, <code>context_pack</code> compiles the 11-section briefing, and <code>next_task</code> hands over the next move. The agent acts, calls <code>remember</code> for what it learned, then <code>session_end</code> writes the handoff. A fresh agent resumes with zero chat history.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOW · NOTES TO KNOWLEDGE</div>
+        <h3>Turn raw memory into synthesized knowledge</h3>
+        <p><code>capture_thought</code> records a raw note, <code>synthesis_queue</code> surfaces what needs synthesizing, and <code>claim_synthesis</code> with <code>complete_synthesis</code> draft canonical relics. Now <code>recall</code> returns the synthesized understanding, not just the original note.</p>
+      </article>
+      <article class="cap reveal">
+        <div class="cap-num">FLOW · UNDERSTAND, THEN PILOT</div>
+        <h3>Comprehend the system before operating it</h3>
+        <p><code>architecture</code> returns the whole blueprint in one call, <code>status</code> confirms the store is healthy, <code>recall</code> pulls the relevant history, and <code>next_task</code> points at the work. The agent operates from understanding instead of assumption.</p>
+      </article>
+      <article class="cap reveal d1">
+        <div class="cap-num">FLOW · TRUST &amp; REPAIR</div>
+        <h3>Audit everything, recover from anything</h3>
+        <p><code>list_receipts</code> is the record of every mutation the system made. When an index is damaged, <code>reliquary_status</code> diagnoses, <code>rebuild_index</code> restores from the files, and <code>restore_memory_relics</code> rebuilds runtime memory. Nothing silent, everything recoverable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="get">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="wrap cta-inner">
+    <h2>Relicquary runs <span class="signal">today.</span></h2>
+    <p>Stand up a store, serve it over MCP, and your agent has all 56 tools, on your own disk, under your own audit.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="index.html#cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        Get Relicquary
+      </a>
+      <a class="btn-ghost" href="stack.html">See the full stack (AIM)
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer aria-labelledby="foot-h">
+  <h2 id="foot-h" class="sr-only">Relicquary footer</h2>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand-row">
+          <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
+          <span>Relicquary<small>RQ MCP LLC</small></span>
+        </div>
+        <p class="foot-about">A local memory operating system for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Product</h5>
+        <a href="index.html">Overview</a>
+        <a href="index.html#recall">How recall works</a>
+        <a href="tools.html">Tool catalog</a>
+        <a href="index.html#apps">macOS &amp; iPhone apps</a>
+      </div>
+      <div class="foot-col">
+        <h5>Resources</h5>
+        <a href="index.html#cta">CLI quickstart</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div class="foot-col">
+        <h5>RQ MCP LLC</h5>
+        <a href="stack.html">The AIM stack</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="mailto:hello@relicquary.com">Contact</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span class="yr">2026</span> RQ MCP LLC. Relicquary is a product of RQ MCP LLC. Local-first, your store, on your own disk.</p>
+      <div class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
+        <span class="lat">Memoria custodita</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){ el.textContent = new Date().getFullYear(); });
+
+  /* mobile nav toggle */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navlinks');
+  if(navToggle && navLinks){
+    var closeNav = function(f){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); if(f){ navToggle.focus(); } };
+    navToggle.addEventListener('click', function(){ var open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){ a.addEventListener('click', function(){ closeNav(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); } });
+  }
+
+  /* scroll reveal + failsafe */
+  var revs = document.querySelectorAll('.reveal');
+  function showAll(){ Array.prototype.forEach.call(revs, function(el){ el.classList.add('in'); }); }
+  if(reduce || !('IntersectionObserver' in window)){
+    showAll();
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.08, rootMargin:'0px 0px -4% 0px'});
+    Array.prototype.forEach.call(revs, function(el){ io.observe(el); });
+    window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
+    setTimeout(showAll, 2500);
+  }
+})();
+</script>
+</body>
+</html>
