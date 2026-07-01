@@ -50,9 +50,9 @@ Your writes are untrusted by default. Every mutation produces a receipt: an appe
 
 Relicquary is durable typed memory with explainable recall and a governed, receipted write path. It does not learn, grow, or improve itself, and it does not train on your use. It remembers what you write and retrieves it well. That is the claim.
 
-The Rust core (a CLI plus the MCP server) runs today for developers and early access by request: you stand up a store, remember something, recall it, and serve it over MCP now. The Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription, no account required. That is the honest state: the core runs today on your own machine, with the apps on the way, not a public consumer download yet.
+The Rust core (a CLI plus the MCP server) runs today for developers and early access by request: you stand up a store, remember something, recall it, and serve it over MCP now. The Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription.
 
-Relicquary is built by RQ MCP LLC and is the core of AIM, its governance architecture for agents that act. AIM wraps the same core in a deterministic floor: one audited actuation chokepoint, a fail-safe fence, and rule-based conscience checks. Neither Relicquary nor the model driving AIM improves itself: capability accumulates in the stack as receipt-bound artifacts, not in any weights. AIM is a working prototype with research ahead of it, marked as such.
+Relicquary is built by RQ MCP LLC and is the core of AIM, its full stack for autonomous computer use. AIM is an operator that perceives a screen, plans, and acts on a real computer, drawing everything it knows from Relicquary, with every action passing through a deterministic floor: one audited actuation chokepoint, a fail-safe fence, rule-based conscience checks, and a receipt for each move. Neither Relicquary nor the model driving AIM improves itself: capability accumulates in the stack as receipt-bound artifacts, not in any weights. AIM is a working prototype, graded honestly part by part on the site.
 
 ## How to begin
 
@@ -62,12 +62,12 @@ The operator adds Relicquary as an MCP server. Your first move is `architecture`
 
 # Relicquary: full site corpus
 
-*Every page of relicquary.com as one machine-readable Markdown document. Relicquary is a local-first memory operating system for AI agents, an MCP-native tool surface; AIM is a governance architecture for verifiable autonomy built on it. RQ MCP LLC.*
+*Every page of relicquary.com as one machine-readable Markdown document. Relicquary is a local-first memory operating system for AI agents, an MCP-native tool surface; AIM is a full-stack computer-use operator built on it, acting on a verifiable floor. RQ MCP LLC.*
 
 ## Contents
 - Relicquary: local-first memory OS for AI agents
 - Relicquary tool catalog: 56 MCP tools
-- AIM: governed autonomy, built on Relicquary
+- AIM: a full-stack computer-use operator on a verifiable floor
 - TouchLink: a virtual touchscreen driver
 - Relicquary support
 - Relicquary privacy policy
@@ -317,7 +317,7 @@ PART OF SOMETHING LARGER
 
 ## Relicquary is the core of AIM.
 
-On its own, Relicquary is the memory and the working loop your agents run on. Given hands and a deterministic floor to act safely, that same core becomes **AIM**, RQ MCP LLC's governance architecture for verifiable autonomy. Relicquary is where it starts; AIM is what it's built into.
+On its own, Relicquary is the memory and the working loop your agents run on. Wired into a full stack that perceives a screen and drives a real computer, that same core becomes **AIM**, RQ MCP LLC's computer-use operator, acting on a floor you can verify. Relicquary is where it starts; AIM is what it's built into.
 
 [See the full stack](stack.html) [Explore TouchLink](touchlink.html)
 
@@ -627,15 +627,15 @@ Stand up a store, serve it over MCP, and your agent has all 56 tools, on your ow
 
 ---
 
-# AIM: governed autonomy, built on Relicquary
+# AIM: a full-stack computer-use operator on a verifiable floor
 
 *Machine-readable Markdown of https://relicquary.com/stack.html*
 
-# Relicquary is the core. AIM is Relicquary writ large, given hands, and the discipline to prove every move.
+# Relicquary is the core. AIM is the full stack that acts: a computer-use operator, on a floor that proves every move.
 
-**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**: the cognitive OS an agent thinks out of. **AIM** wraps that same core in a **deterministic floor you can verify**: limits on what it may do, a receipt for what it did, and only then gives it a body and a voice.
+**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**, the cognitive OS an agent thinks out of. **AIM** is the full stack around it: an operator that perceives the screen, plans, and drives a real computer, everything it knows drawn from that memory, and every action it takes passing through a **floor you can verify**: bounded, receipted, answerable.
 
-Relicquary runs today. AIM is a working prototype; the autonomy it aims toward is research ahead of us, and we mark that line, not blur it.
+Relicquary runs today. AIM is a working prototype, graded part by part in the maturity map below: what runs, what is prototype, what is still research. We mark the line, we do not blur it.
 
 relicquary · mystore runs today
 
@@ -717,11 +717,11 @@ Explore TouchLink
 
 03 / THE FLAGSHIP
 
-## AIM: an autonomous operator on a floor you can verify.
+## AIM: a full computer-use operator on a floor you can verify.
 
-**AIM: Accurate, Immediate, Minimal; AGRO in motion.** Relicquary writ large: the cognitive core given hands and a voice, aimed at autonomy you can audit.
+**AIM: Accurate, Immediate, Minimal; AGRO in motion.** The full stack: an operator that perceives the desktop, plans, and acts on a real computer, drawing everything it knows from Relicquary, on a floor you can audit.
 
-What sets AIM apart is its floor: a deterministic, receipt-checkable layer that decides what an autonomous agent is *allowed* to do, and proves what it *did*. The floor isn't another model second-guessing the first: **it's mechanism**. Because it's deterministic and receipt-checkable, you can verify the property rather than take it on faith.
+AIM drives a real computer, so every action it takes passes through its floor: a deterministic, receipt-checkable layer that decides what the operator is *allowed* to do, and proves what it *did*. The floor isn't another model second-guessing the first: **it's mechanism**. Because it's deterministic and receipt-checkable, you verify the property rather than take it on faith.
 
 aim · one governed tick bounded
 
@@ -773,7 +773,7 @@ Everything the agent writes to memory is untrusted by default and carries its pr
 
 ## Relicquary, writ large.
 
-One core, embodied. Relicquary is the cognitive OS at the center; AIM wraps it in the floor above, then gives it organs. Each part is graded for where it actually stands.
+One core, embodied into an operator that acts. Relicquary is the cognitive OS at the center; AIM adds the parts that let it perceive and drive a real machine, with the floor between every intent and the world. Each part is graded for where it actually stands.
 
 **AGRO: the soil.** The name is both an acronym and an older root: *Always Growing Recursive Optimizer*, and *agros*, cultivated ground. AGRO is the plot the cognitive core is planted in: a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward: the ambition of the stack, stated plainly, not a feature claimed today.
 
@@ -837,7 +837,7 @@ The next phase is capability **synthesis**: authoring a genuinely new durable ca
 
 ## Memory you own, becoming an operator you can trust.
 
-Every capable agent eventually hits the same wall: it forgets. We're building the other way: a foundation that remembers on your terms, governed so every move can be checked. The core runs today; the destination is an autonomous system whose every action leaves a receipt.
+Agents lose context between sessions. We built the other way: a foundation that remembers on your terms, an operator that acts on it, and a floor so every move can be checked. The destination is an autonomous system whose every action leaves a receipt.
 
 MOVE_01
 
@@ -853,9 +853,9 @@ The same local-first core is coming to Mac and iPhone through the Apple App Stor
 
 MOVE_03
 
-working prototype · AIM: a deterministic floor
+working prototype · AIM: the operator that acts
 
-AIM wraps Relicquary in governance. A single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks mean a questionable move is held and corrected rather than silently executed: a floor that holds even when a model is confident it's right. This is how a memory system becomes an operator you can let act: bounded, auditable, answerable for every step.
+AIM turns the memory core into an operator that perceives and drives a real computer, and puts a floor under every move it makes: a single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks, so a questionable move is held and corrected rather than silently executed. That is what lets you actually let it act: bounded, auditable, answerable for every step.
 
 MOVE_04
 
@@ -869,7 +869,7 @@ open frontier · AGRO: the soil it all grows toward
 
 AGRO is the soil: cultivated ground, *Always Growing Recursive Optimizer*. The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability: capability it can carry and reuse, with provenance attached. The hard, open frontier is capability **synthesis**: a genuinely new capability for a problem the system has never seen. That is unbuilt research, and we say so plainly. It is the work ahead, and it is the whole point. **AGRO in motion: Accurate, Immediate, Minimal.**
 
-**Owned, local, and accountable, by construction.** Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't. Build on the core today; grow into the rest as it earns its place.
+**Owned, local, and accountable, by construction.** Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't.
 
 08 / MATURITY
 
@@ -904,7 +904,7 @@ So the credibility gradient is visible at a glance: what runs, what's prototype,
 
 ## Autonomy you can actually audit.
 
-RQ MCP LLC builds Relicquary (the local-first cognitive OS) and AIM, the governance architecture that turns it into a verifiable operator. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed. The core runs today; the Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription.
+RQ MCP LLC builds Relicquary (the local-first cognitive OS) and AIM, the full stack that turns it into a computer-use operator you can audit. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed.
 
 > “Agents forget. Every autonomous system we ran reset to zero between sessions: repeating mistakes, losing the context it had earned, asking us to trust actions we couldn't check afterward. The conviction was simple: memory and accountability aren't features you bolt on later; they're the floor everything else stands on. So we built the floor first. The core runs today on your own machine: one binary, your disk, a receipt for every action. That's the standard I want to be held to.” Jessy Brenenstahl, Founder, RQ MCP LLC
 

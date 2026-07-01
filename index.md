@@ -240,6 +240,6 @@ PART OF SOMETHING LARGER
 
 ## Relicquary is the core of AIM.
 
-On its own, Relicquary is the memory and the working loop your agents run on. Given hands and a deterministic floor to act safely, that same core becomes **AIM**, RQ MCP LLC's governance architecture for verifiable autonomy. Relicquary is where it starts; AIM is what it's built into.
+On its own, Relicquary is the memory and the working loop your agents run on. Wired into a full stack that perceives a screen and drives a real computer, that same core becomes **AIM**, RQ MCP LLC's computer-use operator, acting on a floor you can verify. Relicquary is where it starts; AIM is what it's built into.
 
 [See the full stack](stack.html) [Explore TouchLink](touchlink.html)
