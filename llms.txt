@@ -1,0 +1,16 @@
+# Relicquary (RQ MCP LLC)
+
+> Local-first memory operating system for AI agents: typed memory, a knowledge graph, explainable recall, and an MCP-native surface of 56 tools. AIM is a governance architecture for verifiable autonomy built on Relicquary.
+
+## Pages
+- [Relicquary overview](https://relicquary.com/index.md): the product, what it is and how recall works
+- [Tool catalog](https://relicquary.com/tools.md): all 56 MCP tools, grouped, with function and purpose
+- [AIM and the stack](https://relicquary.com/stack.md): the governance architecture and full stack
+- [TouchLink](https://relicquary.com/touchlink.md): the virtual touchscreen driver
+- [Support](https://relicquary.com/support.md)
+- [Privacy](https://relicquary.com/privacy.md)
+- [Terms](https://relicquary.com/terms.md)
+
+## Full
+- [Entire corpus, one document](https://relicquary.com/relicquary-corpus.md)
+- [All pages as a zip](https://relicquary.com/relicquary-md.zip)

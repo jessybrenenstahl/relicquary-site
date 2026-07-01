@@ -534,3 +534,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 /* brand mark = real logo image */
 .brand .mark{height:30px;width:auto;border-radius:5px}
 .foot-brand-row .mark{height:28px;width:auto;border-radius:5px}
+
+/* ===== agent-readable downloads ===== */
+.downloads{border-top:1px solid var(--line);padding:32px 0}
+.dl-inner{display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.dl-copy{max-width:560px}
+.dl-copy .index{display:block;margin-bottom:8px}
+.dl-copy p{color:var(--ink-2);font-size:13.5px;line-height:1.6}
+.dl-copy code{font-family:var(--mono);font-size:.92em;color:var(--ink)}
+.dl-copy a{color:var(--signal)}
+.dl-links{display:flex;gap:10px;flex-wrap:wrap}
+.dl-btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--radius);padding:9px 13px;transition:border-color .2s,color .2s,background .2s}
+.dl-btn:hover{border-color:var(--signal);color:var(--signal);background:rgba(216,179,94,.06)}
+@media(max-width:640px){.dl-inner{flex-direction:column;align-items:flex-start;gap:16px}}
