@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TouchLink — virtual touchscreen driver | RQ MCP LLC</title>
+<title>TouchLink: virtual touchscreen driver | RQ MCP LLC</title>
 <meta name="description" content="TouchLink is a native macOS touchscreen driver that lands taps where you tap: per-device 4-point calibration, no kernel extension. From RQ MCP LLC." />
 <meta name="theme-color" content="#070809" />
 <link rel="canonical" href="https://relicquary.com/touchlink.html" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relicquary.com/touchlink.html" />
-<meta property="og:title" content="TouchLink — a touchscreen driver that lands taps where you tap" />
+<meta property="og:title" content="TouchLink: a touchscreen driver that lands taps where you tap" />
 <meta property="og:description" content="A native macOS driver for USB touchscreens used as an extended display: per-device 4-point calibration, no kernel extension, no private APIs." />
 <meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -58,7 +58,7 @@
 <!-- part-of-the-stack context strip -->
 <section class="stack-strip">
   <div class="wrap">
-    <p><b>TouchLink</b> is the control-surface lane of <b>AIM</b> — RQ MCP LLC's local-first AI operator stack — and a standalone macOS driver in its own right.</p>
+    <p><b>TouchLink</b> is the control-surface lane of <b>AIM</b> (RQ MCP LLC's local-first AI operator stack) and a standalone macOS driver in its own right.</p>
     <a href="stack.html">↑ See the full stack</a>
   </div>
 </section>
@@ -70,7 +70,7 @@
     <div class="hero-copy">
       <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>virtual touchscreen driver · standalone or in a stack</span></div>
       <h1 class="hero-title">Touch that lands <span class="signal">where you tap.</span></h1>
-      <p class="hero-sub">Mac has never really handled USB touchscreens — plug one in and your taps land in the wrong spot, or just move the pointer instead of pressing the button. <b>TouchLink</b> is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch — <b>your touchscreen works like a touchscreen, and your mouse stays a mouse</b>. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface — the way AIM uses it.</p>
+      <p class="hero-sub">Mac has never really handled USB touchscreens. Plug one in and your taps land in the wrong spot, or just move the pointer instead of pressing the button. <b>TouchLink</b> is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: <b>your touchscreen works like a touchscreen, and your mouse stays a mouse</b>. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#how">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -113,19 +113,19 @@
         <span class="index">01 / THE PROBLEM</span>
         <h2>macOS has no good answer for USB touchscreens.</h2>
       </div>
-      <p>Plug a touchscreen into a Mac and it mostly doesn't behave — your taps land on the wrong screen, in the wrong place, or just move the pointer. macOS treats a touchscreen as a mouse; TouchLink makes it behave like a touchscreen.</p>
+      <p>Plug a touchscreen into a Mac and it mostly doesn't behave: your taps land on the wrong screen, in the wrong place, or just move the pointer. macOS treats a touchscreen as a mouse; TouchLink makes it behave like a touchscreen.</p>
     </div>
     <div class="pillars reveal">
       <div class="pillar">
         <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="6" width="22" height="15" rx="2"/><path d="M12 26h8M16 21v5"/><circle cx="20" cy="13" r="2"/><path d="M20 13 l4 4" stroke-linecap="round"/></svg>
         <h3>Calibrated to your screen</h3>
-        <p>A quick, guided four-corner tap teaches TouchLink your exact panel and layout — so from then on, your touch lands on the right spot, every time.</p>
+        <p>A quick, guided four-corner tap teaches TouchLink your exact panel and layout, so from then on, your touch lands on the right spot, every time.</p>
         <span class="tag">4-point matrix</span>
       </div>
       <div class="pillar">
         <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 L26 8 V15 C26 22 21 26 16 28 C11 26 6 22 6 15 V8 Z"/><path d="M12 16 l3 3 l5 -6" stroke-width="1.7"/></svg>
         <h3>No kernel hacks</h3>
-        <p>TouchLink runs as a menu-bar app on public macOS frameworks — <code>IOHIDManager</code> and a <code>CGEvent</code> tap. No kernel extension to break on an OS update.</p>
+        <p>TouchLink runs as a menu-bar app on public macOS frameworks: <code>IOHIDManager</code> and a <code>CGEvent</code> tap. No kernel extension to break on an OS update.</p>
         <span class="tag">IOHIDManager · CGEvent</span>
       </div>
       <div class="pillar">
@@ -146,7 +146,7 @@
         <span class="index">02 / HOW IT WORKS</span>
         <h2>Catch the wrong tap. Post the right one.</h2>
       </div>
-      <p>TouchLink watches the raw HID stream, recognises the miscalibrated event, applies your calibration, and returns a corrected native event — all on-device.</p>
+      <p>TouchLink watches the raw HID stream, recognises the miscalibrated event, applies your calibration, and returns a corrected native event, all on-device.</p>
     </div>
     <div class="pipeline reveal">
       <div class="stage">
@@ -170,11 +170,11 @@
       <div class="stage">
         <div class="st-n">STAGE 04</div>
         <h4>Post</h4>
-        <p>Returns the corrected event to the stream — the tap lands exactly where you touched.</p>
+        <p>Returns the corrected event to the stream, and the tap lands exactly where you touched.</p>
       </div>
     </div>
     <div class="recall-note reveal" style="margin-top:24px">
-      <b>On-device, by construction.</b> Everything happens locally on your Mac through public frameworks. TouchLink needs Input Monitoring and Accessibility permission to read raw HID and post corrected events — and nothing else.
+      <b>On-device, by construction.</b> Everything happens locally on your Mac through public frameworks. TouchLink needs Input Monitoring and Accessibility permission to read raw HID and post corrected events, and nothing else.
     </div>
   </div>
 </section>
@@ -187,27 +187,27 @@
         <span class="index">03 / IN THE AIM STACK</span>
         <h2>The same primitive, as a control surface.</h2>
       </div>
-      <p>Inside <a href="stack.html" style="color:var(--signal)">AIM</a>, TouchLink is the pattern for turning a physical touchscreen into a safe driver of a virtual workspace — under the same bounded-autonomy rules as the rest of the stack.</p>
+      <p>Inside <a href="stack.html" style="color:var(--signal)">AIM</a>, TouchLink is the pattern for turning a physical touchscreen into a safe driver of a virtual workspace, under the same bounded-autonomy rules as the rest of the stack.</p>
     </div>
     <div class="cap-grid">
       <article class="cap reveal">
         <div class="cap-num">ROLE_01</div>
         <h3>Observer-first</h3>
-        <p>By default it observes and transforms coordinates — metadata only. No synthetic input is injected and no drivers are mutated without an explicit, approved step.</p>
+        <p>By default it observes and transforms coordinates: metadata only. No synthetic input is injected and no drivers are mutated without an explicit, approved step.</p>
       </article>
       <article class="cap reveal d1">
         <div class="cap-num">ROLE_02</div>
         <h3>Focus-preserving</h3>
-        <p>The control-surface lane is designed to route touch into a virtual workspace without stealing focus or duplicating input — the operator's other work keeps running.</p>
+        <p>The control-surface lane is designed to route touch into a virtual workspace without stealing focus or duplicating input; the operator's other work keeps running.</p>
       </article>
       <article class="cap reveal">
         <div class="cap-num">ROLE_03</div>
         <h3>Bounded, like the rest</h3>
-        <p>Any real routing or synthetic input sits behind explicit approval — the same "no single part acts unchecked" posture that governs the whole AIM operator.</p>
+        <p>Any real routing or synthetic input sits behind explicit approval: the same "no single part acts unchecked" posture that governs the whole AIM operator.</p>
       </article>
       <article class="cap reveal d1">
         <div class="cap-num">ROLE_04</div>
-        <h3>Cross-machine — research</h3>
+        <h3>Cross-machine, research</h3>
         <p>Extending the lane to route a Windows-owned touchscreen into a Mac workspace is on the roadmap, behind hard safety rails. Not a shipping feature today.</p>
       </article>
     </div>
@@ -243,8 +243,8 @@
           <img class="mark" src="assets/brand/rq-mark.png" alt="" />
           <span>TouchLink<small>RQ MCP LLC</small></span>
         </div>
-        <p class="foot-about">A native macOS driver that makes USB touchscreens land taps where you tap — per-device calibration, no kernel extension, no private APIs. Part of the AIM stack.</p>
-        <p class="etymology"><b>Touch·Link</b> — the link between a raw digitizer and the pixel you meant to press.</p>
+        <p class="foot-about">A native macOS driver that makes USB touchscreens land taps where you tap: per-device calibration, no kernel extension, no private APIs. Part of the AIM stack.</p>
+        <p class="etymology"><b>Touch·Link</b>: the link between a raw digitizer and the pixel you meant to press.</p>
       </div>
       <div class="foot-col">
         <h5>TouchLink</h5>
