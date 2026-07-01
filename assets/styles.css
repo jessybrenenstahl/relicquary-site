@@ -547,3 +547,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .dl-btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--radius);padding:9px 13px;transition:border-color .2s,color .2s,background .2s}
 .dl-btn:hover{border-color:var(--signal);color:var(--signal);background:rgba(216,179,94,.06)}
 @media(max-width:640px){.dl-inner{flex-direction:column;align-items:flex-start;gap:16px}}
+
+/* ===== for the agent (llms-full.txt pointer) ===== */
+.for-agent{border-top:1px solid var(--line);padding:30px 0 4px}
+.for-agent .index{display:block;margin-bottom:12px}
+.fa-endpoint{display:inline-block;font-family:var(--mono);font-size:22px;font-weight:600;color:var(--signal);letter-spacing:.01em;word-break:break-all;line-height:1.2}
+.fa-endpoint:hover{text-decoration:underline}
+.fa-line{margin-top:12px;max-width:660px;color:var(--ink-2);font-size:13.5px;line-height:1.6}
+.fa-line code{font-family:var(--mono);color:var(--ink)}
+@media(max-width:640px){.fa-endpoint{font-size:16px}}

@@ -12,5 +12,6 @@
 - [Terms](https://relicquary.com/terms.md)
 
 ## Full
+- [Written for the agent, then the full corpus](https://relicquary.com/llms-full.txt): a second-person orientation for an AI agent (what Relicquary gives you, the 56 MCP tools, how to start), followed by the entire site corpus
 - [Entire corpus, one document](https://relicquary.com/relicquary-corpus.md)
 - [All pages as a zip](https://relicquary.com/relicquary-md.zip)
