@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+      - name: Install pandoc 3.10 (pinned; the generator's output is version-sensitive)
+        run: |
+          curl -sSL -o /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/3.10/pandoc-3.10-1-amd64.deb
+          sudo dpkg -i /tmp/pandoc.deb
+          pandoc --version | head -1
       - name: Regenerate the agent layer
         run: python3 scripts/build-agent-layer.py
       - name: Fail on drift (HTML changed without regenerating twins)

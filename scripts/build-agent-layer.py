@@ -130,7 +130,18 @@ def to_md(page, title):
     return head + body, h8
 
 
+PANDOC_WANT = "3.10"
+
+
+def check_pandoc():
+    v = subprocess.run(["pandoc", "--version"], capture_output=True, text=True).stdout.split()[1]
+    if not v.startswith(PANDOC_WANT):
+        sys.exit("pandoc %s found; this generator is pinned to %s (output is version-sensitive)"
+                 % (v, PANDOC_WANT))
+
+
 def main():
+    check_pandoc()
     mds, hashes = {}, {}
     for page, slug, title in PAGES:
         mds[slug], hashes[page] = to_md(page, title)
