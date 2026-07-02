@@ -1,6 +1,6 @@
 # Relicquary terms of service
 
-*Machine-readable Markdown of https://relicquary.com/terms.html*
+*Machine-readable Markdown of https://relicquary.com/terms.html (content hash 88738d12)*
 
 LEGAL · RQ MCP LLC
 

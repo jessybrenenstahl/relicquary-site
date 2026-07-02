@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The record: what ran, when, at what scope | Relicquary</title>
+<meta name="description" content="The append-only ledger behind relicquary.com: dated releases, recorded runs, hardware verification, and the register of what has not run. Every claim on this site resolves here." />
+<meta name="theme-color" content="#070809" />
+<link rel="canonical" href="https://relicquary.com/record.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://relicquary.com/record.html" />
+<meta property="og:title" content="The record: what ran, when, at what scope" />
+<meta property="og:description" content="Dated releases, recorded runs, hardware verification, and the honest register of what has not run. The ledger every claim on relicquary.com resolves to." />
+<meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="assets/brand/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="alternate" type="text/markdown" href="record.md" title="This page as Markdown" />
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+</head>
+<body class="doc-page long-page">
+
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav" id="topnav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Relicquary home">
+      <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
+      <span>Relicquary<small>RQ MCP LLC</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="tools.html">Tools</a>
+      <a href="touchlink.html">TouchLink</a>
+      <a href="stack.html">AIM &amp; the stack</a>
+      <a href="record.html" aria-current="page">The record</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta" href="index.html#get">Get early access</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<header class="doc-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="index">THE RECORD</span>
+    <h1 class="doc-title">What ran, when, at what scope.</h1>
+    <p class="updated" style="max-width:640px">One rule: entries are appended and dated, never edited. Each entry states its own scope. What has not run is listed too. Everything this site claims about behavior resolves to an entry on this page.</p>
+    <div class="jump-row">
+      <a href="#releases"><b>01</b>Releases</a>
+      <a href="#runs"><b>02</b>Recorded runs</a>
+      <a href="#hardware"><b>03</b>Hardware</a>
+      <a href="#nulls"><b>04</b>What has not run</a>
+    </div>
+  </div>
+</header>
+
+<div class="doc">
+  <div class="wrap doc-wrap">
+
+    <!-- RELEASES -->
+    <section id="releases">
+      <h2><span class="index">01</span> &nbsp;Releases</h2>
+      <div class="ledger">
+
+        <article class="ledger-entry" id="rel-090">
+          <span class="le-date">2026-06-10</span>
+          <div class="le-head"><h3>Relicquary v0.9.0, Crystallization</h3><span class="status shipping">runs today</span></div>
+          <p>The core in its current shape: one Rust binary serving CLI and MCP, typed memory mirrored to Markdown relics, the knowledge graph, hybrid explainable recall, receipts on every mutation, and a supervised local model runtime that restarts a crashed model lane instead of failing for the life of the process.</p>
+          <p><b>The gate this release passed:</b> formatting clean, 341 of 341 tests green, the 16-case memory evaluation suite at 16 of 16, and a live verification on real hardware in which one model lane was force-killed mid-session, recall kept working in degraded mode, and the supervisor respawned the lane.</p>
+          <span class="le-scope">scope: one machine, macOS on Apple Silicon, built from source · versioning note: a legacy v1.0 git tag from 2026-05-13 predates this line and is a historical mislabel; it is retained as immutable history and supersedes nothing</span>
+        </article>
+
+        <article class="ledger-entry" id="rel-tools57">
+          <span class="le-date">2026-07-02</span>
+          <div class="le-head"><h3>Tool surface verified at 57</h3><span class="status shipping">drift-check green</span></div>
+          <p>The MCP tool catalog was re-derived from the binary's own schema output and its generated documentation, with the repository drift check passing. The count is <b>57 tools</b>. Earlier copy on this site said 56 and omitted <code>reject_memory</code>; both are corrected as of this entry, and <a href="tools.json" style="color:var(--signal)">tools.json</a> is now generated from the same schema output so the count is settled by construction.</p>
+          <span class="le-scope">scope: schema-derived count, verified against source on the date above</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- RECORDED RUNS -->
+    <section id="runs">
+      <h2 style="margin-top:56px"><span class="index">02</span> &nbsp;Recorded runs</h2>
+      <p style="font-size:13.5px;color:var(--ink-3)">AIM trial runs on a real machine, re-typed here from the recorded sessions. No screenshots are shown because none were retained; what follows is the record as kept, at the scope stated.</p>
+      <div class="ledger">
+
+        <article class="ledger-entry" id="run-conscience">
+          <span class="le-date">2026-06</span>
+          <div class="le-head"><h3>The conscience caught degenerate loops, and corrected them</h3><span class="status prototype">working prototype</span></div>
+          <p>In live operator runs, the deterministic conscience detected degenerate loops the model itself did not notice: fixation (re-attempting one failing move) and no-op churn (activity without progress). The checks are non-terminal: the run was halted at the check, corrected, and continued, rather than crashing or running the loop blind.</p>
+          <span class="le-scope">scope: prototype operator, single machine, supervised runs, June 2026</span>
+        </article>
+
+        <article class="ledger-entry" id="run-reuse">
+          <span class="le-date">2026-06</span>
+          <div class="le-head"><h3>Capability reuse: 8 of 8 held-out trials</h3><span class="status prototype">working prototype</span></div>
+          <p>A durable capability was authored by hand and banked in the store with its obstacle signature. The trials tested the <b>reuse path</b>: given a novel instance the system had not seen, could it recall the banked capability by signature and re-apply it through the governed chokepoint? It did, in 8 of 8 held-out trials.</p>
+          <p><b>What this does not show:</b> the capability was hand-authored, not synthesized by the system. Authoring a genuinely new capability for a never-seen blocker is the open research line in the register below.</p>
+          <span class="le-scope">scope: 8 held-out trials on novel instances, single machine, June 2026 · tests reuse, not synthesis</span>
+        </article>
+
+        <article class="ledger-entry" id="run-buildrepair">
+          <span class="le-date">2026-06</span>
+          <div class="le-head"><h3>A real build-repair run</h3><span class="status prototype">working prototype</span></div>
+          <p>Given a failing real build as its mission, the operator perceived the failure output, drove the task down to a handful of compile errors, and authored the fix itself, acting through the audited chokepoint with a receipt per move. This is the run behind the sentence "bounded, receipted work under governance" on the stack page.</p>
+          <span class="le-scope">scope: one milestone run, real codebase, single machine, supervised, June 2026</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- HARDWARE -->
+    <section id="hardware">
+      <h2 style="margin-top:56px"><span class="index">03</span> &nbsp;Hardware verification</h2>
+      <div class="ledger">
+        <article class="ledger-entry" id="hw-touchlink">
+          <span class="le-date">2026-06</span>
+          <div class="le-head"><h3>TouchLink on a real panel</h3><span class="status prototype">verified · real panel</span></div>
+          <p>The TouchLink driver builds, signs, launches, and passes its test suite on one physical USB touchscreen panel attached to a Mac: taps land where the finger touches, across displays, while the mouse stays a mouse.</p>
+          <span class="le-scope">scope: one panel model, one Mac, macOS 13+ · distribution packaging not yet built</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- NULL REGISTER -->
+    <section id="nulls">
+      <h2 style="margin-top:56px"><span class="index">04</span> &nbsp;What has not run</h2>
+      <p style="font-size:13.5px;color:var(--ink-3)">The register of things this site does not claim, kept next to the things it does.</p>
+      <div class="ledger">
+        <article class="ledger-entry" id="null-synthesis">
+          <span class="le-date">open</span>
+          <div class="le-head"><h3>Capability synthesis</h3><span class="status research">unbuilt · open research</span></div>
+          <p>Authoring a genuinely new durable capability for a blocker the system has never seen. Unbuilt. It will be graded only by a held-out execution test on a novel instance, and that test does not exist yet.</p>
+          <span class="le-scope">status: the open frontier; no claim until the test passes</span>
+        </article>
+        <article class="ledger-entry" id="null-dpaca">
+          <span class="le-date">open</span>
+          <div class="le-head"><h3>DPACA two-model cross-audit</h3><span class="status roadmap">designed, not built</span></div>
+          <p>One model proposes, a second only approves or rejects, behind a deterministic hash-bound publish step. Designed for reliability. Not built.</p>
+          <span class="le-scope">status: on the roadmap, toward acceptance gates</span>
+        </article>
+        <article class="ledger-entry" id="null-backup">
+          <span class="le-date">open</span>
+          <div class="le-head"><h3>Durable backup and restore</h3><span class="status roadmap">designed, not built</span></div>
+          <p>A first-class backup and restore path for the store. Designed, not built. Today durability is the plain files themselves: SQLite and Markdown you can copy, version, and snapshot with ordinary tools.</p>
+          <span class="le-scope">status: gates any paid artifact; graded runs-today only when a restore drill passes in CI</span>
+        </article>
+        <article class="ledger-entry" id="null-sync">
+          <span class="le-date">open</span>
+          <div class="le-head"><h3>Cross-device sync</h3><span class="status roadmap">planned, not built</span></div>
+          <p>Synchronizing a store between Mac and iPhone. Planned for the iPhone release. Not built, and not claimed anywhere else on this site.</p>
+          <span class="le-scope">status: planned for the iPhone release</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="margin-top:64px;border-top:1px solid var(--line);padding-top:40px">
+      <p style="color:var(--ink-2);font-size:14.5px;max-width:560px">Want the underlying receipts for an entry, or to build on the core the record describes? Email and name the entry.</p>
+      <p style="margin-top:14px"><a class="btn-primary" href="mailto:hello@relicquary.com?subject=Relicquary%20early%20access">Get developer early access</a></p>
+      <p style="margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3)">hello@relicquary.com · subject &ldquo;Relicquary early access&rdquo;</p>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<!-- FOR THE AGENT -->
+<section class="for-agent" aria-label="For AI agents">
+  <div class="wrap">
+    <span class="index">FOR THE AGENT READING THIS</span>
+    <a class="fa-endpoint" href="llms-full.txt">relicquary.com/llms-full.txt</a>
+    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 57 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
+  </div>
+</section>
+
+<!-- AGENT-READABLE DOWNLOADS -->
+<section class="downloads" aria-label="Machine-readable versions">
+  <div class="wrap">
+    <div class="dl-inner">
+      <div class="dl-copy">
+        <span class="index">AGENT-READABLE</span>
+        <p>This site practices what it preaches. Every content page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
+      </div>
+      <div class="dl-links">
+        <a class="dl-btn" href="record.md" download>This page (.md)</a>
+        <a class="dl-btn" href="relicquary-corpus.md" download>Full corpus (.md)</a>
+        <a class="dl-btn" href="relicquary-md.zip" download>All pages (.zip)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand-row">
+          <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
+          <span>Relicquary<small>RQ MCP LLC</small></span>
+        </div>
+        <p class="foot-about">A local-first memory OS for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+        <p class="etymology"><b>Relicquary</b>: from <em>reliquary</em>, a vessel built to keep what must not be lost.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Product</h5>
+        <a href="index.html">Overview</a>
+        <a href="tools.html">Tools</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="index.html#apps">The apps</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="stack.html">AIM &amp; the stack</a>
+        <a href="record.html">The record</a>
+        <a href="mailto:hello@relicquary.com">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal &amp; help</h5>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span class="yr">2026</span> RQ MCP LLC. Local-first, your store, on your own disk.</p>
+      <a class="live-chip" href="record.html#releases">v0.9.0 · 2026-06-10</a>
+      <span class="lat">Memoria custodita</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Relicquary tool catalog: 56 MCP tools your agent calls | RQ MCP</title>
-<meta name="description" content="Relicquary is MCP-first: its interface is a set of 56 tools an agent calls directly, from remember and recall to handoff, synthesis, and a one-call architecture spec. Here is every tool, what it does, and why it earns its place." />
+<title>Relicquary tool catalog: 57 MCP tools your agent calls | RQ MCP</title>
+<meta name="description" content="Relicquary is MCP-first: its interface is a set of 57 tools an agent calls directly, from remember and recall to handoff, synthesis, and a one-call architecture spec. Here is every tool, what it does, and why it earns its place." />
 <meta name="theme-color" content="#070809" />
 <link rel="canonical" href="https://relicquary.com/tools.html" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://relicquary.com/tools.html" />
-<meta property="og:title" content="Relicquary tool catalog: 56 MCP tools" />
-<meta property="og:description" content="The interface is the product. 56 MCP tools an agent calls directly: memory, recall, orchestration, synthesis, governance, and a one-call spec of the whole system." />
+<meta property="og:title" content="Relicquary tool catalog: 57 MCP tools" />
+<meta property="og:description" content="The interface is the product. 57 MCP tools an agent calls directly: memory, recall, orchestration, synthesis, governance, and a one-call spec of the whole system." />
 <meta property="og:image" content="https://relicquary.com/assets/brand/og-card.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="assets/brand/favicon.ico" sizes="any" />
@@ -19,10 +19,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="alternate" type="text/markdown" href="tools.md" title="This page as Markdown" />
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
-<body>
+<body class="long-page">
 
 <a href="#main" class="skip">Skip to content</a>
 
@@ -34,11 +36,12 @@
       <span>Relicquary<small>RQ MCP LLC</small></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
-      <a href="index.html">Overview</a>
-      <a href="index.html#recall">Recall</a>
       <a href="tools.html" aria-current="page">Tools</a>
+      <a href="touchlink.html">TouchLink</a>
       <a href="stack.html">AIM &amp; the stack</a>
-      <a class="nav-cta" href="index.html#cta">Get Relicquary</a>
+      <a href="record.html">The record</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta" href="index.html#get">Get early access</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -53,8 +56,8 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-copy" style="max-width:900px">
     <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>The tool catalog · MCP-native</span></div>
-    <h1 class="hero-title">The interface is the product. <span class="signal">56 tools</span> your agent calls over MCP.</h1>
-    <p class="hero-sub">Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 56 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.</p>
+    <h1 class="hero-title">The interface is the product. <span class="signal">57 tools</span> your agent calls over MCP.</h1>
+    <p class="hero-sub">Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 57 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#catalog">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
@@ -65,6 +68,78 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
+
+    <div class="verb-wall reveal" aria-label="All 57 tools">
+      <a href="#g-graph-entities-amp-conflicts">add_memory_edge</a>
+      <a href="#g-lifecycle-amp-governance">approve_memory</a>
+      <a href="#g-the-whole-system">architecture</a>
+      <a href="#g-capture">capture_thought</a>
+      <a href="#g-synthesis">claim_synthesis</a>
+      <a href="#g-synthesis">complete_synthesis</a>
+      <a href="#g-retrieval">context_pack</a>
+      <a href="#g-lifecycle-amp-governance">edit_memory</a>
+      <a href="#g-retrieval">explain_memory</a>
+      <a href="#g-lifecycle-amp-governance">feedback_memory</a>
+      <a href="#g-graph-entities-amp-conflicts">flag_contradiction</a>
+      <a href="#g-lifecycle-amp-governance">forget</a>
+      <a href="#g-lifecycle-amp-governance">forget_memory</a>
+      <a href="#g-graph-entities-amp-conflicts">get_entities</a>
+      <a href="#g-graph-entities-amp-conflicts">get_memory_edges</a>
+      <a href="#g-graph-entities-amp-conflicts">graph_export</a>
+      <a href="#g-tasks-sessions-amp-handoff">handoff</a>
+      <a href="#g-retrieval">hybrid_search</a>
+      <a href="#g-wiki-documents-amp-artifacts">ingest_document</a>
+      <a href="#g-wiki-documents-amp-artifacts">lint_wiki</a>
+      <a href="#g-wiki-documents-amp-artifacts">list_artifacts</a>
+      <a href="#g-lifecycle-amp-governance">list_drafts</a>
+      <a href="#g-health-recovery-amp-audit">list_receipts</a>
+      <a href="#g-lifecycle-amp-governance">list_suggestions</a>
+      <a href="#g-retrieval">list_thoughts</a>
+      <a href="#g-graph-entities-amp-conflicts">memory_conflicts</a>
+      <a href="#g-lifecycle-amp-governance">memory_export</a>
+      <a href="#g-lifecycle-amp-governance">memory_import</a>
+      <a href="#g-health-recovery-amp-audit">memory_status</a>
+      <a href="#g-tasks-sessions-amp-handoff">next_task</a>
+      <a href="#g-lifecycle-amp-governance">promote_memory</a>
+      <a href="#g-retrieval">query_context</a>
+      <a href="#g-retrieval">query_memory_objects</a>
+      <a href="#g-wiki-documents-amp-artifacts">read_artifact</a>
+      <a href="#g-wiki-documents-amp-artifacts">read_relic</a>
+      <a href="#g-health-recovery-amp-audit">rebuild_index</a>
+      <a href="#g-retrieval">recall</a>
+      <a href="#g-retrieval">recall_report</a>
+      <a href="#g-lifecycle-amp-governance">reject_memory</a>
+      <a href="#g-health-recovery-amp-audit">reliquary_status</a>
+      <a href="#g-capture">remember</a>
+      <a href="#g-capture">remember_batch</a>
+      <a href="#g-graph-entities-amp-conflicts">resolve_conflict</a>
+      <a href="#g-health-recovery-amp-audit">restore_memory_relics</a>
+      <a href="#g-synthesis">retry_synthesis</a>
+      <a href="#g-retrieval">search_thoughts</a>
+      <a href="#g-retrieval">search_wiki</a>
+      <a href="#g-tasks-sessions-amp-handoff">session_end</a>
+      <a href="#g-tasks-sessions-amp-handoff">session_start</a>
+      <a href="#g-health-recovery-amp-audit">status</a>
+      <a href="#g-capture">suggest_memory</a>
+      <a href="#g-synthesis">synthesis_queue</a>
+      <a href="#g-tasks-sessions-amp-handoff">task_progress</a>
+      <a href="#g-health-recovery-amp-audit">thought_stats</a>
+      <a href="#g-lifecycle-amp-governance">update_memory</a>
+      <a href="#g-lifecycle-amp-governance">update_thought_status</a>
+      <a href="#g-wiki-documents-amp-artifacts">write_relic</a>
+    </div>
+    <nav class="jump-row" aria-label="Catalog groups">
+      <a href="#g-capture">Capture</a>
+      <a href="#g-retrieval">Retrieval</a>
+      <a href="#g-lifecycle-amp-governance">Lifecycle &amp; governance</a>
+      <a href="#g-graph-entities-amp-conflicts">Graph</a>
+      <a href="#g-wiki-documents-amp-artifacts">Wiki &amp; documents</a>
+      <a href="#g-synthesis">Synthesis</a>
+      <a href="#g-tasks-sessions-amp-handoff">Tasks &amp; sessions</a>
+      <a href="#g-health-recovery-amp-audit">Health &amp; audit</a>
+      <a href="#g-the-whole-system">The whole system</a>
+    </nav>
+    <p class="verb-note reveal">57 tools, 55 cards below: two cards each carry an alias pair (forget / forget_memory, status / reliquary_status). The count is settled by construction in <a href="tools.json" style="color:var(--signal)">tools.json</a>, generated from the live schemas.</p>
   </div>
 </header>
 
@@ -112,7 +187,7 @@
       <p>The name in each card is the exact verb an agent calls. Descriptions are drawn from the live tool schemas, so this stays true as the set evolves.</p>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:12px 0 16px">Capture</h3>
+    <h3 class="catalog-group reveal" id="g-capture">Capture</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">remember</div><h3>Store a typed memory</h3><p>Write a fact, decision, task, procedure, or episode as a typed object, mirrored to a plain Markdown relic, with a receipt and automatic dedupe of exact and near-duplicate content. The verb an agent reaches for first.</p></article>
       <article class="cap reveal d1"><div class="cap-num">remember_batch</div><h3>Store many at once</h3><p>Capture a cluster of typed memories in one call, skipping duplicates. Saves an agent from nine round-trips when it has a batch to record.</p></article>
@@ -120,7 +195,7 @@
       <article class="cap reveal d1"><div class="cap-num">suggest_memory</div><h3>Propose, do not commit</h3><p>Stage a memory for later review instead of writing it live, so a cautious agent can surface a candidate that a promote step, or a human, later accepts or discards.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Retrieval</h3>
+    <h3 class="catalog-group reveal" id="g-retrieval">Retrieval</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">recall</div><h3>The default memory lane</h3><p>Ranked typed-memory retrieval, scoped per agent, project, user, or org, with connected-evidence reranking, currentness scoring, and embedding-first candidates that fall back to lexical BM25. Returns the memories with why-they-ranked explanations and any conflicts it spots.</p></article>
       <article class="cap reveal d1"><div class="cap-num">recall_report</div><h3>Grade your own recall</h3><p>Measures retrieval quality against the live store: recall@1, recall@3, MRR, stale-leak and distractor rates, worst queries. Memory quality becomes a number, not a hunch.</p></article>
@@ -134,12 +209,13 @@
       <article class="cap reveal d1"><div class="cap-num">context_pack</div><h3>The startup pack</h3><p>Compiles an 11-section briefing for an agent starting or resuming work: objective, constraints, canonical paths, recent decisions, open tasks, files, pitfalls, commands, receipts, conflicts, and next actions. One call to be oriented.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Lifecycle &amp; governance</h3>
+    <h3 class="catalog-group reveal" id="g-lifecycle-amp-governance">Lifecycle &amp; governance</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">edit_memory</div><h3>Edit in place</h3><p>Rewrite a memory's content, with a receipt recording the change and its reason.</p></article>
       <article class="cap reveal d1"><div class="cap-num">update_memory</div><h3>Change status or edges</h3><p>Move a memory's status or adjust its dependency edges without rewriting the content.</p></article>
       <article class="cap reveal"><div class="cap-num">update_thought_status</div><h3>Advance a claim</h3><p>Set a memory's lifecycle status: active, in_progress, completed, superseded, verified, or stale.</p></article>
       <article class="cap reveal d1"><div class="cap-num">approve_memory</div><h3>Trust a draft</h3><p>Promote a draft or untrusted memory to trusted-active once it has been reviewed.</p></article>
+      <article class="cap reveal"><div class="cap-num">reject_memory</div><h3>Reject a suggestion or draft</h3><p>Reject a pending memory suggestion, or reject a draft or untrusted memory by marking it invalid. Requires a reason, and records a receipt. The other half of governed trust: what does not earn promotion is turned away, on the record.</p></article>
       <article class="cap reveal"><div class="cap-num">promote_memory</div><h3>Accept a suggestion</h3><p>Turn a staged suggestion, or a draft or stale memory, into trusted-active. The accept step for the passive-capture lane.</p></article>
       <article class="cap reveal d1"><div class="cap-num">forget / forget_memory</div><h3>Soft-delete</h3><p>Mark a memory invalid, a reversible soft delete, guarded by an explicit confirm.</p></article>
       <article class="cap reveal"><div class="cap-num">feedback_memory</div><h3>Rate a result</h3><p>Tell the store a recalled memory was helpful, wrong, stale, or a duplicate. The signal that tunes future ranking.</p></article>
@@ -149,7 +225,7 @@
       <article class="cap reveal"><div class="cap-num">list_suggestions</div><h3>Pending suggestions</h3><p>List staged suggestions by score, ready to promote or discard.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Graph, entities &amp; conflicts</h3>
+    <h3 class="catalog-group reveal" id="g-graph-entities-amp-conflicts">Graph, entities &amp; conflicts</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">add_memory_edge</div><h3>Link two memories</h3><p>Create a typed directed edge (supersedes, depends_on, supports, invalidates, same_as, and more) between memories.</p></article>
       <article class="cap reveal d1"><div class="cap-num">get_memory_edges</div><h3>Inspect the links</h3><p>Return the typed edges around a memory before graph-expanded recall or handoff reasoning.</p></article>
@@ -160,7 +236,7 @@
       <article class="cap reveal"><div class="cap-num">resolve_conflict</div><h3>Close a conflict</h3><p>Resolve a flagged conflict, optionally naming the memory that wins and supersedes the rest.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Wiki, documents &amp; artifacts</h3>
+    <h3 class="catalog-group reveal" id="g-wiki-documents-amp-artifacts">Wiki, documents &amp; artifacts</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">write_relic</div><h3>Write a page</h3><p>Create or overwrite a wiki relic, reindexed on write, with a receipt. How synthesis drafts become canonical pages.</p></article>
       <article class="cap reveal d1"><div class="cap-num">read_relic</div><h3>Read a page</h3><p>Read a relic by path: content, parsed frontmatter, outline, and memory fields, no YAML wrangling.</p></article>
@@ -170,7 +246,7 @@
       <article class="cap reveal d1"><div class="cap-num">read_artifact</div><h3>Read evidence</h3><p>Read a bounded slice of an artifact by path, for pulling in evidence without loading a whole file.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Synthesis</h3>
+    <h3 class="catalog-group reveal" id="g-synthesis">Synthesis</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">synthesis_queue</div><h3>The work queue</h3><p>List and refresh the background synthesis queue, entities, concepts, memory compaction, conflicts, and staleness, with a per-lane count so a worker knows what to claim.</p></article>
       <article class="cap reveal d1"><div class="cap-num">claim_synthesis</div><h3>Take an item</h3><p>Claim the next pending synthesis item for a worker, prioritizing source work before housekeeping.</p></article>
@@ -178,7 +254,7 @@
       <article class="cap reveal d1"><div class="cap-num">retry_synthesis</div><h3>Requeue</h3><p>Return claimed or completed items to pending, one or many.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Tasks, sessions &amp; handoff</h3>
+    <h3 class="catalog-group reveal" id="g-tasks-sessions-amp-handoff">Tasks, sessions &amp; handoff</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">next_task</div><h3>What is next</h3><p>Return the highest-confidence unblocked task for the next step, and optionally claim it atomically so parallel workers do not collide.</p></article>
       <article class="cap reveal d1"><div class="cap-num">task_progress</div><h3>Where things stand</h3><p>Summarize task progress: active, in-progress, completed, stale, blocked, and percent done.</p></article>
@@ -187,7 +263,7 @@
       <article class="cap reveal"><div class="cap-num">session_end</div><h3>Close out</h3><p>End a session: write a handoff, record a receipt, and return the next-task snapshot for whoever comes next.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">Health, recovery &amp; audit</h3>
+    <h3 class="catalog-group reveal" id="g-health-recovery-amp-audit">Health, recovery &amp; audit</h3>
     <div class="cap-grid">
       <article class="cap reveal"><div class="cap-num">status / reliquary_status</div><h3>Is it healthy?</h3><p>Inspect filesystem and SQLite health without writing. The first orientation or recovery call when something looks off.</p></article>
       <article class="cap reveal d1"><div class="cap-num">memory_status</div><h3>Memory health</h3><p>A memory-specific summary: runtime completeness, active kinds, receipt and index health.</p></article>
@@ -197,7 +273,7 @@
       <article class="cap reveal d1"><div class="cap-num">restore_memory_relics</div><h3>Restore memory</h3><p>Rebuild runtime memory rows from the durable relics after an index rebuild. Explicit recovery, never a silent repair.</p></article>
     </div>
 
-    <h3 class="catalog-group reveal" style="font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px">The whole system</h3>
+    <h3 class="catalog-group reveal" id="g-the-whole-system">The whole system</h3>
     <div class="cap-grid">
       <article class="cap reveal" style="grid-column:1 / -1"><div class="cap-num">architecture</div><h3>The whole system, one call</h3><p>Returns Relicquary's full, reconstruction-grade spec as Markdown: the storage schema, the model stack, the retrieval pipeline, governance, the complete tool catalog, and a glossary, read section by section. A piloting agent can call this once and understand the entire system well enough to operate it, or to rebuild it from scratch. This is the tool that turns a memory store into something an agent can actually drive.</p></article>
     </div>
@@ -240,20 +316,35 @@
 </section>
 
 <!-- CTA -->
+<!-- MACHINE-READABLE -->
+<section class="whatis" id="machine">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="index">MACHINE-READABLE</span>
+        <h2>The receipt for the catalog itself.</h2>
+      </div>
+      <p>Every card above is prose. <code style="font-family:var(--mono);font-size:13px;color:var(--signal)">tools.json</code> is the same catalog as data, generated from the live tool schemas: name, aliases, group, and a one-line description per tool. It settles the count by construction, and an agent can diff it between visits.</p>
+    </div>
+    <a class="dl-btn reveal" href="tools.json" download>tools.json · all 57, from the schemas</a>
+  </div>
+</section>
+
 <section class="cta" id="get">
   <div class="cta-glow" aria-hidden="true"></div>
   <div class="wrap cta-inner">
     <h2>Relicquary runs <span class="signal">today.</span></h2>
-    <p>Stand up a store, serve it over MCP, and your agent has all 56 tools, on your own disk, under your own audit.</p>
+    <p>Stand up a store, serve it over MCP, and your agent has all 57 tools, on your own disk, under your own audit.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="index.html#cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        Get Relicquary
+      <a class="btn-primary" href="mailto:hello@relicquary.com?subject=Relicquary%20early%20access&body=Platform%20(macOS%20version%2C%20chip)%3A%0AAgent%20stack%3A%20">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        Get developer early access
       </a>
-      <a class="btn-ghost" href="stack.html">See the full stack (AIM)
+      <a class="btn-ghost" href="index.html#get">The overview, and how to run it
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
+    <p style="margin-top:16px;font:500 13px/1.5 var(--mono);color:var(--ink-3)">hello@relicquary.com · subject &ldquo;Relicquary early access&rdquo;</p>
   </div>
 </section>
 
@@ -264,7 +355,7 @@
   <div class="wrap">
     <span class="index">FOR THE AGENT READING THIS</span>
     <a class="fa-endpoint" href="llms-full.txt">relicquary.com/llms-full.txt</a>
-    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 56 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
+    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 57 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
   </div>
 </section>
 
@@ -274,20 +365,21 @@
     <div class="dl-inner">
       <div class="dl-copy">
         <span class="index">AGENT-READABLE</span>
-        <p>This site practices what it preaches. Every page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
+        <p>This site practices what it preaches. Every content page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
       </div>
       <div class="dl-links">
         <a class="dl-btn" href="tools.md" download>This page (.md)</a>
+        <a class="dl-btn" href="tools.json" download>tools.json</a>
         <a class="dl-btn" href="relicquary-corpus.md" download>Full corpus (.md)</a>
         <a class="dl-btn" href="relicquary-md.zip" download>All pages (.zip)</a>
+        <span class="dl-stamp" data-stamp>tools.md · content hash 80909bba</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer aria-labelledby="foot-h">
-  <h2 id="foot-h" class="sr-only">Relicquary footer</h2>
+<footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
@@ -295,71 +387,37 @@
           <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
           <span>Relicquary<small>RQ MCP LLC</small></span>
         </div>
-        <p class="foot-about">A local memory operating system for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+        <p class="foot-about">A local-first memory OS for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+        <p class="etymology"><b>Relicquary</b>: from <em>reliquary</em>, a vessel built to keep what must not be lost.</p>
       </div>
       <div class="foot-col">
         <h5>Product</h5>
         <a href="index.html">Overview</a>
-        <a href="index.html#recall">How recall works</a>
-        <a href="tools.html">Tool catalog</a>
-        <a href="index.html#apps">macOS &amp; iPhone apps</a>
+        <a href="tools.html">Tools</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="index.html#apps">The apps</a>
       </div>
       <div class="foot-col">
-        <h5>Resources</h5>
-        <a href="index.html#cta">CLI quickstart</a>
+        <h5>Company</h5>
+        <a href="stack.html">AIM &amp; the stack</a>
+        <a href="record.html">The record</a>
+        <a href="mailto:hello@relicquary.com">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal &amp; help</h5>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
-      </div>
-      <div class="foot-col">
-        <h5>RQ MCP LLC</h5>
-        <a href="stack.html">The AIM stack</a>
-        <a href="touchlink.html">TouchLink</a>
-        <a href="mailto:hello@relicquary.com">Contact</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>&copy; <span class="yr">2026</span> RQ MCP LLC. Relicquary is a product of RQ MCP LLC. Local-first, your store, on your own disk.</p>
-      <div class="legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
-        <span class="lat">Memoria custodita</span>
-      </div>
+      <p>© <span class="yr">2026</span> RQ MCP LLC. Local-first, your store, on your own disk.</p>
+      <a class="live-chip" href="record.html#releases">v0.9.0 · 2026-06-10</a>
+      <span class="lat">Memoria custodita</span>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){ el.textContent = new Date().getFullYear(); });
-
-  /* mobile nav toggle */
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navlinks');
-  if(navToggle && navLinks){
-    var closeNav = function(f){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); if(f){ navToggle.focus(); } };
-    navToggle.addEventListener('click', function(){ var open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){ a.addEventListener('click', function(){ closeNav(false); }); });
-    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); } });
-  }
-
-  /* scroll reveal + failsafe */
-  var revs = document.querySelectorAll('.reveal');
-  function showAll(){ Array.prototype.forEach.call(revs, function(el){ el.classList.add('in'); }); }
-  if(reduce || !('IntersectionObserver' in window)){
-    showAll();
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:0.08, rootMargin:'0px 0px -4% 0px'});
-    Array.prototype.forEach.call(revs, function(el){ io.observe(el); });
-    window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
-    setTimeout(showAll, 2500);
-  }
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

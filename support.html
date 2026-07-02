@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="alternate" type="text/markdown" href="support.md" title="This page as Markdown" />
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
@@ -33,12 +35,12 @@
       <span>Relicquary<small>RQ MCP LLC</small></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
-      <a href="stack.html#aim">AIM</a>
-      <a href="relicquary.html">Relicquary</a>
+      <a href="tools.html">Tools</a>
       <a href="touchlink.html">TouchLink</a>
+      <a href="stack.html">AIM &amp; the stack</a>
+      <a href="record.html">The record</a>
       <a href="support.html" aria-current="page">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a class="nav-cta" href="stack.html#contact">Get in touch</a>
+      <a class="nav-cta" href="index.html#get">Get early access</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -77,18 +79,38 @@
 
     <div class="faq">
       <div class="faq-item">
+        <h3>Can I use Relicquary today?</h3>
+        <p>Yes, as a developer: the v0.9.0 core (CLI plus MCP server) is in early access. Email <a href="mailto:hello@relicquary.com?subject=Relicquary%20early%20access">hello@relicquary.com</a> with the subject &ldquo;Relicquary early access&rdquo; and the binary arrives by reply. The steps to run it are on <a href="index.html#get">the overview</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between the core and the apps?</h3>
+        <p>The core is the developer surface: one Rust binary serving a CLI and the MCP server, running today. The Mac and iPhone apps wrap that core for everyone else and are coming to the App Store as a one-time purchase, no subscription.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What does the core run on?</h3>
+        <p>Relicquary v0.9.0 builds and runs on macOS on Apple Silicon. TouchLink requires macOS 13 or later. App minimums will be listed on the App Store at release.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do agents connect?</h3>
+        <p>Over the Model Context Protocol: run <code style="font-family:var(--mono);font-size:.92em">relicquary mcp-server</code> and point any MCP-capable client at it. The one-line config is on <a href="index.html#get">the overview</a>, and every tool is described in <a href="tools.html">the catalog</a>.</p>
+      </div>
+
+      <div class="faq-item">
         <h3>Where is my data stored?</h3>
         <p>
           On your own device, as a local SQLite database and Markdown files. Relicquary is local-first: your store
-          stays on your hardware. The only things that leave are what you choose: optional device-to-device sync, or
-          prompts to a model provider if you connect one. See our
+          stays on your hardware. The only thing that leaves is what you choose to send: prompts to a model provider,
+          if you connect one. See our
           <a href="privacy.html">Privacy Policy</a>.
         </p>
       </div>
 
       <div class="faq-item">
         <h3>Do I need an account?</h3>
-        <p>No. Relicquary runs without any account or sign-up. Optional device-to-device sync uses your own iCloud or local network.</p>
+        <p>No. Relicquary runs without any account or sign-up. Cross-device sync is planned for the iPhone release.</p>
       </div>
 
       <div class="faq-item">
@@ -98,7 +120,7 @@
 
       <div class="faq-item">
         <h3>What are the system requirements?</h3>
-        <p>The upcoming apps target recent versions of macOS and iOS. Exact minimums will be listed on the App Store when the apps are released.</p>
+        <p>The core runs on macOS on Apple Silicon today; TouchLink needs macOS 13+. The upcoming apps target recent versions of macOS and iOS, with exact minimums listed on the App Store at release.</p>
       </div>
 
       <div class="faq-item">
@@ -123,7 +145,7 @@
   <div class="wrap">
     <span class="index">FOR THE AGENT READING THIS</span>
     <a class="fa-endpoint" href="llms-full.txt">relicquary.com/llms-full.txt</a>
-    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 56 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
+    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 57 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
   </div>
 </section>
 
@@ -133,20 +155,20 @@
     <div class="dl-inner">
       <div class="dl-copy">
         <span class="index">AGENT-READABLE</span>
-        <p>This site practices what it preaches. Every page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
+        <p>This site practices what it preaches. Every content page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
       </div>
       <div class="dl-links">
         <a class="dl-btn" href="support.md" download>This page (.md)</a>
         <a class="dl-btn" href="relicquary-corpus.md" download>Full corpus (.md)</a>
         <a class="dl-btn" href="relicquary-md.zip" download>All pages (.zip)</a>
+        <span class="dl-stamp" data-stamp>support.md · content hash 40b13537</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer aria-labelledby="foot-h">
-  <h2 id="foot-h" class="sr-only">Relicquary footer</h2>
+<footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
@@ -154,69 +176,37 @@
           <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
           <span>Relicquary<small>RQ MCP LLC</small></span>
         </div>
-        <p class="foot-about">A local memory operating system for AI agents. Typed memory, a knowledge graph, and explainable recall, all on your own disk, under your own audit.</p>
-        <p class="etymology"><b>rel·i·quary</b>, an evolution of <em>reliquary</em>, a vessel that safeguards relics. Here, the relic is memory: memory, safeguarded.</p>
+        <p class="foot-about">A local-first memory OS for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+        <p class="etymology"><b>Relicquary</b>: from <em>reliquary</em>, a vessel built to keep what must not be lost.</p>
       </div>
       <div class="foot-col">
-        <h5>The stack</h5>
-        <a href="stack.html#aim">What AIM is</a>
-        <a href="stack.html#architecture">Architecture</a>
-        <a href="stack.html#trust">Trust &amp; safety</a>
-        <a href="stack.html#roadmap">Maturity</a>
-      </div>
-      <div class="foot-col">
-        <h5>Products</h5>
-        <a href="relicquary.html">Relicquary</a>
+        <h5>Product</h5>
+        <a href="index.html">Overview</a>
+        <a href="tools.html">Tools</a>
         <a href="touchlink.html">TouchLink</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="index.html#apps">The apps</a>
       </div>
       <div class="foot-col">
         <h5>Company</h5>
+        <a href="stack.html">AIM &amp; the stack</a>
+        <a href="record.html">The record</a>
         <a href="mailto:hello@relicquary.com">Contact</a>
-        <a href="privacy.html">Privacy policy</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal &amp; help</h5>
         <a href="support.html">Support</a>
-        <a href="stack.html#contact">About RQ MCP</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>© <span class="yr">2026</span> RQ MCP LLC. Relicquary is a product of RQ MCP LLC. Local-first: your store, on your own disk.</p>
-      <div class="legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
-        <span class="lat">Memoria custodita</span>
-      </div>
+      <p>© <span class="yr">2026</span> RQ MCP LLC. Local-first, your store, on your own disk.</p>
+      <a class="live-chip" href="record.html#releases">v0.9.0 · 2026-06-10</a>
+      <span class="lat">Memoria custodita</span>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){
-    el.textContent = new Date().getFullYear();
-  });
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navlinks');
-  if(navToggle && navLinks){
-    var closeNav = function(focusToggle){
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      if(focusToggle){ navToggle.focus(); }
-    };
-    navToggle.addEventListener('click', function(){
-      var open = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){
-      a.addEventListener('click', function(){ closeNav(false); });
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); }
-    });
-  }
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

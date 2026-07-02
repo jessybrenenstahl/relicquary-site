@@ -1,11 +1,12 @@
 # Relicquary: full site corpus
 
-*Every page of relicquary.com as one machine-readable Markdown document. Relicquary is a local-first memory operating system for AI agents, an MCP-native tool surface; AIM is a full-stack computer-use operator built on it, acting on a verifiable floor. RQ MCP LLC.*
+*Every content page of relicquary.com as one machine-readable Markdown document. Relicquary is a local-first memory OS for AI agents with an MCP-native surface of 57 tools; AIM is a full-stack computer-use operator built on it, acting on a verifiable floor. RQ MCP LLC.*
 
 ## Contents
 - Relicquary: local-first memory OS for AI agents
-- Relicquary tool catalog: 56 MCP tools
-- AIM: a full-stack computer-use operator on a verifiable floor
+- Relicquary tool catalog: 57 MCP tools
+- The record: what ran, when, at what scope
+- AIM: the full stack that acts, on a verifiable floor
 - TouchLink: a virtual touchscreen driver
 - Relicquary support
 - Relicquary privacy policy
@@ -15,13 +16,13 @@
 
 # Relicquary: local-first memory OS for AI agents
 
-*Machine-readable Markdown of https://relicquary.com/index.html*
+*Machine-readable Markdown of https://relicquary.com/index.html (content hash 159ce109)*
 
 Memory your agents can recall,\
 and the loop they run on.
 ===============================
 
-Relicquary is a **local-first cognitive operating system** for AI agents: typed memory and a knowledge graph, **plus the orchestration an agent works out of**. Recall what matters, decide what's next, synthesize, hand off, keep the session moving. SQLite and Markdown on your own disk, a receipt for every step. **No hosted service. No telemetry. Fully auditable.**
+Relicquary is a **local-first memory OS** for AI agents: typed memory, a knowledge graph, and explainable recall, **plus the working loop an agent runs on**. One Rust binary, your own disk, a receipt for every write.
 
 Protocol**MCP** + CLI
 
@@ -29,25 +30,27 @@ Memory kinds**14** typed
 
 Model**local** or your own
 
-relicquary: recall · mystore live
+relicquary: recall · mystore demo
 
 \$
 
+One Rust binary, CLI + MCP · SQLite + Markdown on your disk · A receipt per mutation · Model: local or your own
+
 01 / WHAT IT IS
 
-## Not chat history. The cognitive OS your agents run on.
+## Not chat history. The memory OS your agents run on.
 
-A reliquary is a vessel built to keep what must not be lost; Relicquary is that vessel for an agent's memory. The store is plain files you own, with no hosted service and no telemetry. Relicquary remembers and runs the loop an agent thinks out of: recall, decide, synthesize, hand off. The model is yours: keep it fully local on your own machine, or connect your own provider account.
+A reliquary is a vessel built to keep what must not be lost; Relicquary is that vessel for an agent's memory. The store is plain files you own, and the model is yours: keep it fully local on your own machine, or connect your own provider account. One honest note on durability: a first-class backup and restore path is designed, not yet built; today durability is the plain files themselves, which you can copy and version like any others.
 
 ### Local-first by design
 
-A SQLite database plus human-readable Markdown relics, sitting in a folder on your disk. Open them, grep them, version them. The operator owns the store.
+A SQLite database plus human-readable Markdown relics, sitting in a folder on your disk. Open them, grep them, version them, and work offline. You own the store.
 
 ~/.relicquary/mystore
 
-### Orchestration, not just storage
+### Continuity across sessions
 
-Relicquary runs the loop: recall, decide what's next, synthesize, hand off, keep a session moving. That loop has driven live agent sessions end to end.
+Relicquary runs the working loop, and it makes sessions continuous: `session_start` recovers stranded work and `context_pack` briefs an agent in one call, so a fresh session resumes where the last one stopped.
 
 recall → decide → act
 
@@ -57,99 +60,21 @@ Every write is untrusted by default and produces a receipt: an append-only recor
 
 receipts · trust tiers
 
-A STORE THAT LIVES ON YOUR DISK
-
-## Your machine is the whole system.
+THE WHOLE SYSTEM IS YOUR MACHINE
 
 - 01
 
-  ### Local-first by construction
+  ### Works offline
 
-  The entire store is a SQLite database plus human-readable Markdown files on your own machine, with no hosted service and no telemetry. Run the models locally, or bring your own provider; either way, your store and audit trail stay yours.
+  Retrieval, reranking, and the store itself run on-device. No connection, no degradation of what you own.
 
 - 02
 
-  ### MCP-native for agents
+  ### Greppable, versionable files
 
-  Agents connect over the Model Context Protocol and read & write memory like a first-class tool. You drive the same store from a clean CLI.
+  Every memory mirrors to a Markdown relic you can open in any editor, grep, or commit to git. No opaque service between you and your record.
 
-- 03
-
-  ### Auditable to the byte
-
-  Every mutation lands as a receipt and a file you can open in any editor. No telemetry, no opaque service: memory you can actually inspect.
-
-02 / WHO IT'S FOR
-
-## For agents that have to remember.
-
-For developers and teams running MCP-capable agents (coding agents, research agents, autonomous operators) that have to pick up where they left off. Before Relicquary, every session starts from zero: the agent re-derives what it already knew, asks the same questions, and repeats mistakes it has no record of making. After, it recalls a durable, typed, receipted record of what was decided and why, cites where each piece came from, and builds on it across restarts, sessions, and tools.
-
-### WHO_01 · Coding agents that keep their decisions
-
-The architecture call you made last week (local-first, passkeys over passwords, this library not that one) is still there next session, with the reasoning and the trail attached. The agent stops relitigating settled choices and stops reintroducing bugs you already fixed.
-
-### WHO_02 · Research & operator agents that accumulate
-
-Long-running research and autonomous operators write findings into a typed knowledge graph (facts, entities, and the edges between them) instead of a transcript that scrolls away. Each run adds to the last, and contradictions surface instead of quietly overwriting what was true.
-
-### WHO_03 · Teams that need a memory they own and can audit
-
-The store is SQLite and Markdown on your own disk, and every write carries a receipt. A teammate, or a different tool, can open the same record, see where each entry came from, and trust it, because nothing landed without provenance. The memory is yours to read, move, and keep.
-
-03 / CAPABILITIES
-
-## Structured memory, and the loop to act on it.
-
-Memory is typed, linked, and explainable, and Relicquary orchestrates the working loop on top of it, so an agent can find the right thing, prove why it surfaced, and act on it.
-
-### CAP_00 · THE LOOP · Orchestration, not just storage
-
-Relicquary runs the loop an agent works out of: recall what matters, decide what's next, synthesize, hand off, keep a session moving. The orchestration is first-class, and that loop has driven **live agent sessions end to end**.
-
-next_tasksynthesishandoffsessionrecall → act
-
-### CAP_01 · Typed memory: 14 kinds
-
-Fourteen kinds of memory object, each carrying tags, confidence, provenance, and a trust tier. No undifferentiated text blobs; every entry knows what it is.
-
-factdecisiontaskprocedureepisodeobservationcontradictionpreferenceentityhandoffclaimartifactfrictionsummary
-
-### CAP_02 · Typed knowledge graph
-
-Typed edges link memories into a graph (`supersedes`, `depends_on`, `conflicts_with`, `blocks`, `mentions`) with automatic conflict detection so stale beliefs get flagged.
-
-supersedesdepends_onconflicts_withblocksmentions
-
-### CAP_03 · Explainable recall
-
-Lexical BM25 fused with on-device semantic embeddings, then reranked. Results carry currentness labels and a per-result "why it ranked" breakdown, not raw text dumps.
-
-BM25embeddingsrerankcurrentnesswhy-it-ranked
-
-### CAP_04 · Receipts for every mutation
-
-Every mutation is recorded as an append-only receipt you can audit as a file. Approve, supersede, or forget: the history of how memory changed is always there.
-
-append-onlyauditableprovenancetrust tier
-
-### CAP_05 · One store, two front doors: MCP & CLI
-
-Agents speak the Model Context Protocol; you run `relicquary remember`, `relicquary recall`, and `relicquary mcp-server` from your terminal. One source of truth, no SDK lock-in, no SaaS daemon.
-
-relicquary rememberrelicquary recallrelicquary mcp-server
-
-THE INTERFACE
-
-## The interface is the product: 56 tools your agent calls.
-
-Relicquary is MCP-first. It is not a library you wrap; it is a surface an agent talks to directly. Connect any MCP-compatible agent and it gets 56 verbs: remember, recall, hand off, synthesize, audit, and more.
-
-**One of them returns the whole system.** An agent cannot pilot what it does not understand, so `architecture` hands it the entire reconstruction-grade spec, the schema, retrieval pipeline, governance, and the full tool catalog, in a single call. It reads once, then operates from understanding instead of guessing. The rest of the catalog is memory, retrieval, synthesis, tasks, and governance, each a plain tool that leaves a receipt.
-
-[Explore all 56 tools](tools.html) [See how they compose](tools.html#together)
-
-04 / HOW RECALL WORKS
+02 / EXHIBIT: RECALL
 
 ## A query becomes ranked, dated, defensible evidence.
 
@@ -197,7 +122,83 @@ currentness.98
 
 **Currentness, not just relevance.** Every result is labelled `current`, `stale`, or `superseded`, so an agent never acts on a decision that's already been overruled. Ask in natural language; get back ranked, dated, explainable memory.
 
-05 / WHY RELICQUARY
+03 / WHO IT'S FOR
+
+## For agents that have to remember.
+
+For developers and teams running MCP-capable agents (coding agents, research agents, autonomous operators) that have to pick up where they left off. Before Relicquary, every session starts from zero: the agent re-derives what it already knew, asks the same questions, and repeats mistakes it has no record of making. After, it recalls a durable, typed, receipted record of what was decided and why, cites where each piece came from, and builds on it across restarts, sessions, and tools.
+
+- WHO_01
+
+  ### Coding agents that keep their decisions
+
+  The architecture call you made last week (local-first, passkeys over passwords, this library not that one) is still there next session, with the reasoning and the trail attached. The agent stops relitigating settled choices and stops reintroducing bugs you already fixed.
+
+- WHO_02
+
+  ### Research and operator agents that accumulate
+
+  Long-running research and autonomous operators write findings into a typed knowledge graph (facts, entities, and the edges between them) instead of a transcript that scrolls away. Each run adds to the last, and contradictions surface instead of quietly overwriting what was true.
+
+- WHO_03
+
+  ### Teams that need a memory they own and can audit
+
+  The store is SQLite and Markdown on your own disk, and every write carries a receipt. A teammate, or a different tool, can open the same record, see where each entry came from, and trust it, because nothing landed without provenance. The memory is yours to read, move, and keep.
+
+04 / CAPABILITIES
+
+## Structured memory, and the loop to act on it.
+
+Memory is typed, linked, and explainable, and Relicquary orchestrates the working loop on top of it, so an agent can find the right thing, prove why it surfaced, and act on it.
+
+### CAP_00 · THE LOOP · Orchestration, not just storage
+
+Relicquary runs the loop an agent works out of: recall what matters, decide what's next, synthesize, hand off, keep a session moving. The orchestration is first-class, and that loop has driven **live agent sessions end to end**. [RUN 2026-06 · build-repair ↗](record.html#run-buildrepair)
+
+next_task · synthesis · handoff · session · recall → act
+
+### CAP_01 · Typed memory: 14 kinds
+
+Fourteen kinds of memory object, each carrying tags, confidence, provenance, and a trust tier. No undifferentiated text blobs; every entry knows what it is.
+
+fact · decision · task · procedure · episode · observation · contradiction · preference · entity · handoff · claim · artifact · friction · summary
+
+### CAP_02 · Typed knowledge graph
+
+Typed edges link memories into a graph (`supersedes`, `depends_on`, `conflicts_with`, `blocks`, `mentions`) with automatic conflict detection so stale beliefs get flagged.
+
+supersedes · depends_on · conflicts_with · blocks · mentions
+
+### CAP_03 · Explainable recall
+
+Lexical BM25 fused with on-device semantic embeddings, then reranked. Results carry currentness labels and a per-result "why it ranked" breakdown, not raw text dumps.
+
+BM25 · embeddings · rerank · currentness · why-it-ranked
+
+### CAP_04 · Receipts for every mutation
+
+Every mutation is recorded as an append-only receipt you can audit as a file. Approve, supersede, or forget: the history of how memory changed is always there. [REL 2026-06-10 · v0.9.0 gate ↗](record.html#rel-090)
+
+append-only · auditable · provenance · trust tier
+
+### CAP_05 · One store, two front doors: MCP & CLI
+
+Agents speak the Model Context Protocol; you run `relicquary remember`, `relicquary recall`, and `relicquary mcp-server` from your terminal. One source of truth, no SDK lock-in, no SaaS daemon.
+
+relicquary remember · relicquary recall · relicquary mcp-server
+
+05 / THE TOOLS
+
+## The interface is the product: 57 tools your agent calls.
+
+Relicquary is MCP-first: not a library you wrap, a surface an agent talks to directly. One of the 57 returns the whole system: `architecture` hands an agent the reconstruction-grade spec in a single call, so it operates from understanding instead of guessing.
+
+rememberrecallcontext_packhandoffnext_taskflag_contradictionlist_receiptsgraph_exportsession_endarchitecture
+
+[Explore all 57 tools](tools.html) [See how they compose](tools.html#together)
+
+06 / WHY RELICQUARY
 
 ## Memory that's yours, typed, and provable.
 
@@ -217,58 +218,70 @@ Unlike memory baked into a single framework's SDK, Relicquary speaks the Model C
 
 ### VS_04 · Receipt-bound, and it runs the loop
 
-Unlike tools that are storage and nothing more, Relicquary treats every write as untrusted by default and records it as an append-only receipt you can audit as a file. And it doesn't stop at remembering: it runs the orchestration loop an agent works out of (recall, decide, synthesize, hand off), a loop that has driven live agent sessions end to end.
+Unlike tools that are storage and nothing more, Relicquary treats every write as untrusted by default and records it as an append-only receipt you can audit as a file. And it doesn't stop at remembering: it runs the orchestration loop an agent works out of (recall, decide, synthesize, hand off), a loop that has driven live agent sessions end to end. [RUN 2026-06 · build-repair ↗](record.html#run-buildrepair)
 
+07 / THE APPS\
 Coming to the App Store
 
 ## Your memory, in your pocket.
 
-Native macOS and iPhone apps are coming to the Apple App Store: **a one-time purchase, no subscription**. On-device recall on your desk and your phone, with private cross-device sync and no account required.
+Native macOS and iPhone apps are coming to the Apple App Store: **a one-time purchase, no subscription**. The apps are in development; the core they wrap runs today via CLI and MCP. On-device recall on your desk and your phone, no account required.
 
 - **One-time purchase, no subscription**: buy once, yours across Mac and iPhone.
 - **On-device recall**: search and surface memory locally, instantly, offline.
-- **Private cross-device sync**: Mac and iPhone stay in step, end to end.
+- **Cross-device sync**: planned for the iPhone release. [register ↗](record.html#null-sync)
 - **No account required**: no sign-up, no server, no profile to harvest.
 
 **Join the waitlist**: email [hello@relicquary.com](mailto:hello@relicquary.com?subject=Relicquary%20waitlist) and we'll tell you the moment it's live.
 
-## Give your agents memory that stays put.
+08 / GET IT
 
-Local. Auditable. Yours. The core runs today: stand up a store, remember something, recall it. The Mac and iPhone apps are coming to the App Store as a one-time purchase, no subscription.
+## The core runs today.
 
-relicquary: terminal
+Relicquary v0.9.0 is in developer early access: the full core, CLI and MCP server. It builds and runs on macOS on Apple Silicon; the binary arrives by reply. [REL 2026-06-10 · v0.9.0 ↗](record.html#rel-090)
 
-\# write a memory to your local store\
-\$ relicquary remember mystore "decided: ship local-first"\
-stored decision · receipt written · indexed\
-\
-\# recall it later, in plain language\
-\$ relicquary recall mystore "what did we decide?"\
-\
-\# serve memory to agents over MCP\
-\$ relicquary mcp-server\
-listening · serving your local store
+    # step 1: request access
 
-Already building on the core? Developer early access is open: email [hello@relicquary.com](mailto:hello@relicquary.com?subject=Relicquary%20early%20access) with the subject “Relicquary early access.”
+    $ email hello@relicquary.com, subject "Relicquary early access"
+
+    # step 2: the binary arrives with the reply
+
+    # step 3: run it
+
+    $ relicquary remember mystore "decided: ship local-first"
+
+    $ relicquary recall mystore "what did we decide?"
+
+    $ relicquary mcp-server
+
+    {"mcpServers":{"relicquary":{"command":"relicquary","args":["mcp-server"]}}}
+    # or, with Claude Code:
+    claude mcp add relicquary -- relicquary mcp-server
+
+hello@relicquary.com · subject “Relicquary early access”
 
 PART OF SOMETHING LARGER
 
 ## Relicquary is the core of AIM.
 
-On its own, Relicquary is the memory and the working loop your agents run on. Wired into a full stack that perceives a screen and drives a real computer, that same core becomes **AIM**, RQ MCP LLC's computer-use operator, acting on a floor you can verify. Relicquary is where it starts; AIM is what it's built into.
+On its own, Relicquary is the memory and the working loop your agents run on. Wired into a full stack that perceives a screen and drives a real computer, that same core becomes **AIM**, RQ MCP LLC's computer-use operator, acting on a floor you can verify. Relicquary is where it starts; AIM is what it's built into. In recorded runs, its conscience has caught and corrected degenerate loops. [RUN 2026-06 · conscience ↗](record.html#run-conscience) And its capability-reuse path went 8 of 8 on held-out trials. [RUN 2026-06 · reuse 8/8 ↗](record.html#run-reuse)
 
 [See the full stack](stack.html) [Explore TouchLink](touchlink.html)
 
 
 ---
 
-# Relicquary tool catalog: 56 MCP tools
+# Relicquary tool catalog: 57 MCP tools
 
-*Machine-readable Markdown of https://relicquary.com/tools.html*
+*Machine-readable Markdown of https://relicquary.com/tools.html (content hash 80909bba)*
 
-# The interface is the product. 56 tools your agent calls over MCP.
+# The interface is the product. 57 tools your agent calls over MCP.
 
-Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 56 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.
+Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 57 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.
+
+[add_memory_edge](#g-graph-entities-amp-conflicts) [approve_memory](#g-lifecycle-amp-governance) [architecture](#g-the-whole-system) [capture_thought](#g-capture) [claim_synthesis](#g-synthesis) [complete_synthesis](#g-synthesis) [context_pack](#g-retrieval) [edit_memory](#g-lifecycle-amp-governance) [explain_memory](#g-retrieval) [feedback_memory](#g-lifecycle-amp-governance) [flag_contradiction](#g-graph-entities-amp-conflicts) [forget](#g-lifecycle-amp-governance) [forget_memory](#g-lifecycle-amp-governance) [get_entities](#g-graph-entities-amp-conflicts) [get_memory_edges](#g-graph-entities-amp-conflicts) [graph_export](#g-graph-entities-amp-conflicts) [handoff](#g-tasks-sessions-amp-handoff) [hybrid_search](#g-retrieval) [ingest_document](#g-wiki-documents-amp-artifacts) [lint_wiki](#g-wiki-documents-amp-artifacts) [list_artifacts](#g-wiki-documents-amp-artifacts) [list_drafts](#g-lifecycle-amp-governance) [list_receipts](#g-health-recovery-amp-audit) [list_suggestions](#g-lifecycle-amp-governance) [list_thoughts](#g-retrieval) [memory_conflicts](#g-graph-entities-amp-conflicts) [memory_export](#g-lifecycle-amp-governance) [memory_import](#g-lifecycle-amp-governance) [memory_status](#g-health-recovery-amp-audit) [next_task](#g-tasks-sessions-amp-handoff) [promote_memory](#g-lifecycle-amp-governance) [query_context](#g-retrieval) [query_memory_objects](#g-retrieval) [read_artifact](#g-wiki-documents-amp-artifacts) [read_relic](#g-wiki-documents-amp-artifacts) [rebuild_index](#g-health-recovery-amp-audit) [recall](#g-retrieval) [recall_report](#g-retrieval) [reject_memory](#g-lifecycle-amp-governance) [reliquary_status](#g-health-recovery-amp-audit) [remember](#g-capture) [remember_batch](#g-capture) [resolve_conflict](#g-graph-entities-amp-conflicts) [restore_memory_relics](#g-health-recovery-amp-audit) [retry_synthesis](#g-synthesis) [search_thoughts](#g-retrieval) [search_wiki](#g-retrieval) [session_end](#g-tasks-sessions-amp-handoff) [session_start](#g-tasks-sessions-amp-handoff) [status](#g-health-recovery-amp-audit) [suggest_memory](#g-capture) [synthesis_queue](#g-synthesis) [task_progress](#g-tasks-sessions-amp-handoff) [thought_stats](#g-health-recovery-amp-audit) [update_memory](#g-lifecycle-amp-governance) [update_thought_status](#g-lifecycle-amp-governance) [write_relic](#g-wiki-documents-amp-artifacts)
+
+57 tools, 55 cards below: two cards each carry an alias pair (forget / forget_memory, status / reliquary_status). The count is settled by construction in [tools.json](tools.json), generated from the live schemas.
 
 WHY MCP-FIRST
 
@@ -379,6 +392,10 @@ Set a memory's lifecycle status: active, in_progress, completed, superseded, ver
 ### approve_memory · Trust a draft
 
 Promote a draft or untrusted memory to trusted-active once it has been reviewed.
+
+### reject_memory · Reject a suggestion or draft
+
+Reject a pending memory suggestion, or reject a draft or untrusted memory by marking it invalid. Requires a reason, and records a receipt. The other half of governed trust: what does not earn promotion is turned away, on the record.
 
 ### promote_memory · Accept a suggestion
 
@@ -558,20 +575,165 @@ Four flows that show the catalog working as a system. Each is real: every step i
 
 `list_receipts` is the record of every mutation the system made. When an index is damaged, `reliquary_status` diagnoses, `rebuild_index` restores from the files, and `restore_memory_relics` rebuilds runtime memory. Nothing silent, everything recoverable.
 
+MACHINE-READABLE
+
+## The receipt for the catalog itself.
+
+Every card above is prose. `tools.json` is the same catalog as data, generated from the live tool schemas: name, aliases, group, and a one-line description per tool. It settles the count by construction, and an agent can diff it between visits.
+
+[tools.json · all 57, from the schemas](tools.json)
+
 ## Relicquary runs today.
 
-Stand up a store, serve it over MCP, and your agent has all 56 tools, on your own disk, under your own audit.
+Stand up a store, serve it over MCP, and your agent has all 57 tools, on your own disk, under your own audit.
+
+hello@relicquary.com · subject “Relicquary early access”
 
 
 ---
 
-# AIM: a full-stack computer-use operator on a verifiable floor
+# The record: what ran, when, at what scope
 
-*Machine-readable Markdown of https://relicquary.com/stack.html*
+*Machine-readable Markdown of https://relicquary.com/record.html (content hash 9335065b)*
 
-# Relicquary is the core. AIM is the full stack that acts: a computer-use operator, on a floor that proves every move.
+THE RECORD
 
-**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**, the cognitive OS an agent thinks out of. **AIM** is the full stack around it: an operator that perceives the screen, plans, and drives a real computer, everything it knows drawn from that memory, and every action it takes passing through a **floor you can verify**: bounded, receipted, answerable.
+# What ran, when, at what scope.
+
+One rule: entries are appended and dated, never edited. Each entry states its own scope. What has not run is listed too. Everything this site claims about behavior resolves to an entry on this page.
+
+## 01  Releases
+
+2026-06-10
+
+### Relicquary v0.9.0, Crystallization
+
+runs today
+
+The core in its current shape: one Rust binary serving CLI and MCP, typed memory mirrored to Markdown relics, the knowledge graph, hybrid explainable recall, receipts on every mutation, and a supervised local model runtime that restarts a crashed model lane instead of failing for the life of the process.
+
+**The gate this release passed:** formatting clean, 341 of 341 tests green, the 16-case memory evaluation suite at 16 of 16, and a live verification on real hardware in which one model lane was force-killed mid-session, recall kept working in degraded mode, and the supervisor respawned the lane.
+
+scope: one machine, macOS on Apple Silicon, built from source · versioning note: a legacy v1.0 git tag from 2026-05-13 predates this line and is a historical mislabel; it is retained as immutable history and supersedes nothing
+
+2026-07-02
+
+### Tool surface verified at 57
+
+drift-check green
+
+The MCP tool catalog was re-derived from the binary's own schema output and its generated documentation, with the repository drift check passing. The count is **57 tools**. Earlier copy on this site said 56 and omitted `reject_memory`; both are corrected as of this entry, and [tools.json](tools.json) is now generated from the same schema output so the count is settled by construction.
+
+scope: schema-derived count, verified against source on the date above
+
+## 02  Recorded runs
+
+AIM trial runs on a real machine, re-typed here from the recorded sessions. No screenshots are shown because none were retained; what follows is the record as kept, at the scope stated.
+
+2026-06
+
+### The conscience caught degenerate loops, and corrected them
+
+working prototype
+
+In live operator runs, the deterministic conscience detected degenerate loops the model itself did not notice: fixation (re-attempting one failing move) and no-op churn (activity without progress). The checks are non-terminal: the run was halted at the check, corrected, and continued, rather than crashing or running the loop blind.
+
+scope: prototype operator, single machine, supervised runs, June 2026
+
+2026-06
+
+### Capability reuse: 8 of 8 held-out trials
+
+working prototype
+
+A durable capability was authored by hand and banked in the store with its obstacle signature. The trials tested the **reuse path**: given a novel instance the system had not seen, could it recall the banked capability by signature and re-apply it through the governed chokepoint? It did, in 8 of 8 held-out trials.
+
+**What this does not show:** the capability was hand-authored, not synthesized by the system. Authoring a genuinely new capability for a never-seen blocker is the open research line in the register below.
+
+scope: 8 held-out trials on novel instances, single machine, June 2026 · tests reuse, not synthesis
+
+2026-06
+
+### A real build-repair run
+
+working prototype
+
+Given a failing real build as its mission, the operator perceived the failure output, drove the task down to a handful of compile errors, and authored the fix itself, acting through the audited chokepoint with a receipt per move. This is the run behind the sentence "bounded, receipted work under governance" on the stack page.
+
+scope: one milestone run, real codebase, single machine, supervised, June 2026
+
+## 03  Hardware verification
+
+2026-06
+
+### TouchLink on a real panel
+
+verified · real panel
+
+The TouchLink driver builds, signs, launches, and passes its test suite on one physical USB touchscreen panel attached to a Mac: taps land where the finger touches, across displays, while the mouse stays a mouse.
+
+scope: one panel model, one Mac, macOS 13+ · distribution packaging not yet built
+
+## 04  What has not run
+
+The register of things this site does not claim, kept next to the things it does.
+
+open
+
+### Capability synthesis
+
+unbuilt · open research
+
+Authoring a genuinely new durable capability for a blocker the system has never seen. Unbuilt. It will be graded only by a held-out execution test on a novel instance, and that test does not exist yet.
+
+status: the open frontier; no claim until the test passes
+
+open
+
+### DPACA two-model cross-audit
+
+designed, not built
+
+One model proposes, a second only approves or rejects, behind a deterministic hash-bound publish step. Designed for reliability. Not built.
+
+status: on the roadmap, toward acceptance gates
+
+open
+
+### Durable backup and restore
+
+designed, not built
+
+A first-class backup and restore path for the store. Designed, not built. Today durability is the plain files themselves: SQLite and Markdown you can copy, version, and snapshot with ordinary tools.
+
+status: gates any paid artifact; graded runs-today only when a restore drill passes in CI
+
+open
+
+### Cross-device sync
+
+planned, not built
+
+Synchronizing a store between Mac and iPhone. Planned for the iPhone release. Not built, and not claimed anywhere else on this site.
+
+status: planned for the iPhone release
+
+Want the underlying receipts for an entry, or to build on the core the record describes? Email and name the entry.
+
+[Get developer early access](mailto:hello@relicquary.com?subject=Relicquary%20early%20access)
+
+hello@relicquary.com · subject “Relicquary early access”
+
+
+---
+
+# AIM: the full stack that acts, on a verifiable floor
+
+*Machine-readable Markdown of https://relicquary.com/stack.html (content hash fe0085e8)*
+
+# Relicquary is the core. AIM is the full stack that acts on it.
+
+**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**, the memory OS an agent thinks out of. **AIM** is the full stack around it: an operator that perceives the screen, plans, and drives a real computer, everything it knows drawn from that memory. Every action it takes passes through a **floor you can verify**.
 
 Relicquary runs today. AIM is a working prototype, graded part by part in the maturity map below: what runs, what is prototype, what is still research. We mark the line, we do not blur it.
 
@@ -589,13 +751,37 @@ relicquary · mystore runs today
 
 ✓ listening · memory + orchestration, served over MCP
 
-**One Rust binary** SQLite + Markdown **on your disk** **A receipt** for every mutation Your model: **local or your own provider**
+One Rust binary · SQLite + Markdown on your disk · A receipt for every mutation · Your model: local or your own provider
 
-01 / WHAT WE BUILD TO
+01 / THE RECORDED RUNS
+
+## What it has done when run, before any architecture.
+
+Three entries from the record: real trial runs on a real machine, each stated at its own scope. The full dated ledger, including what has not run, is [the record](https://relicquary.com/record.html).
+
+RUN · 2026-06
+
+supervised runs · The conscience caught degenerate loops
+
+In live runs, the deterministic conscience detected fixation and no-op churn the model did not notice, and corrected the run rather than crashing it. [entry ↗](https://relicquary.com/record.html#run-conscience)
+
+RUN · 2026-06
+
+8 held-out trials · Capability reuse: 8 of 8
+
+A hand-authored, banked capability was recalled by obstacle signature and re-applied on novel held-out instances, 8 of 8. Reuse, not synthesis; the entry says exactly which. [entry ↗](https://relicquary.com/record.html#run-reuse)
+
+RUN · 2026-06
+
+one milestone run · A real build-repair run
+
+Given a failing real build, the operator drove the task down to a handful of compile errors and authored the fix itself, through the audited chokepoint, with a receipt per move. [entry ↗](https://relicquary.com/record.html#run-buildrepair)
+
+02 / WHAT WE BUILD TO
 
 ## One company, one discipline.
 
-A cognitive OS, an operator, a touch driver, a control stack, held together by three commitments that show up in the code, not just the copy.
+A memory OS, an operator, a touch driver, a control stack, held together by three commitments that show up in the code, not just the copy.
 
 ### Sovereign by construction
 
@@ -615,7 +801,7 @@ No capability exists until a receipt backs it. If a proof didn't run, the system
 
 receipts over rhetoric
 
-02 / THE PRODUCTS
+03 / THE PRODUCTS
 
 ## Start with the core.
 
@@ -623,11 +809,11 @@ Relicquary is the core, and it runs today. TouchLink is a virtual touchscreen dr
 
 Runnable today · v0.9.0
 
-### Relicquary: the cognitive OS for AI agents
+### Relicquary: the memory OS for AI agents
 
-A local-first cognitive operating system in a single Rust binary. Durable typed memory and a knowledge graph, **plus the orchestration an agent works out of** (what to do next, synthesis, handoff, continuity across sessions), all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.
+A local-first memory OS in a single Rust binary: the working loop included. Durable typed memory and a knowledge graph, **plus the orchestration an agent works out of** (what to do next, synthesis, handoff, continuity across sessions), all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.
 
-[Explore Relicquary](index.html)
+[Explore Relicquary](https://relicquary.com/index.html) [The 57 tools](https://relicquary.com/tools.html)
 
 recall **"what did we decide about storage?"**
 
@@ -643,7 +829,7 @@ semantic.92
 
 currentness.98
 
-[](touchlink.html)
+[](https://relicquary.com/touchlink.html)
 
 ### TouchLink: a virtual touchscreen driver
 
@@ -653,7 +839,7 @@ On its own, it makes a USB touchscreen on a Mac behave like a touchscreen: taps 
 
 Explore TouchLink
 
-03 / THE FLAGSHIP
+04 / THE FLAGSHIP
 
 ## AIM: a full computer-use operator on a floor you can verify.
 
@@ -663,23 +849,16 @@ AIM drives a real computer, so every action it takes passes through its floor: a
 
 aim · one governed tick bounded
 
-perceiveread desktop state **+** recall prior capability
+    perceive: read desktop state + recall prior capability
+    plan: model proposes one action · read-only sandbox
+    conscience: deterministic checks · halt & correct, then continue
+    act: one audited chokepoint · behind a fail-safe fence
+    verify: receipt written · no proof ran → it says so
+    remember: capability persisted → Relicquary
 
-planmodel proposes **one** action · read-only sandbox
+**How the loop is governed.** The runtime is a *perceive → plan → execute* loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes.
 
-consciencedeterministic checks · halt & correct, then continue
-
-actone audited chokepoint · behind a fail-safe fence
-
-verifyreceipt written · no proof ran → it says so
-
-remembercapability persisted **→** Relicquary
-
-**How the loop is governed.** The runtime is a *perceive → plan → execute* loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes. A floor you can audit.
-
-**What it's done when run, not only designed.** In real trial runs, the deterministic conscience has caught degenerate loops (fixation, no-op churn) and corrected them rather than crashing. And the capability-reuse path recalled a banked capability and re-applied it across **8 of 8 held-out trials**, on novel instances it hadn't seen. Outcomes from actual runs, each stated at its scope: the record, not a promise.
-
-04 / THE DETERMINISTIC FLOOR
+05 / THE DETERMINISTIC FLOOR
 
 ## A floor you can verify, not take on faith.
 
@@ -687,39 +866,51 @@ Five mechanisms, none of them another model's opinion. They hold whether or not 
 
 The floor is mechanism, so it holds even when the models agree.
 
-### FLOOR_01 · One actuation chokepoint
+FLOOR_01
+
+#### One actuation chokepoint
 
 Exactly one place where the agent acts on the world, governed and inspectable, not scattered tool calls. A standard agent is a loop wired to many tools, with many places intent becomes effect; AIM has one. That single gate is the structural break from while-loop-plus-tools.
 
-### FLOOR_02 · A fail-safe fence
+FLOOR_02
+
+#### A fail-safe fence
 
 The chokepoint sits behind a hard boundary that blocks catastrophic operations outright, independent of what the model decides. The safe state is the default; the agent is never trusted past the fence for those operations.
 
-### FLOOR_03 · A deterministic conscience
+FLOOR_03
+
+#### A deterministic conscience
 
 Not a second model grading the first: rule-based checks (we call them theodicytes) that can halt the agent on fixation, on no-op churn, or on an ungrounded assertion. The judgment is mechanism, and a halt is correct-and-continue, not a crash.
 
-### FLOOR_04 · Receipt-bound actions
+FLOOR_04
+
+#### Receipt-bound actions
 
 Every mutation emits an append-only receipt. Actions aren't just claimed in the agent's narration; each leaves a record you can audit independently, after the fact, without trusting how the agent described what it did.
 
-### FLOOR_05 · An untrusted-memory model
+FLOOR_05
+
+#### An untrusted-memory model
 
 Everything the agent writes to memory is untrusted by default and carries its provenance. Trust is earned through governance, never assumed because the model said so: the same discipline that makes Relicquary's memory auditable, applied to an operator that acts.
 
-05 / THE FULL STACK
+Grades: the floor components are built and tested; the operator lanes around them are a working prototype.
+
+06 / THE FULL STACK
 
 ## Relicquary, writ large.
 
-One core, embodied into an operator that acts. Relicquary is the cognitive OS at the center; AIM adds the parts that let it perceive and drive a real machine, with the floor between every intent and the world. Each part is graded for where it actually stands.
+One core, embodied into an operator that acts. Relicquary is the memory OS at the center; AIM adds the parts that let it perceive and drive a real machine, with the floor between every intent and the world. Each part is graded for where it actually stands.
 
-**AGRO: the soil.** The name is both an acronym and an older root: *Always Growing Recursive Optimizer*, and *agros*, cultivated ground. AGRO is the plot the cognitive core is planted in: a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward: the ambition of the stack, stated plainly, not a feature claimed today.
+**AGRO: the soil.** The name is both an acronym and an older root: *Always Growing Recursive Optimizer*, and *agros*, cultivated ground. AGRO is the plot the core is planted in: a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward: the ambition of the stack, stated plainly.
 
 THE CORE
 
 runs today · v0.9.0 · Relicquary: memory + orchestration
 
-The cognitive OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop, under receipt-bound governance. [Standalone →](index.html)
+The memory OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop, under receipt-bound governance. [Standalone →](https://relicquary.com/index.html)
 
 THE DRIVE
 
@@ -751,17 +942,17 @@ external · swappable · The brain: a hosted model
 
 A capable frontier model drives the loop from outside, plan-only. It has no weights we can touch, so it never improves itself; it authors capability *into* AIM. Swappable by design.
 
-06 / HOW IT GROWS
+07 / THE ROAD AHEAD
 
 ## The brain never grows. The stack accumulates.
 
-The brain is a model whose weights we don't touch, so it never trains on your use. Capability accumulates in the stack instead. Here is exactly where it can live, and how we hold the line on what counts.
+The brain is a model whose weights we don't touch, so it never trains on your use. Capability accumulates in the stack instead: what that means today, and where it goes.
 
 WORKS TODAY
 
 reuse · 8/8 held-out · Reuse
 
-Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored (a tool, a procedure, a receipted artifact) and re-applies it. The capability-reuse path passed all 8 of 8 held-out trials, on novel instances, not memorized ones.
+Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored (a tool, a procedure, a receipted artifact) and re-applies it. The capability-reuse path passed 8 of 8 held-out trials on novel instances. [RUN 2026-06 · reuse 8/8 ↗](https://relicquary.com/record.html#run-reuse)
 
 OPEN FRONTIER
 
@@ -769,43 +960,23 @@ unbuilt · gated · Synthesis
 
 The next phase is capability **synthesis**: authoring a genuinely new durable capability for a blocker it has **never seen**, gated behind a hard held-out test. Clearing a blocker is the entry ticket, not the verdict: a capability is real only once it passes a held-out execution on a novel instance. Model opinions don't count; only the test does.
 
-**The stack accumulates what the brain authors:** receipt-bound capability written as it hits friction, capability that re-applies through the same governed chokepoint as any other action. In one milestone run, the operator drove a real build-repair task down to a handful of compile errors and authored the fix itself: **bounded, receipted work under governance**. The model itself does not change. DPACA: two-model cross-audit · on the roadmap
+THE APPS
 
-07 / THE ROAD AHEAD
+App Store · Relicquary for everyone
 
-## Memory you own, becoming an operator you can trust.
+The same local-first core, on Mac and iPhone, bought once and owned outright. Status and details live in one place: [the apps](https://relicquary.com/index.html#apps).
 
-Agents lose context between sessions. We built the other way: a foundation that remembers on your terms, an operator that acts on it, and a floor so every move can be checked. The destination is an autonomous system whose every action leaves a receipt.
+CROSS-AUDIT
 
-MOVE_01
+on the roadmap · DPACA: reliability by design
 
-runs today · Relicquary: memory you own
-
-A single Rust binary, CLI and MCP, with your memory living as SQLite and Markdown on your own disk. Typed memory, a linked knowledge graph, local search and reranking; nothing routes through a model provider. Writes are untrusted by default, every mutation leaves a receipt, and it already reuses capability it has stored, demonstrated by passing 8 of 8 held-out trials on a capability it had banked before, not memorized. The foundation everything else stands on.
-
-MOVE_02
-
-App Store · soon · The apps: Relicquary for everyone
-
-The same local-first core is coming to Mac and iPhone through the Apple App Store: a one-time purchase, no subscription. Your memory stays on your devices and in your hands. The durable memory that has lived on the command line becomes something anyone running capable agents can buy once and own outright.
-
-MOVE_03
-
-working prototype · AIM: the operator that acts
-
-AIM turns the memory core into an operator that perceives and drives a real computer, and puts a floor under every move it makes: a single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks, so a questionable move is held and corrected rather than silently executed. That is what lets you actually let it act: bounded, auditable, answerable for every step.
-
-MOVE_04
-
-on the roadmap · Cross-audit: reliability by design
-
-DPACA puts two models in a four-eyes arrangement (one proposes, the other only approves or rejects) behind a deterministic, hash-bound publish step. Its purpose is reliability, not magic: to make it far harder for a single confident model to push a mistake through. Named here as direction, built toward acceptance gates, not something already shipping.
+Two models in a four-eyes arrangement (one proposes, the other only approves or rejects) behind a deterministic, hash-bound publish step. Its purpose is reliability: to make it far harder for a single confident model to push a mistake through.
 
 THE DESTINATION
 
 open frontier · AGRO: the soil it all grows toward
 
-AGRO is the soil: cultivated ground, *Always Growing Recursive Optimizer*. The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability: capability it can carry and reuse, with provenance attached. The hard, open frontier is capability **synthesis**: a genuinely new capability for a problem the system has never seen. That is unbuilt research, and we say so plainly. It is the work ahead, and it is the whole point. **AGRO in motion: Accurate, Immediate, Minimal.**
+The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability it can carry and reuse, with provenance attached; the hard, open frontier is synthesis. It is the work ahead, and it is the whole point. **AGRO in motion: Accurate, Immediate, Minimal.**
 
 **Owned, local, and accountable, by construction.** Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't.
 
@@ -813,67 +984,65 @@ AGRO is the soil: cultivated ground, *Always Growing Recursive Optimizer*. The d
 
 ## Every claim, graded.
 
-So the credibility gradient is visible at a glance: what runs, what's prototype, what's research, what's only designed.
+So the credibility gradient is visible at a glance: what runs, what's prototype, what's research, what's only designed. The floor components are built and tested; the operator lanes around them are a working prototype. Each line links to its dated entry in [the record](https://relicquary.com/record.html).
 
 #### Runs today
 
-- **Relicquary v0.9.0**: memory + orchestration, CLI + MCP
+- **Relicquary v0.9.0**: memory + orchestration, CLI + MCP [entry ↗](https://relicquary.com/record.html#rel-090)
 - **The deterministic floor** (chokepoint, fence, conscience), built & tested
-- **Capability reuse**: 8/8 held-out
+- **Capability reuse**: 8/8 held-out [entry ↗](https://relicquary.com/record.html#run-reuse)
 
 #### Working prototype
 
 - **AGRO** planning loop
 - **Operator substrate**: persistent operator + chokepoint
-- **TouchLink** (one verified device)
+- **TouchLink** (one verified device) [entry ↗](https://relicquary.com/record.html#hw-touchlink)
 - **AI Control Stack** (single machine)
 
 #### Open research
 
-- **Capability synthesis**: a new capability from a never-seen blocker; held-out test unbuilt
+- **Capability synthesis**: a new capability from a never-seen blocker; held-out test unbuilt [entry ↗](https://relicquary.com/record.html#null-synthesis)
 
 #### Designed, not built
 
-- **DPACA** two-model cross-audit
-- **Durable backup/restore**: memory is volatile today
+- **DPACA** two-model cross-audit [entry ↗](https://relicquary.com/record.html#null-dpaca)
+- **Durable backup/restore**: memory is volatile today [entry ↗](https://relicquary.com/record.html#null-backup)
 - **Signed, distributable** apps & Relicquary v1.0
 
 09 / RQ MCP LLC
 
 ## Autonomy you can actually audit.
 
-RQ MCP LLC builds Relicquary (the local-first cognitive OS) and AIM, the full stack that turns it into a computer-use operator you can audit. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed.
+RQ MCP LLC builds Relicquary (the local-first memory OS) and AIM, the full stack that turns it into a computer-use operator you can audit. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed.
 
 > “Agents forget. Every autonomous system we ran reset to zero between sessions: repeating mistakes, losing the context it had earned, asking us to trust actions we couldn't check afterward. The conviction was simple: memory and accountability aren't features you bolt on later; they're the floor everything else stands on. So we built the floor first. The core runs today on your own machine: one binary, your disk, a receipt for every action. That's the standard I want to be held to.” Jessy Brenenstahl, Founder, RQ MCP LLC
+
+hello@relicquary.com · subject “AIM” for the recorded-run evidence, or to build on the stack
 
 
 ---
 
 # TouchLink: a virtual touchscreen driver
 
-*Machine-readable Markdown of https://relicquary.com/touchlink.html*
+*Machine-readable Markdown of https://relicquary.com/touchlink.html (content hash 83821c11)*
 
-**TouchLink** is the control-surface lane of **AIM** (RQ MCP LLC's local-first AI operator stack) and a standalone macOS driver in its own right.
+**TouchLink** is the control-surface lane of **AIM** (RQ MCP LLC's full-stack computer-use operator) and a standalone macOS driver in its own right.
 
-[↑ See the full stack](stack.html)
+[AIM & the stack](stack.html)
 
 # Touch that lands where you tap.
 
-Mac has never really handled USB touchscreens. Plug one in and your taps land in the wrong spot, or just move the pointer instead of pressing the button. **TouchLink** is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: **your touchscreen works like a touchscreen, and your mouse stays a mouse**. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.
+**TouchLink** is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: **your touchscreen works like a touchscreen, and your mouse stays a mouse**. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.
 
 A working prototype, verified on real hardware. Distribution packaging comes next. macOS 13+.
 
-touchlink just works
+touchlink verified · real panel
 
-plug inyour USB touchscreen
-
-calibratetap the four corners · once
-
-you tapthe button you meant
-
-it landsright where you touched **✓**
-
-your mousestill works as a mouse
+    plug in: your USB touchscreen
+    calibrate: tap the four corners · once
+    you tap: the button you meant
+    it lands: right where you touched ✓
+    your mouse: still works as a mouse
 
 01 / THE PROBLEM
 
@@ -957,14 +1126,18 @@ Extending the lane to route a Windows-owned touchscreen into a Mac workspace is 
 
 ## A working prototype, on real hardware.
 
-TouchLink builds, signs, launches, and passes its test suite on real hardware. Signing, notarization, and broader device testing come next. Follow the build, or try it on your panel.
+TouchLink builds, signs, launches, and passes its test suite on one real panel. [HW 2026-06 · verified ↗](record.html#hw-touchlink) Distribution packaging comes next.
+
+Email your panel model and macOS version and we will send current-build instructions, or say “updates” to hear when packaging ships.
+
+hello@relicquary.com · subject “TouchLink”
 
 
 ---
 
 # Relicquary support
 
-*Machine-readable Markdown of https://relicquary.com/support.html*
+*Machine-readable Markdown of https://relicquary.com/support.html (content hash 40b13537)*
 
 HELP · RQ MCP LLC
 
@@ -980,13 +1153,29 @@ Whether you've hit a bug, have a question about how Relicquary works, want to re
 
 ## Frequently asked
 
+### Can I use Relicquary today?
+
+Yes, as a developer: the v0.9.0 core (CLI plus MCP server) is in early access. Email [hello@relicquary.com](mailto:hello@relicquary.com?subject=Relicquary%20early%20access) with the subject “Relicquary early access” and the binary arrives by reply. The steps to run it are on [the overview](index.html#get).
+
+### What is the difference between the core and the apps?
+
+The core is the developer surface: one Rust binary serving a CLI and the MCP server, running today. The Mac and iPhone apps wrap that core for everyone else and are coming to the App Store as a one-time purchase, no subscription.
+
+### What does the core run on?
+
+Relicquary v0.9.0 builds and runs on macOS on Apple Silicon. TouchLink requires macOS 13 or later. App minimums will be listed on the App Store at release.
+
+### How do agents connect?
+
+Over the Model Context Protocol: run `relicquary mcp-server` and point any MCP-capable client at it. The one-line config is on [the overview](index.html#get), and every tool is described in [the catalog](tools.html).
+
 ### Where is my data stored?
 
-On your own device, as a local SQLite database and Markdown files. Relicquary is local-first: your store stays on your hardware. The only things that leave are what you choose: optional device-to-device sync, or prompts to a model provider if you connect one. See our [Privacy Policy](privacy.html).
+On your own device, as a local SQLite database and Markdown files. Relicquary is local-first: your store stays on your hardware. The only thing that leaves is what you choose to send: prompts to a model provider, if you connect one. See our [Privacy Policy](privacy.html).
 
 ### Do I need an account?
 
-No. Relicquary runs without any account or sign-up. Optional device-to-device sync uses your own iCloud or local network.
+No. Relicquary runs without any account or sign-up. Cross-device sync is planned for the iPhone release.
 
 ### Does it work offline?
 
@@ -994,7 +1183,7 @@ Yes. Recall, capture, and the knowledge graph all run on-device. There is no req
 
 ### What are the system requirements?
 
-The upcoming apps target recent versions of macOS and iOS. Exact minimums will be listed on the App Store when the apps are released.
+The core runs on macOS on Apple Silicon today; TouchLink needs macOS 13+. The upcoming apps target recent versions of macOS and iOS, with exact minimums listed on the App Store at release.
 
 ### How do I export or delete everything?
 
@@ -1009,7 +1198,7 @@ Relicquary is built and maintained by **RQ MCP LLC**. For business or legal inqu
 
 # Relicquary privacy policy
 
-*Machine-readable Markdown of https://relicquary.com/privacy.html*
+*Machine-readable Markdown of https://relicquary.com/privacy.html (content hash 1a07b8c1)*
 
 LEGAL · RQ MCP LLC
 
@@ -1033,7 +1222,7 @@ Relicquary stores the memories, notes, tags, graph, and related content you crea
 
 ## 3. Optional sync between your devices
 
-If you choose to enable device-to-device sync, your content is transferred directly between your own devices (for example over your local network, or through your personal Apple iCloud account if you opt in). When iCloud sync is used, that data is handled under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/) and stored in your own iCloud account, not by RQ MCP. Sync is off unless you turn it on.
+If you choose to enable device-to-device sync (planned for the iPhone release), your content is transferred directly between your own devices (for example over your local network, or through your personal Apple iCloud account if you opt in). When iCloud sync is used, that data is handled under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/) and stored in your own iCloud account, not by RQ MCP. Sync is off unless you turn it on.
 
 ## 4. Diagnostics
 
@@ -1065,7 +1254,7 @@ RQ MCP LLC, the company behind Relicquary.
 
 # Relicquary terms of service
 
-*Machine-readable Markdown of https://relicquary.com/terms.html*
+*Machine-readable Markdown of https://relicquary.com/terms.html (content hash 88738d12)*
 
 LEGAL · RQ MCP LLC
 

@@ -1,10 +1,14 @@
-# Relicquary tool catalog: 56 MCP tools
+# Relicquary tool catalog: 57 MCP tools
 
-*Machine-readable Markdown of https://relicquary.com/tools.html*
+*Machine-readable Markdown of https://relicquary.com/tools.html (content hash 80909bba)*
 
-# The interface is the product. 56 tools your agent calls over MCP.
+# The interface is the product. 57 tools your agent calls over MCP.
 
-Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 56 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.
+Relicquary is not a library you wrap. It is a memory-and-orchestration surface an agent talks to directly, over the Model Context Protocol. Connect any MCP-compatible agent and it gets 57 verbs: remember, recall, hand off, synthesize, audit, and more. Below is every one, what it does, and why it earns its place.
+
+[add_memory_edge](#g-graph-entities-amp-conflicts) [approve_memory](#g-lifecycle-amp-governance) [architecture](#g-the-whole-system) [capture_thought](#g-capture) [claim_synthesis](#g-synthesis) [complete_synthesis](#g-synthesis) [context_pack](#g-retrieval) [edit_memory](#g-lifecycle-amp-governance) [explain_memory](#g-retrieval) [feedback_memory](#g-lifecycle-amp-governance) [flag_contradiction](#g-graph-entities-amp-conflicts) [forget](#g-lifecycle-amp-governance) [forget_memory](#g-lifecycle-amp-governance) [get_entities](#g-graph-entities-amp-conflicts) [get_memory_edges](#g-graph-entities-amp-conflicts) [graph_export](#g-graph-entities-amp-conflicts) [handoff](#g-tasks-sessions-amp-handoff) [hybrid_search](#g-retrieval) [ingest_document](#g-wiki-documents-amp-artifacts) [lint_wiki](#g-wiki-documents-amp-artifacts) [list_artifacts](#g-wiki-documents-amp-artifacts) [list_drafts](#g-lifecycle-amp-governance) [list_receipts](#g-health-recovery-amp-audit) [list_suggestions](#g-lifecycle-amp-governance) [list_thoughts](#g-retrieval) [memory_conflicts](#g-graph-entities-amp-conflicts) [memory_export](#g-lifecycle-amp-governance) [memory_import](#g-lifecycle-amp-governance) [memory_status](#g-health-recovery-amp-audit) [next_task](#g-tasks-sessions-amp-handoff) [promote_memory](#g-lifecycle-amp-governance) [query_context](#g-retrieval) [query_memory_objects](#g-retrieval) [read_artifact](#g-wiki-documents-amp-artifacts) [read_relic](#g-wiki-documents-amp-artifacts) [rebuild_index](#g-health-recovery-amp-audit) [recall](#g-retrieval) [recall_report](#g-retrieval) [reject_memory](#g-lifecycle-amp-governance) [reliquary_status](#g-health-recovery-amp-audit) [remember](#g-capture) [remember_batch](#g-capture) [resolve_conflict](#g-graph-entities-amp-conflicts) [restore_memory_relics](#g-health-recovery-amp-audit) [retry_synthesis](#g-synthesis) [search_thoughts](#g-retrieval) [search_wiki](#g-retrieval) [session_end](#g-tasks-sessions-amp-handoff) [session_start](#g-tasks-sessions-amp-handoff) [status](#g-health-recovery-amp-audit) [suggest_memory](#g-capture) [synthesis_queue](#g-synthesis) [task_progress](#g-tasks-sessions-amp-handoff) [thought_stats](#g-health-recovery-amp-audit) [update_memory](#g-lifecycle-amp-governance) [update_thought_status](#g-lifecycle-amp-governance) [write_relic](#g-wiki-documents-amp-artifacts)
+
+57 tools, 55 cards below: two cards each carry an alias pair (forget / forget_memory, status / reliquary_status). The count is settled by construction in [tools.json](tools.json), generated from the live schemas.
 
 WHY MCP-FIRST
 
@@ -115,6 +119,10 @@ Set a memory's lifecycle status: active, in_progress, completed, superseded, ver
 ### approve_memory · Trust a draft
 
 Promote a draft or untrusted memory to trusted-active once it has been reviewed.
+
+### reject_memory · Reject a suggestion or draft
+
+Reject a pending memory suggestion, or reject a draft or untrusted memory by marking it invalid. Requires a reason, and records a receipt. The other half of governed trust: what does not earn promotion is turned away, on the record.
 
 ### promote_memory · Accept a suggestion
 
@@ -294,6 +302,16 @@ Four flows that show the catalog working as a system. Each is real: every step i
 
 `list_receipts` is the record of every mutation the system made. When an index is damaged, `reliquary_status` diagnoses, `rebuild_index` restores from the files, and `restore_memory_relics` rebuilds runtime memory. Nothing silent, everything recoverable.
 
+MACHINE-READABLE
+
+## The receipt for the catalog itself.
+
+Every card above is prose. `tools.json` is the same catalog as data, generated from the live tool schemas: name, aliases, group, and a one-line description per tool. It settles the count by construction, and an agent can diff it between visits.
+
+[tools.json · all 57, from the schemas](tools.json)
+
 ## Relicquary runs today.
 
-Stand up a store, serve it over MCP, and your agent has all 56 tools, on your own disk, under your own audit.
+Stand up a store, serve it over MCP, and your agent has all 57 tools, on your own disk, under your own audit.
+
+hello@relicquary.com · subject “Relicquary early access”

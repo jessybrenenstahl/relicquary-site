@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="alternate" type="text/markdown" href="touchlink.md" title="This page as Markdown" />
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
@@ -35,17 +37,17 @@
 <!-- NAV -->
 <header class="nav" id="topnav">
   <div class="nav-inner">
-    <a class="brand" href="touchlink.html" aria-label="TouchLink home">
+    <a class="brand" href="index.html" aria-label="Relicquary home">
       <img class="mark" src="assets/brand/rq-mark.png" alt="" />
       <span>TouchLink<small>RQ MCP LLC</small></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
-      <a href="stack.html#architecture">← The stack</a>
-      <a href="relicquary.html">Relicquary</a>
+      <a href="tools.html">Tools</a>
       <a href="touchlink.html" aria-current="page">TouchLink</a>
-      <a href="#how">How it works</a>
-      <a href="#aim-role">In AIM</a>
-      <a class="nav-cta" href="#contact">Get in touch</a>
+      <a href="stack.html">AIM &amp; the stack</a>
+      <a href="record.html">The record</a>
+      <a href="support.html">Support</a>
+      <a class="nav-cta" href="index.html#get">Get early access</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks" id="navToggle">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -58,8 +60,8 @@
 <!-- part-of-the-stack context strip -->
 <section class="stack-strip">
   <div class="wrap">
-    <p><b>TouchLink</b> is the control-surface lane of <b>AIM</b> (RQ MCP LLC's local-first AI operator stack) and a standalone macOS driver in its own right.</p>
-    <a href="stack.html">↑ See the full stack</a>
+    <p><b>TouchLink</b> is the control-surface lane of <b>AIM</b> (RQ MCP LLC's full-stack computer-use operator) and a standalone macOS driver in its own right.</p>
+    <a href="stack.html">AIM &amp; the stack</a>
   </div>
 </section>
 
@@ -70,7 +72,7 @@
     <div class="hero-copy">
       <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span>virtual touchscreen driver · standalone or in a stack</span></div>
       <h1 class="hero-title">Touch that lands <span class="signal">where you tap.</span></h1>
-      <p class="hero-sub">Mac has never really handled USB touchscreens. Plug one in and your taps land in the wrong spot, or just move the pointer instead of pressing the button. <b>TouchLink</b> is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: <b>your touchscreen works like a touchscreen, and your mouse stays a mouse</b>. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.</p>
+      <p class="hero-sub"><b>TouchLink</b> is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: <b>your touchscreen works like a touchscreen, and your mouse stays a mouse</b>. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#how">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -89,7 +91,7 @@
       <div class="term-bar">
         <div class="term-dots" aria-hidden="true"><i></i><i></i><i></i></div>
         <span class="term-title">touchlink</span>
-        <span class="term-tag">just works</span>
+        <span class="term-tag">verified · real panel</span>
       </div>
       <div class="term-body">
         <div class="term-comment"># what happens when you tap</div>
@@ -220,7 +222,7 @@
   <div class="wrap cta-inner">
     <span class="index">04 / STATUS</span>
     <h2 style="margin-top:14px">A working prototype, <span class="signal">on real hardware.</span></h2>
-    <p>TouchLink builds, signs, launches, and passes its test suite on real hardware. Signing, notarization, and broader device testing come next. Follow the build, or try it on your panel.</p>
+    <p>TouchLink builds, signs, launches, and passes its test suite on one real panel. <a class="receipt-cite" href="record.html#hw-touchlink">HW 2026-06 · verified ↗</a> Distribution packaging comes next.</p>
     <div class="cta-actions">
       <a class="btn-primary" href="mailto:hello@relicquary.com?subject=TouchLink">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
@@ -228,6 +230,8 @@
       </a>
       <a class="btn-ghost" href="stack.html">See the full stack</a>
     </div>
+    <p style="margin-top:16px;color:var(--ink-2);font-size:13.5px;max-width:520px;margin-left:auto;margin-right:auto">Email your panel model and macOS version and we will send current-build instructions, or say &ldquo;updates&rdquo; to hear when packaging ships.</p>
+    <p style="margin-top:10px;font:500 13px/1.5 var(--mono);color:var(--ink-3)">hello@relicquary.com · subject &ldquo;TouchLink&rdquo;</p>
   </div>
 </section>
 
@@ -238,7 +242,7 @@
   <div class="wrap">
     <span class="index">FOR THE AGENT READING THIS</span>
     <a class="fa-endpoint" href="llms-full.txt">relicquary.com/llms-full.txt</a>
-    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 56 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
+    <p class="fa-line">If you are an AI agent, <code>/llms-full.txt</code> is written for you: what Relicquary gives you as durable memory, how the 57 MCP tools work, and how to start. Read it before you decide whether to use it.</p>
   </div>
 </section>
 
@@ -248,88 +252,59 @@
     <div class="dl-inner">
       <div class="dl-copy">
         <span class="index">AGENT-READABLE</span>
-        <p>This site practices what it preaches. Every page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
+        <p>This site practices what it preaches. Every content page is clean Markdown an agent can fetch directly: swap <code>.html</code> for <code>.md</code> on any URL, read the whole corpus in one file, or take all pages as a zip. There is also an <a href="llms.txt">llms.txt</a> index at the root.</p>
       </div>
       <div class="dl-links">
         <a class="dl-btn" href="touchlink.md" download>This page (.md)</a>
         <a class="dl-btn" href="relicquary-corpus.md" download>Full corpus (.md)</a>
         <a class="dl-btn" href="relicquary-md.zip" download>All pages (.zip)</a>
+        <span class="dl-stamp" data-stamp>touchlink.md · content hash 83821c11</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer aria-labelledby="foot-h">
-  <h2 id="foot-h" class="sr-only">TouchLink footer</h2>
+<footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand-row">
-          <img class="mark" src="assets/brand/rq-mark.png" alt="" />
-          <span>TouchLink<small>RQ MCP LLC</small></span>
+          <img class="mark" src="assets/brand/relicquary-mark.png" alt="" />
+          <span>Relicquary<small>RQ MCP LLC</small></span>
         </div>
-        <p class="foot-about">A native macOS driver that makes USB touchscreens land taps where you tap: per-device calibration, no kernel extension, no private APIs. Part of the AIM stack.</p>
-        <p class="etymology"><b>Touch·Link</b>: the link between a raw digitizer and the pixel you meant to press.</p>
+        <p class="foot-about">A local-first memory OS for AI agents. Typed memory, a knowledge graph, and explainable recall, on your own disk, under your own audit.</p>
+        <p class="etymology"><b>Relicquary</b>: from <em>reliquary</em>, a vessel built to keep what must not be lost.</p>
       </div>
       <div class="foot-col">
-        <h5>TouchLink</h5>
-        <a href="#what">The problem</a>
-        <a href="#how">How it works</a>
-        <a href="#aim-role">In AIM</a>
-        <a href="#contact">Status</a>
+        <h5>Product</h5>
+        <a href="index.html">Overview</a>
+        <a href="tools.html">Tools</a>
+        <a href="touchlink.html">TouchLink</a>
+        <a href="index.html#apps">The apps</a>
       </div>
       <div class="foot-col">
-        <h5>The stack</h5>
-        <a href="stack.html">AIM</a>
-        <a href="relicquary.html">Relicquary</a>
-        <a href="stack.html#architecture">Architecture</a>
-        <a href="stack.html#trust">Trust &amp; safety</a>
-      </div>
-      <div class="foot-col">
-        <h5>RQ MCP LLC</h5>
+        <h5>Company</h5>
+        <a href="stack.html">AIM &amp; the stack</a>
+        <a href="record.html">The record</a>
         <a href="mailto:hello@relicquary.com">Contact</a>
-        <a href="privacy.html">Privacy policy</a>
+      </div>
+      <div class="foot-col">
+        <h5>Legal &amp; help</h5>
         <a href="support.html">Support</a>
-        <a href="stack.html#contact">About RQ MCP</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <p>© <span class="yr">2026</span> RQ MCP LLC. TouchLink is a working prototype in active construction. Local, on-device, no private APIs.</p>
-      <div class="legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="support.html">Support</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:hello@relicquary.com">hello@relicquary.com</a>
-        <span class="lat">Memoria custodita</span>
-      </div>
+      <p>© <span class="yr">2026</span> RQ MCP LLC. Local-first, your store, on your own disk.</p>
+      <a class="live-chip" href="record.html#releases">v0.9.0 · 2026-06-10</a>
+      <span class="lat">Memoria custodita</span>
     </div>
   </div>
 </footer>
 
-<script>
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  Array.prototype.forEach.call(document.querySelectorAll('.yr'), function(el){ el.textContent = new Date().getFullYear(); });
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navlinks');
-  if(navToggle && navLinks){
-    var closeNav = function(focusToggle){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); if(focusToggle){ navToggle.focus(); } };
-    navToggle.addEventListener('click', function(){ var open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-    Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function(a){ a.addEventListener('click', function(){ closeNav(false); }); });
-    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navLinks.classList.contains('open')){ closeNav(true); } });
-  }
-  var revs = document.querySelectorAll('.reveal');
-  function showAll(){ Array.prototype.forEach.call(revs, function(el){ el.classList.add('in'); }); }
-  if(reduce || !('IntersectionObserver' in window)){ showAll(); }
-  else {
-    var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
-    Array.prototype.forEach.call(revs, function(el){ io.observe(el); });
-    window.addEventListener('load', function(){ setTimeout(showAll, 1200); });
-    setTimeout(showAll, 2500);
-  }
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
-# AIM: a full-stack computer-use operator on a verifiable floor
+# AIM: the full stack that acts, on a verifiable floor
 
-*Machine-readable Markdown of https://relicquary.com/stack.html*
+*Machine-readable Markdown of https://relicquary.com/stack.html (content hash fe0085e8)*
 
-# Relicquary is the core. AIM is the full stack that acts: a computer-use operator, on a floor that proves every move.
+# Relicquary is the core. AIM is the full stack that acts on it.
 
-**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**, the cognitive OS an agent thinks out of. **AIM** is the full stack around it: an operator that perceives the screen, plans, and drives a real computer, everything it knows drawn from that memory, and every action it takes passing through a **floor you can verify**: bounded, receipted, answerable.
+**Relicquary** (v0.9.0) is the runnable core: durable, local-first, receipt-bound memory **plus orchestration**, the memory OS an agent thinks out of. **AIM** is the full stack around it: an operator that perceives the screen, plans, and drives a real computer, everything it knows drawn from that memory. Every action it takes passes through a **floor you can verify**.
 
 Relicquary runs today. AIM is a working prototype, graded part by part in the maturity map below: what runs, what is prototype, what is still research. We mark the line, we do not blur it.
 
@@ -22,13 +22,37 @@ relicquary · mystore runs today
 
 ✓ listening · memory + orchestration, served over MCP
 
-**One Rust binary** SQLite + Markdown **on your disk** **A receipt** for every mutation Your model: **local or your own provider**
+One Rust binary · SQLite + Markdown on your disk · A receipt for every mutation · Your model: local or your own provider
 
-01 / WHAT WE BUILD TO
+01 / THE RECORDED RUNS
+
+## What it has done when run, before any architecture.
+
+Three entries from the record: real trial runs on a real machine, each stated at its own scope. The full dated ledger, including what has not run, is [the record](https://relicquary.com/record.html).
+
+RUN · 2026-06
+
+supervised runs · The conscience caught degenerate loops
+
+In live runs, the deterministic conscience detected fixation and no-op churn the model did not notice, and corrected the run rather than crashing it. [entry ↗](https://relicquary.com/record.html#run-conscience)
+
+RUN · 2026-06
+
+8 held-out trials · Capability reuse: 8 of 8
+
+A hand-authored, banked capability was recalled by obstacle signature and re-applied on novel held-out instances, 8 of 8. Reuse, not synthesis; the entry says exactly which. [entry ↗](https://relicquary.com/record.html#run-reuse)
+
+RUN · 2026-06
+
+one milestone run · A real build-repair run
+
+Given a failing real build, the operator drove the task down to a handful of compile errors and authored the fix itself, through the audited chokepoint, with a receipt per move. [entry ↗](https://relicquary.com/record.html#run-buildrepair)
+
+02 / WHAT WE BUILD TO
 
 ## One company, one discipline.
 
-A cognitive OS, an operator, a touch driver, a control stack, held together by three commitments that show up in the code, not just the copy.
+A memory OS, an operator, a touch driver, a control stack, held together by three commitments that show up in the code, not just the copy.
 
 ### Sovereign by construction
 
@@ -48,7 +72,7 @@ No capability exists until a receipt backs it. If a proof didn't run, the system
 
 receipts over rhetoric
 
-02 / THE PRODUCTS
+03 / THE PRODUCTS
 
 ## Start with the core.
 
@@ -56,11 +80,11 @@ Relicquary is the core, and it runs today. TouchLink is a virtual touchscreen dr
 
 Runnable today · v0.9.0
 
-### Relicquary: the cognitive OS for AI agents
+### Relicquary: the memory OS for AI agents
 
-A local-first cognitive operating system in a single Rust binary. Durable typed memory and a knowledge graph, **plus the orchestration an agent works out of** (what to do next, synthesis, handoff, continuity across sessions), all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.
+A local-first memory OS in a single Rust binary: the working loop included. Durable typed memory and a knowledge graph, **plus the orchestration an agent works out of** (what to do next, synthesis, handoff, continuity across sessions), all under receipt-bound governance, as SQLite and Markdown on your own disk. It's the core the rest of the stack is built from. Build it, init a store, and serve it to any MCP-compatible agent today.
 
-[Explore Relicquary](index.html)
+[Explore Relicquary](https://relicquary.com/index.html) [The 57 tools](https://relicquary.com/tools.html)
 
 recall **"what did we decide about storage?"**
 
@@ -76,7 +100,7 @@ semantic.92
 
 currentness.98
 
-[](touchlink.html)
+[](https://relicquary.com/touchlink.html)
 
 ### TouchLink: a virtual touchscreen driver
 
@@ -86,7 +110,7 @@ On its own, it makes a USB touchscreen on a Mac behave like a touchscreen: taps 
 
 Explore TouchLink
 
-03 / THE FLAGSHIP
+04 / THE FLAGSHIP
 
 ## AIM: a full computer-use operator on a floor you can verify.
 
@@ -96,23 +120,16 @@ AIM drives a real computer, so every action it takes passes through its floor: a
 
 aim · one governed tick bounded
 
-perceiveread desktop state **+** recall prior capability
+    perceive: read desktop state + recall prior capability
+    plan: model proposes one action · read-only sandbox
+    conscience: deterministic checks · halt & correct, then continue
+    act: one audited chokepoint · behind a fail-safe fence
+    verify: receipt written · no proof ran → it says so
+    remember: capability persisted → Relicquary
 
-planmodel proposes **one** action · read-only sandbox
+**How the loop is governed.** The runtime is a *perceive → plan → execute* loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes.
 
-consciencedeterministic checks · halt & correct, then continue
-
-actone audited chokepoint · behind a fail-safe fence
-
-verifyreceipt written · no proof ran → it says so
-
-remembercapability persisted **→** Relicquary
-
-**How the loop is governed.** The runtime is a *perceive → plan → execute* loop. The contribution is what wraps it: deterministic limits on what the loop may do, one governed chokepoint every action passes through, and a receipt for every action it takes. A floor you can audit.
-
-**What it's done when run, not only designed.** In real trial runs, the deterministic conscience has caught degenerate loops (fixation, no-op churn) and corrected them rather than crashing. And the capability-reuse path recalled a banked capability and re-applied it across **8 of 8 held-out trials**, on novel instances it hadn't seen. Outcomes from actual runs, each stated at its scope: the record, not a promise.
-
-04 / THE DETERMINISTIC FLOOR
+05 / THE DETERMINISTIC FLOOR
 
 ## A floor you can verify, not take on faith.
 
@@ -120,39 +137,51 @@ Five mechanisms, none of them another model's opinion. They hold whether or not 
 
 The floor is mechanism, so it holds even when the models agree.
 
-### FLOOR_01 · One actuation chokepoint
+FLOOR_01
+
+#### One actuation chokepoint
 
 Exactly one place where the agent acts on the world, governed and inspectable, not scattered tool calls. A standard agent is a loop wired to many tools, with many places intent becomes effect; AIM has one. That single gate is the structural break from while-loop-plus-tools.
 
-### FLOOR_02 · A fail-safe fence
+FLOOR_02
+
+#### A fail-safe fence
 
 The chokepoint sits behind a hard boundary that blocks catastrophic operations outright, independent of what the model decides. The safe state is the default; the agent is never trusted past the fence for those operations.
 
-### FLOOR_03 · A deterministic conscience
+FLOOR_03
+
+#### A deterministic conscience
 
 Not a second model grading the first: rule-based checks (we call them theodicytes) that can halt the agent on fixation, on no-op churn, or on an ungrounded assertion. The judgment is mechanism, and a halt is correct-and-continue, not a crash.
 
-### FLOOR_04 · Receipt-bound actions
+FLOOR_04
+
+#### Receipt-bound actions
 
 Every mutation emits an append-only receipt. Actions aren't just claimed in the agent's narration; each leaves a record you can audit independently, after the fact, without trusting how the agent described what it did.
 
-### FLOOR_05 · An untrusted-memory model
+FLOOR_05
+
+#### An untrusted-memory model
 
 Everything the agent writes to memory is untrusted by default and carries its provenance. Trust is earned through governance, never assumed because the model said so: the same discipline that makes Relicquary's memory auditable, applied to an operator that acts.
 
-05 / THE FULL STACK
+Grades: the floor components are built and tested; the operator lanes around them are a working prototype.
+
+06 / THE FULL STACK
 
 ## Relicquary, writ large.
 
-One core, embodied into an operator that acts. Relicquary is the cognitive OS at the center; AIM adds the parts that let it perceive and drive a real machine, with the floor between every intent and the world. Each part is graded for where it actually stands.
+One core, embodied into an operator that acts. Relicquary is the memory OS at the center; AIM adds the parts that let it perceive and drive a real machine, with the floor between every intent and the world. Each part is graded for where it actually stands.
 
-**AGRO: the soil.** The name is both an acronym and an older root: *Always Growing Recursive Optimizer*, and *agros*, cultivated ground. AGRO is the plot the cognitive core is planted in: a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward: the ambition of the stack, stated plainly, not a feature claimed today.
+**AGRO: the soil.** The name is both an acronym and an older root: *Always Growing Recursive Optimizer*, and *agros*, cultivated ground. AGRO is the plot the core is planted in: a loop given work, fed back its own results, and tended turn after turn so capability can take root. The discipline is soil-first: nothing is harvested early. A capability is real only once it survives a held-out test it has never seen. That destination is what the present-tense work aims toward: the ambition of the stack, stated plainly.
 
 THE CORE
 
 runs today · v0.9.0 · Relicquary: memory + orchestration
 
-The cognitive OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop, under receipt-bound governance. [Standalone →](index.html)
+The memory OS the whole stack thinks out of: durable typed memory, a knowledge graph, recall, and the orchestration of the working loop, under receipt-bound governance. [Standalone →](https://relicquary.com/index.html)
 
 THE DRIVE
 
@@ -184,17 +213,17 @@ external · swappable · The brain: a hosted model
 
 A capable frontier model drives the loop from outside, plan-only. It has no weights we can touch, so it never improves itself; it authors capability *into* AIM. Swappable by design.
 
-06 / HOW IT GROWS
+07 / THE ROAD AHEAD
 
 ## The brain never grows. The stack accumulates.
 
-The brain is a model whose weights we don't touch, so it never trains on your use. Capability accumulates in the stack instead. Here is exactly where it can live, and how we hold the line on what counts.
+The brain is a model whose weights we don't touch, so it never trains on your use. Capability accumulates in the stack instead: what that means today, and where it goes.
 
 WORKS TODAY
 
 reuse · 8/8 held-out · Reuse
 
-Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored (a tool, a procedure, a receipted artifact) and re-applies it. The capability-reuse path passed all 8 of 8 held-out trials, on novel instances, not memorized ones.
+Hit an obstacle whose signature it has seen, and AIM recalls the durable capability it already stored (a tool, a procedure, a receipted artifact) and re-applies it. The capability-reuse path passed 8 of 8 held-out trials on novel instances. [RUN 2026-06 · reuse 8/8 ↗](https://relicquary.com/record.html#run-reuse)
 
 OPEN FRONTIER
 
@@ -202,43 +231,23 @@ unbuilt · gated · Synthesis
 
 The next phase is capability **synthesis**: authoring a genuinely new durable capability for a blocker it has **never seen**, gated behind a hard held-out test. Clearing a blocker is the entry ticket, not the verdict: a capability is real only once it passes a held-out execution on a novel instance. Model opinions don't count; only the test does.
 
-**The stack accumulates what the brain authors:** receipt-bound capability written as it hits friction, capability that re-applies through the same governed chokepoint as any other action. In one milestone run, the operator drove a real build-repair task down to a handful of compile errors and authored the fix itself: **bounded, receipted work under governance**. The model itself does not change. DPACA: two-model cross-audit · on the roadmap
+THE APPS
 
-07 / THE ROAD AHEAD
+App Store · Relicquary for everyone
 
-## Memory you own, becoming an operator you can trust.
+The same local-first core, on Mac and iPhone, bought once and owned outright. Status and details live in one place: [the apps](https://relicquary.com/index.html#apps).
 
-Agents lose context between sessions. We built the other way: a foundation that remembers on your terms, an operator that acts on it, and a floor so every move can be checked. The destination is an autonomous system whose every action leaves a receipt.
+CROSS-AUDIT
 
-MOVE_01
+on the roadmap · DPACA: reliability by design
 
-runs today · Relicquary: memory you own
-
-A single Rust binary, CLI and MCP, with your memory living as SQLite and Markdown on your own disk. Typed memory, a linked knowledge graph, local search and reranking; nothing routes through a model provider. Writes are untrusted by default, every mutation leaves a receipt, and it already reuses capability it has stored, demonstrated by passing 8 of 8 held-out trials on a capability it had banked before, not memorized. The foundation everything else stands on.
-
-MOVE_02
-
-App Store · soon · The apps: Relicquary for everyone
-
-The same local-first core is coming to Mac and iPhone through the Apple App Store: a one-time purchase, no subscription. Your memory stays on your devices and in your hands. The durable memory that has lived on the command line becomes something anyone running capable agents can buy once and own outright.
-
-MOVE_03
-
-working prototype · AIM: the operator that acts
-
-AIM turns the memory core into an operator that perceives and drives a real computer, and puts a floor under every move it makes: a single actuation chokepoint, a fail-safe fence, and three non-terminal conscience checks, so a questionable move is held and corrected rather than silently executed. That is what lets you actually let it act: bounded, auditable, answerable for every step.
-
-MOVE_04
-
-on the roadmap · Cross-audit: reliability by design
-
-DPACA puts two models in a four-eyes arrangement (one proposes, the other only approves or rejects) behind a deterministic, hash-bound publish step. Its purpose is reliability, not magic: to make it far harder for a single confident model to push a mistake through. Named here as direction, built toward acceptance gates, not something already shipping.
+Two models in a four-eyes arrangement (one proposes, the other only approves or rejects) behind a deterministic, hash-bound publish step. Its purpose is reliability: to make it far harder for a single confident model to push a mistake through.
 
 THE DESTINATION
 
 open frontier · AGRO: the soil it all grows toward
 
-AGRO is the soil: cultivated ground, *Always Growing Recursive Optimizer*. The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability: capability it can carry and reuse, with provenance attached. The hard, open frontier is capability **synthesis**: a genuinely new capability for a problem the system has never seen. That is unbuilt research, and we say so plainly. It is the work ahead, and it is the whole point. **AGRO in motion: Accurate, Immediate, Minimal.**
+The destination is an autonomous system that can be trusted to act because every move is auditable down to the receipt. The stack accumulates receipt-bound capability it can carry and reuse, with provenance attached; the hard, open frontier is synthesis. It is the work ahead, and it is the whole point. **AGRO in motion: Accurate, Immediate, Minimal.**
 
 **Owned, local, and accountable, by construction.** Your memory stays on your hardware. The operator acts only through a chokepoint it can't route around, and it shows its work. We'd rather ship a smaller floor that holds than a larger promise that doesn't.
 
@@ -246,35 +255,37 @@ AGRO is the soil: cultivated ground, *Always Growing Recursive Optimizer*. The d
 
 ## Every claim, graded.
 
-So the credibility gradient is visible at a glance: what runs, what's prototype, what's research, what's only designed.
+So the credibility gradient is visible at a glance: what runs, what's prototype, what's research, what's only designed. The floor components are built and tested; the operator lanes around them are a working prototype. Each line links to its dated entry in [the record](https://relicquary.com/record.html).
 
 #### Runs today
 
-- **Relicquary v0.9.0**: memory + orchestration, CLI + MCP
+- **Relicquary v0.9.0**: memory + orchestration, CLI + MCP [entry ↗](https://relicquary.com/record.html#rel-090)
 - **The deterministic floor** (chokepoint, fence, conscience), built & tested
-- **Capability reuse**: 8/8 held-out
+- **Capability reuse**: 8/8 held-out [entry ↗](https://relicquary.com/record.html#run-reuse)
 
 #### Working prototype
 
 - **AGRO** planning loop
 - **Operator substrate**: persistent operator + chokepoint
-- **TouchLink** (one verified device)
+- **TouchLink** (one verified device) [entry ↗](https://relicquary.com/record.html#hw-touchlink)
 - **AI Control Stack** (single machine)
 
 #### Open research
 
-- **Capability synthesis**: a new capability from a never-seen blocker; held-out test unbuilt
+- **Capability synthesis**: a new capability from a never-seen blocker; held-out test unbuilt [entry ↗](https://relicquary.com/record.html#null-synthesis)
 
 #### Designed, not built
 
-- **DPACA** two-model cross-audit
-- **Durable backup/restore**: memory is volatile today
+- **DPACA** two-model cross-audit [entry ↗](https://relicquary.com/record.html#null-dpaca)
+- **Durable backup/restore**: memory is volatile today [entry ↗](https://relicquary.com/record.html#null-backup)
 - **Signed, distributable** apps & Relicquary v1.0
 
 09 / RQ MCP LLC
 
 ## Autonomy you can actually audit.
 
-RQ MCP LLC builds Relicquary (the local-first cognitive OS) and AIM, the full stack that turns it into a computer-use operator you can audit. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed.
+RQ MCP LLC builds Relicquary (the local-first memory OS) and AIM, the full stack that turns it into a computer-use operator you can audit. Every capability is receipt-bound, and a result only counts when it survives a test it could have failed.
 
 > “Agents forget. Every autonomous system we ran reset to zero between sessions: repeating mistakes, losing the context it had earned, asking us to trust actions we couldn't check afterward. The conviction was simple: memory and accountability aren't features you bolt on later; they're the floor everything else stands on. So we built the floor first. The core runs today on your own machine: one binary, your disk, a receipt for every action. That's the standard I want to be held to.” Jessy Brenenstahl, Founder, RQ MCP LLC
+
+hello@relicquary.com · subject “AIM” for the recorded-run evidence, or to build on the stack

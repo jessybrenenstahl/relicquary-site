@@ -1,0 +1,16 @@
+name: agent-layer drift gate
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+      - name: Regenerate the agent layer
+        run: python3 scripts/build-agent-layer.py
+      - name: Fail on drift (HTML changed without regenerating twins)
+        run: git diff --exit-code

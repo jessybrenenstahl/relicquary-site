@@ -1,0 +1,8 @@
+# relicquary.com
+User-agent: *
+Allow: /
+
+Sitemap: https://relicquary.com/sitemap.xml
+
+# Agents: start at /llms.txt (index) or /llms-full.txt (orientation + full corpus).
+# Every content page has a Markdown twin: swap .html for .md on any URL.

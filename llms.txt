@@ -1,17 +1,21 @@
 # Relicquary (RQ MCP LLC)
 
-> Local-first memory operating system for AI agents: typed memory, a knowledge graph, explainable recall, and an MCP-native surface of 56 tools. AIM is a governance architecture for verifiable autonomy built on Relicquary.
+> Local-first memory OS for AI agents: typed memory, a knowledge graph, explainable recall, and an MCP-native surface of 57 tools. AIM is a full-stack computer-use operator built on Relicquary: it perceives a screen, plans, and drives a real computer, and every action passes through a floor you can verify. The v0.9.0 core runs today: developer early access by emailing hello@relicquary.com, subject "Relicquary early access"; Mac and iPhone apps follow via the App Store.
 
 ## Pages
-- [Relicquary overview](https://relicquary.com/index.md): the product, what it is and how recall works
-- [Tool catalog](https://relicquary.com/tools.md): all 56 MCP tools, grouped, with function and purpose
-- [AIM and the stack](https://relicquary.com/stack.md): the governance architecture and full stack
+- [Relicquary overview](https://relicquary.com/index.md): the product, what it is, how recall works, and how to get it
+- [Tool catalog](https://relicquary.com/tools.md): all 57 MCP tools, grouped, with function and purpose
+- [The record](https://relicquary.com/record.md): the dated ledger of what ran, when, at what scope, and what has not run
+- [AIM and the stack](https://relicquary.com/stack.md): the full-stack computer-use operator and its verifiable floor
 - [TouchLink](https://relicquary.com/touchlink.md): the virtual touchscreen driver
 - [Support](https://relicquary.com/support.md)
 - [Privacy](https://relicquary.com/privacy.md)
 - [Terms](https://relicquary.com/terms.md)
 
 ## Full
-- [Written for the agent, then the full corpus](https://relicquary.com/llms-full.txt): a second-person orientation for an AI agent (what Relicquary gives you, the 56 MCP tools, how to start), followed by the entire site corpus
+- [Written for the agent, then the full corpus](https://relicquary.com/llms-full.txt): a second-person orientation for an AI agent (what Relicquary gives you, the 57 MCP tools, how to connect and start), followed by the entire site corpus
 - [Entire corpus, one document](https://relicquary.com/relicquary-corpus.md)
 - [All pages as a zip](https://relicquary.com/relicquary-md.zip)
+
+## Machine-readable
+- [tools.json](https://relicquary.com/tools.json): the tool catalog as data, generated from the live schemas (name, aliases, group, description, receipt flag)

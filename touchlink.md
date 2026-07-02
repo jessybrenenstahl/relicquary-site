@@ -1,28 +1,24 @@
 # TouchLink: a virtual touchscreen driver
 
-*Machine-readable Markdown of https://relicquary.com/touchlink.html*
+*Machine-readable Markdown of https://relicquary.com/touchlink.html (content hash 83821c11)*
 
-**TouchLink** is the control-surface lane of **AIM** (RQ MCP LLC's local-first AI operator stack) and a standalone macOS driver in its own right.
+**TouchLink** is the control-surface lane of **AIM** (RQ MCP LLC's full-stack computer-use operator) and a standalone macOS driver in its own right.
 
-[↑ See the full stack](stack.html)
+[AIM & the stack](stack.html)
 
 # Touch that lands where you tap.
 
-Mac has never really handled USB touchscreens. Plug one in and your taps land in the wrong spot, or just move the pointer instead of pressing the button. **TouchLink** is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: **your touchscreen works like a touchscreen, and your mouse stays a mouse**. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.
+**TouchLink** is a virtual touchscreen driver for Mac. On its own, it makes touch behave like touch: **your touchscreen works like a touchscreen, and your mouse stays a mouse**. And because it's a virtual driver, it also folds into a larger stack as a programmable control surface, the way AIM uses it.
 
 A working prototype, verified on real hardware. Distribution packaging comes next. macOS 13+.
 
-touchlink just works
+touchlink verified · real panel
 
-plug inyour USB touchscreen
-
-calibratetap the four corners · once
-
-you tapthe button you meant
-
-it landsright where you touched **✓**
-
-your mousestill works as a mouse
+    plug in: your USB touchscreen
+    calibrate: tap the four corners · once
+    you tap: the button you meant
+    it lands: right where you touched ✓
+    your mouse: still works as a mouse
 
 01 / THE PROBLEM
 
@@ -106,4 +102,8 @@ Extending the lane to route a Windows-owned touchscreen into a Mac workspace is 
 
 ## A working prototype, on real hardware.
 
-TouchLink builds, signs, launches, and passes its test suite on real hardware. Signing, notarization, and broader device testing come next. Follow the build, or try it on your panel.
+TouchLink builds, signs, launches, and passes its test suite on one real panel. [HW 2026-06 · verified ↗](record.html#hw-touchlink) Distribution packaging comes next.
+
+Email your panel model and macOS version and we will send current-build instructions, or say “updates” to hear when packaging ships.
+
+hello@relicquary.com · subject “TouchLink”

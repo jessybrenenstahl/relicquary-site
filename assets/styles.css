@@ -1,5 +1,5 @@
 /* ============================================================
-   Relicquary — shared dark "Living Terminal" identity
+   Relicquary : shared dark "Living Terminal" identity
    v2 base, with v4 elements re-skinned to the dark palette.
    A product of RQ MCP LLC.
    ============================================================ */
@@ -13,12 +13,12 @@
   --line-2:#4a3a22;
   --ink:#f1e9d7;
   --ink-2:#c3b395;
-  --ink-3:#8d7e63;
-  --signal:#d8b35e;        /* antique gold — primary accent */
+  --ink-3:#98896d;
+  --signal:#d8b35e;        /* antique gold : primary accent */
   --signal-dim:#a87f33;    /* deep gold */
   --signal-btn:#caa24a;    /* gold for filled buttons */
   --gold-bright:#f3d68a;   /* gold highlight */
-  --cyan:#46b6ff;          /* electric blue glow — secondary accent */
+  --cyan:#46b6ff;          /* electric blue glow : secondary accent */
   --amber:#e0a23c;
   --red:#e0584f;
   --grid:rgba(216,179,94,.04);
@@ -155,7 +155,8 @@ h1.hero-title .stroke{color:transparent;-webkit-text-stroke:1.4px var(--ink-2)}
 .term-dots i:first-child{background:#3a4450}
 .term-title{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em}
 .term-tag{margin-left:auto;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal-dim);border:1px solid var(--line-2);padding:3px 8px;border-radius:3px}
-.term-body{padding:18px 18px 22px;font-size:13.5px;min-height:382px}
+.term-body{padding:18px 18px 22px;font-size:13.5px}
+.terminal--demo .term-body{min-height:382px}
 .term-line{display:flex;gap:9px;white-space:pre-wrap;word-break:break-word}
 .term-line .prompt{color:var(--signal);user-select:none;flex-shrink:0}
 .term-line .cmd{color:var(--ink)}
@@ -171,7 +172,7 @@ h1.hero-title .stroke{color:transparent;-webkit-text-stroke:1.4px var(--ink-2)}
 }
 @keyframes revealcard{to{opacity:1;transform:none}}
 .res-top{display:flex;align-items:center;gap:10px;margin-bottom:5px;flex-wrap:wrap}
-.kind{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px;font-weight:600}
+.kind{font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px;font-weight:600}
 .kind.fact{background:rgba(70,182,255,.12);color:var(--cyan);border:1px solid rgba(70,182,255,.25)}
 .kind.decision{background:rgba(216,179,94,.12);color:var(--signal);border:1px solid rgba(216,179,94,.25)}
 .kind.procedure{background:rgba(255,180,84,.12);color:var(--amber);border:1px solid rgba(255,180,84,.28)}
@@ -184,7 +185,7 @@ h1.hero-title .stroke{color:transparent;-webkit-text-stroke:1.4px var(--ink-2)}
 .score b{color:var(--ink);font-weight:600}
 .res-text{color:var(--ink);font-size:13px;line-height:1.55;margin:2px 0 7px}
 .res-why{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.res-why .lbl{font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-right:2px}
+.res-why .lbl{font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-right:2px}
 .bar{height:5px;border-radius:3px;background:var(--line-2);position:relative;overflow:hidden;min-width:44px}
 .bar i{position:absolute;inset:0;width:0;transition:width .9s ease;border-radius:3px}
 .bar.bm25 i{background:linear-gradient(90deg,#1f5d8f,var(--cyan))}
@@ -359,7 +360,8 @@ section{position:relative;z-index:1}
    (the index's radial mask fades to flat black low on tall pages) and give the
    doc column a faint left rule so lower sections don't read generic. */
 .doc-page body::before,
-body.doc-page::before{
+body.doc-page::before,
+body.long-page::before{
   -webkit-mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.18) 100%);
   mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.18) 100%);
 }
@@ -395,6 +397,16 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 /* ===== RESPONSIVE ===== */
 @media(max-width:920px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:rgba(7,8,9,.97);border-bottom:1px solid var(--line);padding:8px 18px 16px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;width:100%}
+  .nav-toggle{display:inline-flex}
+  .pipe-wide{display:none}
+  .pipe-tall{display:block}
   .terminal{order:2}
   .pillars{grid-template-columns:1fr}
   .local-grid{grid-template-columns:1fr;gap:40px}
@@ -407,18 +419,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 @media(max-width:620px){
   .wrap{padding:0 18px}
   .nav-inner{padding:0 18px}
-  .nav-links{
-    display:none;position:absolute;top:64px;left:0;right:0;
-    flex-direction:column;align-items:flex-start;gap:0;
-    background:rgba(7,8,9,.97);border-bottom:1px solid var(--line);padding:8px 18px 16px;
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:10px 0;width:100%}
-  .nav-toggle{display:inline-flex}
   .hero{padding:54px 0 64px}
   .hero-meta{gap:18px}
-  .pipe-wide{display:none}
-  .pipe-tall{display:block}
   .pipeline{grid-template-columns:1fr}
   /* keep illustrative mocks from shrinking labels too far on phones */
   .device-figure svg{max-width:380px;margin:0 auto}
@@ -499,7 +501,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 @media(max-width:920px){ .product-grid{grid-template-columns:1fr} .tiers{grid-template-columns:1fr 1fr} }
 @media(max-width:620px){ .tiers{grid-template-columns:1fr} }
 
-/* proof strip — verifiable facts band under the hero */
+/* proof strip : verifiable facts band under the hero */
 .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);position:relative;z-index:1}
 .proof .wrap{display:flex;flex-wrap:wrap;gap:16px 38px;padding-top:20px;padding-bottom:20px;align-items:center}
 .proof .pf{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
@@ -518,7 +520,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .floor-line{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.6vw,30px);letter-spacing:-.02em;line-height:1.2;color:var(--ink);max-width:760px}
 .floor-line .signal{color:var(--signal)}
 
-/* ===== brand skin overrides — gold + blue glow ===== */
+/* ===== brand skin overrides : gold + blue glow ===== */
 .signal{background:linear-gradient(100deg,var(--gold-bright),var(--signal) 45%,var(--signal-dim));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--signal)}
 .eyebrow .dot{background:var(--cyan);box-shadow:0 0 10px 0 var(--cyan),0 0 0 3px rgba(70,182,255,.16)}
 .term-tag{color:var(--cyan);border-color:rgba(70,182,255,.4)}
@@ -556,3 +558,69 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--bg-
 .fa-line{margin-top:12px;max-width:660px;color:var(--ink-2);font-size:13.5px;line-height:1.6}
 .fa-line code{font-family:var(--mono);color:var(--ink)}
 @media(max-width:640px){.fa-endpoint{font-size:16px}}
+
+/* ============================================================
+   THE RECORD redesign components (2026-07)
+   ============================================================ */
+
+/* inline receipt citation chip: links a claim to its dated record entry */
+.receipt-cite{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--signal);border:1px solid rgba(216,179,94,.32);border-radius:3px;padding:2px 8px;margin-left:8px;vertical-align:1px;white-space:nowrap;transition:background .18s,border-color .18s}
+.receipt-cite:hover{background:rgba(216,179,94,.08);border-color:var(--signal)}
+
+/* record.html ledger */
+.ledger{display:flex;flex-direction:column;gap:34px;margin-top:12px}
+.ledger-entry{position:relative;border-left:2px solid var(--signal-dim);padding:2px 0 2px 26px}
+.ledger-entry .le-date{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--signal);display:block;margin-bottom:8px}
+.ledger-entry .le-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.ledger-entry h3{font-size:19px;margin:0}
+.ledger-entry p{color:var(--ink-2);font-size:14px;line-height:1.72;margin:0 0 10px}
+.ledger-entry p b{color:var(--ink);font-weight:600}
+.ledger-entry .le-scope{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:9px;display:block}
+.ledger-entry code{color:var(--signal);background:rgba(216,179,94,.08);padding:1px 5px;border-radius:3px;font-family:var(--mono);font-size:12px}
+
+/* page-local jump chips under a hero */
+.jump-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.jump-row a{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-2);border:1px solid var(--line-2);border-radius:3px;padding:5px 11px;background:var(--panel);transition:color .18s,border-color .18s}
+.jump-row a:hover{color:var(--signal);border-color:var(--signal-dim)}
+.jump-row a b{color:var(--signal);font-weight:600;margin-right:6px}
+
+/* all-verbs wall on tools.html */
+.verb-wall{display:flex;flex-wrap:wrap;gap:7px;margin-top:30px}
+.verb-wall a{font-family:var(--mono);font-size:11.5px;color:var(--signal);border:1px solid rgba(216,179,94,.26);border-radius:3px;padding:4px 9px;background:var(--bg-2);transition:background .15s,border-color .15s}
+.verb-wall a:hover{background:rgba(216,179,94,.08);border-color:var(--signal)}
+.verb-note{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:14px}
+
+/* five-station floor pipeline */
+.pipeline--floor{grid-template-columns:repeat(5,1fr)}
+@media(max-width:920px){.pipeline--floor{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.pipeline--floor{grid-template-columns:1fr}}
+
+/* footer liveness chip */
+.live-chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--signal);border:1px solid rgba(216,179,94,.3);border-radius:3px;padding:3px 9px;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.live-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--signal);flex:0 0 auto}
+.live-chip:hover{background:rgba(216,179,94,.08)}
+
+/* downloads currentness stamp */
+.dl-stamp{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--ink-3);margin-top:10px}
+
+/* inline-style promotions */
+.cap--wide{grid-column:1 / -1}
+.recall-note--solid{border-style:solid;border-left:2px solid var(--signal)}
+.catalog-group{font:600 13px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin:34px 0 16px}
+.catalog-group:first-of-type{margin-top:12px}
+.founder-quote{max-width:780px;margin:34px auto 4px;font:italic 400 19px/1.62 var(--body);color:var(--ink)}
+.founder-quote cite{display:block;margin-top:16px;font:600 13px/1.4 var(--mono);font-style:normal;color:var(--signal);letter-spacing:.02em}
+.index--interlude{color:var(--cyan)}
+
+/* copyable command block (conversion) */
+.cmd-block{position:relative;border:1px solid var(--line-2);border-radius:8px;background:linear-gradient(180deg,#0c0f14,#090b0e);overflow:hidden;text-align:left}
+.cmd-block .cb-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.cmd-block .cb-bar span{font-size:11px;color:var(--ink-3);letter-spacing:.06em;font-family:var(--mono)}
+.cmd-block pre{margin:0;padding:16px 18px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink-2);overflow-x:auto}
+.cmd-block pre b{color:var(--ink);font-weight:500}
+.cmd-block pre .cm{color:var(--ink-3)}
+.cmd-block pre .pr{color:var(--signal)}
+
+/* tools.html: the verb is the headline on catalog cards */
+#catalog .cap-num{font-size:13.5px;color:var(--signal);letter-spacing:.1em}
+#catalog .cap h3{font-size:17px}

@@ -1,6 +1,6 @@
 # Relicquary privacy policy
 
-*Machine-readable Markdown of https://relicquary.com/privacy.html*
+*Machine-readable Markdown of https://relicquary.com/privacy.html (content hash 1a07b8c1)*
 
 LEGAL · RQ MCP LLC
 
@@ -24,7 +24,7 @@ Relicquary stores the memories, notes, tags, graph, and related content you crea
 
 ## 3. Optional sync between your devices
 
-If you choose to enable device-to-device sync, your content is transferred directly between your own devices (for example over your local network, or through your personal Apple iCloud account if you opt in). When iCloud sync is used, that data is handled under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/) and stored in your own iCloud account, not by RQ MCP. Sync is off unless you turn it on.
+If you choose to enable device-to-device sync (planned for the iPhone release), your content is transferred directly between your own devices (for example over your local network, or through your personal Apple iCloud account if you opt in). When iCloud sync is used, that data is handled under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/) and stored in your own iCloud account, not by RQ MCP. Sync is off unless you turn it on.
 
 ## 4. Diagnostics
 

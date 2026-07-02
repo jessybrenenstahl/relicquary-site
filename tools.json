@@ -1,0 +1,349 @@
+{
+ "$schema_note": "Generated from the Relicquary binary's own mcp-schema output (docs drift-check green, 2026-07-02). One entry per tool; alias pairs are cross-referenced.",
+ "count": 57,
+ "generated": "2026-07-02",
+ "source": "relicquary mcp-schema \u00b7 docs/mcp-tools.md",
+ "tools": [
+  {
+   "name": "add_memory_edge",
+   "group": "Graph, entities & conflicts",
+   "description": "Create a typed directed edge between two memories. Allowed edge types: supersedes, superseded_by, mentions, blocked_by, blocks, depends_on, supports, invalidates, belongs_to, produced, same_as, derived_from, modified, conflicts_with. For symmetric contradictions prefer flag_contradiction; use resolve_conflict to close them.",
+   "primary_arg": "from_id, to_id, edge_type"
+  },
+  {
+   "name": "approve_memory",
+   "group": "Lifecycle & governance",
+   "description": "Promote a draft or untrusted memory to trusted active status and record a thought_status_change receipt.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "architecture",
+   "group": "The whole system",
+   "description": "Return Relicquary's full architecture & reconstruction specification as Markdown \u2014 the same document published at the `relicquary://architecture` resource, exposed as a TOOL because most MCP clients surface tools (not resources) to the model. It is reconstruction-grade: what the system is, the on-disk layout and full SQLite schema, the typed memory model and knowledge graph, the local model stack, the retrieval/ranking pipeline, governance and receipts, the complete MCP tool catalog, the CLI and environment variables, a Table of Contents, a Glossary defining every term, and Reference Indexes. CALL THIS to understand, explain, or rebuild Relicquary; it needs no reliquary path. With NO arguments it returns a compact map (the table of contents plus how to read sections); pass a `section` (e.g. \"1\", \"11\" for the tool catalog, \"Glossary\", \"Reference Indexes\", or any section number/title) to read ONE section at a time. The spec is read section-by-section so every result stays small.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "capture_thought",
+   "group": "Capture",
+   "description": "Capture an RQ local memory thought and mirror it as a durable memory relic. The response includes memory_relic and thought.memory_relic so agents can immediately follow up with read_relic without reconstructing the path; thought.status, thought.source, and thought.tags mirror claim_status and metadata provenance for consistency with memory search hits. receipt.payload_json is returned alongside the raw receipt payload for consistency with list_receipts. memory_capture receipt payload_json includes status as a claim_status alias so receipt scans match memory tool output, plus deduped/existing_id when exact or semantic capture dedupe returned an existing memory. Records a memory_capture receipt for governance audit, then refreshes the wiki index and stale embeddings so the memory relic is immediately available to search_wiki and hybrid retrieval. The classifier auto-detects kind from content: prefix with 'Decision:' for architecture decisions, 'Friction:' for friction observations, 'Fact:' for durable constraints, or 'TODO:'/'need to' for tasks. Pass kind explicitly to override the classifier, source to preserve memory provenance separately from the receipt actor, and tags to add searchable memory topics.",
+   "primary_arg": "content",
+   "leaves_receipt": true
+  },
+  {
+   "name": "claim_synthesis",
+   "group": "Synthesis",
+   "description": "Claim the next pending synthesis queue item for an agent worker. Unfiltered claims prioritize source synthesis before housekeeping tasks; pass target_kind to claim a specific queue lane such as memory or staleness. Memory compression items are completed directly into summary memories by complete_synthesis."
+  },
+  {
+   "name": "complete_synthesis",
+   "group": "Synthesis",
+   "description": "Complete a synthesis queue item and optionally write a draft relic. Completion records a synthesis_complete receipt; draft writes also record a relic_write receipt. provider=bonsai requires live Bonsai output and marks the item failed if the brain is unavailable instead of silently falling back.",
+   "primary_arg": "id",
+   "leaves_receipt": true
+  },
+  {
+   "name": "context_pack",
+   "group": "Retrieval",
+   "description": "Machine-first context compiler. Builds an 11-section markdown pack for agent startup or continuation: Current Objective, Hard Constraints, Canonical Paths, Recent Decisions, Open Tasks, Relevant Files, Known Pitfalls, Useful Commands, Recent Receipts, Conflicts / Stale Items, and Suggested Next Actions. Also preserves source-backed query_context retrieval metadata, estimated token count, and optional saved answer relic path. WHEN TO USE: Pick this for agent startup/continuation packs with objectives, constraints, tasks, receipts, and retrieved context.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "edit_memory",
+   "group": "Lifecycle & governance",
+   "description": "Edit the content of an active or draft durable memory object in place. Refreshes FTS metadata, rewrites the memory relic, increments edit_count, and records a memory_edit receipt. Use list_receipts action=memory_edit subject=<id> for content history.",
+   "primary_arg": "content, reason",
+   "leaves_receipt": true
+  },
+  {
+   "name": "explain_memory",
+   "group": "Retrieval",
+   "description": "Return an entity-level memory introspection view for a query. Combines BM25 memory recall, matching extracted entities, graph edges around matched memories, and grouped memory objects by kind so agents can answer 'what do I know about X?' without manually stitching recall, get_entities, and get_memory_edges. The response includes generation provenance so Bonsai opt-in output is distinguishable from extractive default or extractive fallback when the brain is unavailable. WHEN TO USE: Pick this to understand why memory results matched, including entities and graph edges, not as a raw retrieval list."
+  },
+  {
+   "name": "feedback_memory",
+   "group": "Lifecycle & governance",
+   "description": "Record agent feedback on a recalled memory. Use when a recall result was helpful, wrong, stale, or a duplicate. Stored in memory_feedback and used in future ranking.",
+   "primary_arg": "query, feedback"
+  },
+  {
+   "name": "flag_contradiction",
+   "group": "Graph, entities & conflicts",
+   "description": "Explicitly flag two memories as contradicting each other. Creates a contradiction synthesis queue item and adds conflicts_with edges in both directions.",
+   "primary_arg": "memory_a, memory_b, reason"
+  },
+  {
+   "name": "forget",
+   "group": "Lifecycle & governance",
+   "description": "Alias for forget_memory. Marks a memory as invalid (soft delete). Requires confirm:true and id/memory_id/thought_id.",
+   "primary_arg": "confirm",
+   "alias_of": "forget_memory"
+  },
+  {
+   "name": "forget_memory",
+   "group": "Lifecycle & governance",
+   "description": "Soft-delete a durable memory object by marking its claim_status invalid. Requires confirm:true and records the same thought_status_change receipt path as update_thought_status.",
+   "primary_arg": "confirm",
+   "aliases": [
+    "forget"
+   ],
+   "leaves_receipt": true
+  },
+  {
+   "name": "get_entities",
+   "group": "Graph, entities & conflicts",
+   "description": "List named entities extracted from durable memory metadata, grouped by type. Entity tags use entity:file:<path>, entity:tool:<name>, and entity:person:<name>; each returned entity includes memory and mention-edge counts. WHEN TO USE: Pick this to list extracted file/tool/person entities and mention counts, not to search memory or wiki content."
+  },
+  {
+   "name": "get_memory_edges",
+   "group": "Graph, entities & conflicts",
+   "description": "Return typed graph edges for a memory object. Use this to inspect supersedes, superseded_by, mentions, dependency, support, invalidation, scope, production, and same_as links before graph-expanded recall or handoff reasoning."
+  },
+  {
+   "name": "graph_export",
+   "group": "Graph, entities & conflicts",
+   "description": "Export memory edges or the wiki-link graph as structured JSON, Graphviz DOT, or JSON Canvas-compatible canvas data."
+  },
+  {
+   "name": "handoff",
+   "group": "Tasks, sessions & handoff",
+   "description": "Generate a deterministic project handoff from durable memory, status, and recent receipts. Use at the end of an agent run so the next agent can continue without relying on chat history.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "hybrid_search",
+   "group": "Retrieval",
+   "description": "Search Relicquary wiki relics with the active vector provider. Each hit includes path, title, kind, snippet, score, lexical_score, and vector_score. Memory hits include parsed status/source/memory fields consistent with read_relic, search_wiki, and query_context memory sources. Uses the supervised MLX Qwen embedding runtime for semantic retrieval when available and falls back to deterministic hash reranking of lexical BM25 candidates when the local model server is unavailable. `count` is the returned page size; `total_count` is the full number of eligible hybrid hits matching the same query and kind filter, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective query/kind/limit filters, embedding_runtime freshness metadata, and truncated so callers can tell when more hybrid hits exist beyond the returned page. WHEN TO USE: Pick this for wiki/document retrieval that blends BM25 with embeddings; use recall for typed memory objects.",
+   "primary_arg": "query"
+  },
+  {
+   "name": "ingest_document",
+   "group": "Wiki, documents & artifacts",
+   "description": "Ingest a document body into the reliquary from MCP \u2014 no shell or CLI access required. Creates a raw/ copy from the provided body text, writes a formatted wiki/sources/ relic with correct frontmatter, and triggers reindex so the content is immediately searchable. Use this to bootstrap a reliquary from project docs when the agent already has the content in context. Records a source_ingest receipt for governance audit and returns that receipt with payload_json for immediate auditability.",
+   "primary_arg": "title, body",
+   "leaves_receipt": true
+  },
+  {
+   "name": "lint_wiki",
+   "group": "Wiki, documents & artifacts",
+   "description": "Check wiki health for duplicate titles, unresolved links, orphans, and TODO pages, and summarize Markdown tags and frontmatter properties for metadata orientation. The response includes counts for quick triage, tag_counts, property_counts, plus the full lint report arrays."
+  },
+  {
+   "name": "list_artifacts",
+   "group": "Wiki, documents & artifacts",
+   "description": "List files available to MCP agents. By default this lists artifact files in raw/ and wiki/attachments/ for read_artifact. Pass surface=relics to browse Markdown pages under wiki/ for read_relic, or surface=all to browse both. Pass random:true to select one matching entry from the filtered set. Each entry includes read_tool so agents can choose the correct follow-up call. `count` is the returned page size; `total_count` is the full number of files matching prefix/since filters, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective surface/prefix/since_secs/limit/random filters. Returns truncated:true when results are capped; use prefix or since_secs to narrow."
+  },
+  {
+   "name": "list_drafts",
+   "group": "Lifecycle & governance",
+   "description": "List draft or untrusted durable memory objects pending operator or agent approval. Drafts are excluded from recall, context_pack memory sections, and active memory stats; untrusted active memories are excluded from authoritative context_pack sections until approved."
+  },
+  {
+   "name": "list_receipts",
+   "group": "Health, recovery & audit",
+   "description": "List operator receipts for governance actions. Filter by action, subject, or since_secs for targeted audit queries across synthesis, memory, ingest, recovery, and relic-write receipts. Each receipt preserves the raw `payload` string and also exposes parsed `payload_json` when the payload is valid JSON. memory_capture payload_json includes status as a claim_status alias, including for older receipts that only stored claim_status. `count` is the returned page size; `total_count` is the full number of receipts matching the same filters, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective action/subject/since_secs/limit filters and a `truncated` boolean: when true, more receipts exist beyond the returned page \u2014 increase `limit` or narrow with action/subject/since_secs filters.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "list_suggestions",
+   "group": "Lifecycle & governance",
+   "description": "List pending memory suggestions sorted by score. Use promote_memory to accept or reject_memory to discard each one."
+  },
+  {
+   "name": "list_thoughts",
+   "group": "Retrieval",
+   "description": "List recent RQ local memory thoughts. Each returned thought includes memory_relic, the durable wiki/memory path for follow-up read_relic calls, and status/source/tags convenience fields consistent with read_relic and memory search hits. Use `kind` to enumerate all thoughts of a specific memory kind (claim, task, artifact, entity, decision, friction, fact, preference, procedure, episode, summary, handoff, observation, contradiction), and `actor` to list memories assigned to a specific agent. `count` is the returned page size; `total_count` is the full number of active memories matching the same filters, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective kind/actor/limit filters and truncated so callers can tell when more memories exist beyond the returned page."
+  },
+  {
+   "name": "memory_conflicts",
+   "group": "Graph, entities & conflicts",
+   "description": "List memory conflict and scope-drift synthesis items with resolution_status pending, resolved, or auto_resolved. Potential conflicts are created when new fact, decision, or preference memories substantially overlap older active memories with shared tags. Scope drift items are created when new facts or decisions substantially overlap active tasks with shared tags."
+  },
+  {
+   "name": "memory_export",
+   "group": "Lifecycle & governance",
+   "description": "Export RQ local memory thoughts to a JSON or JSONL archive and record a memory_export receipt. The response output is the actual written path after extension normalization, and filters echoes the requested output path plus the effective archive format.",
+   "primary_arg": "output",
+   "leaves_receipt": true
+  },
+  {
+   "name": "memory_import",
+   "group": "Lifecycle & governance",
+   "description": "Import RQ local memory thoughts from a JSON or JSONL archive and record a memory_import receipt.",
+   "primary_arg": "input",
+   "leaves_receipt": true
+  },
+  {
+   "name": "memory_status",
+   "group": "Health, recovery & audit",
+   "description": "Machine-first memory health summary. Combines reliquary_status and thought_stats, reports memory runtime completeness, active kind counts, receipt/index health, and the preferred machine-memory tools.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "next_task",
+   "group": "Tasks, sessions & handoff",
+   "description": "Return the highest-confidence unblocked active task for the next agent step, plus currently in-progress tasks for crash/recovery orientation. Completed tasks are excluded. The scheduler scans a deeper candidate window than the bounded orientation output so blocked high-priority tasks do not hide dispatchable lower-priority work. Use exclude_tags to make an orchestrator mode skip classes of work such as benchmark/eval/verification tasks before claim, rather than relying on prompt wording. Responses include queue_depth, in_progress_depth, skipped_excluded_tag_count, skipped_blocked_count, skipped_blocked_tasks with blocker details, and filters.assignment_scope/exclude_tags/candidate_scan_limit/orientation_limit. With claim:true, atomically transitions the selected active task to in_progress and records the actor on the status-change receipt so orchestrators can dispatch without duplicate workers claiming the same task.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "promote_memory",
+   "group": "Lifecycle & governance",
+   "description": "Promote a memory_suggestion or draft/stale/untrusted memory to trusted active. If id or suggestion_id is a suggestion id, materialises it as an active memory. If id, memory_id, or thought_id is a thought id, transitions draft or stale to active. Use this instead of approve_memory when working with suggestions from the passive capture lane."
+  },
+  {
+   "name": "query_context",
+   "group": "Retrieval",
+   "description": "Build a deterministic retrieval context pack for a question. Provide either question or query; query is the cross-tool alias. `count` and `source_count` are the returned source count; `total_count` is the full number of eligible context sources for the same retrieval mode and filters, and `remaining_count` is the number still hidden by the current limit. The response includes `context_char_count` for size-aware clients, `filters` echoing the effective query/kind/retrieval_mode/max_memory/limit filters, retrieval_mode, truncated, and sources metadata so callers can inspect retrieved relics without parsing the context text. Memory sources include parsed status/source/memory fields consistent with read_relic and search_wiki memory hits. When retrieval_mode=hybrid, the response also includes embedding_runtime freshness metadata so agents can tell whether the call refreshed stale embeddings. WHEN TO USE: Pick this when a model needs a cited retrieval context bundle from wiki/source pages, not just individual hits."
+  },
+  {
+   "name": "query_memory_objects",
+   "group": "Retrieval",
+   "description": "Query the structured memory_objects projection directly by id, kind, tag, source, or status. Returns projection fields including payload_json and provenance_json without running recall ranking or thought FTS. WHEN TO USE: Pick this for governance/introspection over the stable memory object table; use recall for ranked current memory retrieval."
+  },
+  {
+   "name": "read_artifact",
+   "group": "Wiki, documents & artifacts",
+   "description": "Read bounded artifact evidence from raw/ or wiki/attachments/ by relative path. The response includes `filters.max_bytes` echoing the effective capped byte limit used for the read, plus `returned_bytes` and `truncated` for bounded evidence handling.",
+   "primary_arg": "path"
+  },
+  {
+   "name": "read_relic",
+   "group": "Wiki, documents & artifacts",
+   "description": "Read a wiki relic by its exact relative path under wiki/. Returns full content, Markdown `body` with leading YAML frontmatter removed, parsed frontmatter as the legacy string map `frontmatter`, typed frontmatter as `frontmatter_json`, heading `outline`, `word_stats`, and convenience frontmatter fields title, kind, status, synthesis_status, plus memory fields thought_id, memory_kind, claim_status, source, tags, supersedes, superseded_by, and confidence so agents don't have to parse YAML or memory metadata prose themselves. For memory relics, status falls back to claim_status. Use this when you have a specific relic path (e.g. returned by query_context save:true, write_relic, list_thoughts, or search_thoughts) and need its full content. Complements write_relic: read \u2192 inspect synthesis_status and artifact_evidence \u2192 synthesize \u2192 write back.",
+   "primary_arg": "path"
+  },
+  {
+   "name": "rebuild_index",
+   "group": "Health, recovery & audit",
+   "description": "Safely rebuild the SQLite index from wiki files. If an existing .relicquary/relicquary.db is present, it is copied to .relicquary/backups before replacement. Use after reliquary_status reports a malformed or missing DB while wiki/raw files remain recoverable. By default this returns after the DB rebuild; pass refresh_embeddings:true only when the caller can wait for a full embedding refresh."
+  },
+  {
+   "name": "recall",
+   "group": "Retrieval",
+   "description": "Machine-first memory retrieval. Searches typed local memory objects with optional kind, actor assignment, scopes filtering, opt-in cross-project federation through federation_paths when scopes includes user or org, automatic connected-evidence reranking for named/inference-style questions, automatic temporal-intent scoring for current/previous/when/during-style questions, and opt-in explicit temporal decay via decay_halflife_days, then returns stable memory objects with ranking explanations. When connected rerank is active and candidate_limit is omitted, recall uses a deeper pre-rerank candidate window before truncating to limit. When a live semantic embedding provider is available, recall uses embedding-first candidate retrieval over memory relic vectors before BM25/confidence reranking, and gracefully falls back to lexical BM25 when embeddings are unavailable. scopes defaults to [\"agent\", \"project\"] so each caller sees its own agent-scoped memories plus shared project memories; agent scope uses scope_key, agent/agent_id, or actor as the namespace key. Include \"user\" or \"org\" to merge user/org memories into the same ranked response. When kind/kinds is omitted, lightweight intent routing boosts task/procedure, decision, or preference memories for matching queries and reports intent_detected/intent_kinds in the response; explicit kind/kinds always override intent routing. With expand_graph=true, appends discounted outbound supports, mentions, depends_on, invalidates, belongs_to, produced, and same_as graph neighbors until the requested limit is reached. The response includes conflicts, a heuristic array of potential contradictions detected among returned memories with shared tags and active fact/decision/preference status. Use query_context or context_pack when the caller needs broader wiki/source context, and recall when it specifically needs durable memory. WHEN TO USE: Pick this as the default typed-memory lane for facts/decisions/tasks with scope, currentness, federation, and ranking."
+  },
+  {
+   "name": "recall_report",
+   "group": "Retrieval",
+   "description": "Measure recall quality on a real project memory store with no fixture file. Derives evaluation cases from existing feedback_memory rows, supersession links, and active memory self-queries, then runs them through the public recall path and returns recall@1, recall@3, MRR, feedback alignment, stale-leak rate, distractor rate, a composite score, and worst queries."
+  },
+  {
+   "name": "reject_memory",
+   "group": "Lifecycle & governance",
+   "description": "Reject a pending memory suggestion or reject a draft/untrusted memory by marking it invalid. Requires a reason and records a receipt.",
+   "primary_arg": "reason",
+   "leaves_receipt": true
+  },
+  {
+   "name": "reliquary_status",
+   "group": "Health, recovery & audit",
+   "description": "Inspect a reliquary's filesystem and SQLite health without writing. Use this before recovery when DB-backed tools fail; it reports whether wiki/raw files are still readable and whether the SQLite index appears missing, healthy, or malformed. Runtime reports both thought_rows (raw rows) and active_thought_rows (search-visible thoughts after status and validity filtering); the same runtime counters are also mirrored as top-level fields for quick MCP status checks. The response includes memory_runtime completeness metadata so agents can tell whether runtime thought rows fully cover durable wiki/memory relics before calling list_thoughts/search_thoughts, plus embedding_runtime freshness metadata so stale vector indexes are machine-readable without parsing recommendations.",
+   "aliases": [
+    "status"
+   ]
+  },
+  {
+   "name": "remember",
+   "group": "Capture",
+   "description": "Machine-first memory capture. Stores a typed local memory object, mirrors it to wiki/memory as a durable relic, records a memory_capture receipt, and returns both legacy thought fields and a stable memory object shape. Optional scope=project\\|agent\\|user\\|org controls shared project, per-agent, per-user, or organization memory routing; agent scope uses scope_key, agent/agent_id, or actor as the namespace key. When content is an exact fingerprint duplicate, or when a live semantic embedding provider finds a near-duplicate active memory of the same kind in the same scope, returns the existing memory with deduped=true and existing_id instead of inserting another row. Use this instead of capture_thought when an agent wants a competitor-style remember verb.",
+   "primary_arg": "content",
+   "leaves_receipt": true
+  },
+  {
+   "name": "remember_batch",
+   "group": "Capture",
+   "description": "Capture multiple typed durable memory objects in one MCP call. Skips duplicate content fingerprints and returns created ids, memory objects, and receipts.",
+   "primary_arg": "memories",
+   "leaves_receipt": true
+  },
+  {
+   "name": "resolve_conflict",
+   "group": "Graph, entities & conflicts",
+   "description": "Resolve a memory_conflicts synthesis item. Marks the queue item done, records a conflict_resolved receipt, and when winner_id is supplied marks the other referenced memories superseded by that winner.",
+   "primary_arg": "synthesis_id, resolution, reason",
+   "leaves_receipt": true
+  },
+  {
+   "name": "restore_memory_relics",
+   "group": "Health, recovery & audit",
+   "description": "Restore runtime thought rows from durable wiki/memory relics after an index rebuild. This is explicit recovery, not automatic repair: it imports only well-formed type:memory relics with thought_id frontmatter, skips ambiguous legacy markdown, leaves wiki files untouched, records a memory_restore receipt, and returns post-restore memory_runtime completeness metadata so callers can tell whether list_thoughts/search_thoughts now cover durable memory.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "retry_synthesis",
+   "group": "Synthesis",
+   "description": "Return one or more claimed or completed synthesis queue items to pending state. Provide either id for a single item or ids for a batch."
+  },
+  {
+   "name": "search_thoughts",
+   "group": "Retrieval",
+   "description": "Search RQ local memory thoughts. Each returned thought includes memory_relic, the durable wiki/memory path for follow-up read_relic calls, and status/source/tags convenience fields consistent with read_relic and memory search hits. An empty query with a kind filter returns all active thoughts of that kind; that browse-style response includes total_count for the full active lane size. An empty query without kind returns no results. Non-empty searches use BM25 first and supplement with hybrid vector search only when BM25 returns no primary hits. `count` is the returned page size; `total_count` is the exact primary BM25 match count for the same query/kind filters, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective query/kind/limit filters and truncated so callers can tell when more primary matches exist beyond the returned page. WHEN TO USE: Pick this lower-level runtime thought search when you need raw thought rows or kind browsing; prefer recall for ranked memory retrieval.",
+   "primary_arg": "query"
+  },
+  {
+   "name": "search_wiki",
+   "group": "Retrieval",
+   "description": "Search Relicquary wiki pages with optional page kind filtering. Each hit includes path, title, kind, snippet, and score. Memory hits (kind=memory) always include parsed claim_status, memory_kind, source, tags, thought_id, supersedes, superseded_by, confidence, status, and synthesis_status fields regardless of include_body \u2014 consistent with hybrid_search and query_context memory sources. `count` is the returned page size; `total_count` is the full number of wiki hits matching the same query and kind filter, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective query/kind/include_body/limit filters and truncated so callers can tell when more wiki hits exist beyond the returned page. Set include_body:true to also return each hit's Markdown body with leading YAML frontmatter removed, raw content (both capped at 4000 chars), and parsed frontmatter/frontmatter_json for all hit kinds \u2014 removes the need for follow-up read_relic calls when scanning frontmatter or short relics. WHEN TO USE: Pick this for lexical-only wiki/page lookup by keyword; use recall for scoped typed memories and hybrid_search when semantic wiki ranking matters.",
+   "primary_arg": "query"
+  },
+  {
+   "name": "session_end",
+   "group": "Tasks, sessions & handoff",
+   "description": "End an agent session by generating a handoff, recording a session_end receipt with the supplied summary, and returning same-actor task progress plus the read-only next_task snapshot so the next worker can continue without extra queue calls.",
+   "primary_arg": "summary",
+   "leaves_receipt": true
+  },
+  {
+   "name": "session_start",
+   "group": "Tasks, sessions & handoff",
+   "description": "Start an agent session and recover stale in-progress tasks back to active status with session_recovery receipts. Recovery transitions are preconditioned on the task still being in_progress; tasks that changed after stale scanning are skipped and surfaced as skipped_recovery_race_count/skipped_recovery_race_ids instead of aborting the session.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "status",
+   "group": "Health, recovery & audit",
+   "description": "Alias for reliquary_status. Inspect a reliquary's filesystem and SQLite health without writing; useful as the first recovery/orientation call when an agent naturally asks for status. Includes memory_runtime completeness metadata for durable memory recovery decisions and embedding_runtime freshness metadata for vector-index decisions.",
+   "alias_of": "reliquary_status"
+  },
+  {
+   "name": "suggest_memory",
+   "group": "Capture",
+   "description": "Suggest a memory for later review without immediately creating it. Writes to the memory_suggestions staging table. Use promote_memory to accept or reject_memory to discard.",
+   "primary_arg": "content"
+  },
+  {
+   "name": "synthesis_queue",
+   "group": "Synthesis",
+   "description": "Refresh and list synthesis queue items (entity, concept, memory, resolve_conflict, contradiction, and staleness). The memory lane includes memory conflict, scope-drift, and episode-compression tasks. Default ordering shows source synthesis before housekeeping tasks. `count` is the returned page size; `total_count` is the full number of queue rows matching the same status/since_secs filters, and `remaining_count` is the number still hidden by the current limit. The response includes `filters` echoing the effective status/since_secs/limit filters, truncated, and a report with pending, running, stale_running counts, status_counts, and pending_by_kind \u2014 a per-target-kind breakdown (e.g. {\"concept\": 17, \"entity\": 19, \"memory\": 2, \"staleness\": 22}) so agents can prioritize which lane to claim without paginating all items. With refresh:false, the report is read-only and does not seed or supersede queue items. When `truncated` is true, more items exist beyond the returned page \u2014 increase `limit` or filter by status/since_secs to page through."
+  },
+  {
+   "name": "task_progress",
+   "group": "Tasks, sessions & handoff",
+   "description": "Summarize project task progress from durable task memories, including active, in-progress, completed, stale, blocked, and percent-complete counts. `stale` is the explicit lifecycle status; `recoverable_stale_in_progress` and `recoverable_stale_in_progress_tasks` show in-progress work older than stale_after_minutes that session_start would reset. With actor set, reports that actor's assigned actionable work; if the actor has no active or in-progress tasks, falls back to unassigned work and reports filters.assignment_scope so operator UIs match next_task actor fallback."
+  },
+  {
+   "name": "thought_stats",
+   "group": "Health, recovery & audit",
+   "description": "Summarize RQ local memory thought counts and facets. The response mirrors stats.total as top-level count, total_count, and active_count so orientation calls do not need to parse nested stats before deciding whether to list or search memory. The `kinds` field shows counts by memory_kind \u2014 use these keys directly as `kind` in list_thoughts or search_thoughts. The response preserves full `stats.topics` and `stats.people` maps, includes `filters` echoing the effective facet_limit, includes `facet_counts` breadth metadata, includes `memory_runtime` completeness metadata so agents can tell when runtime thought rows are only a partial restore of durable wiki/memory relics, and also includes ranked `top_topics` and `top_people` arrays for quick orientation without client-side sorting."
+  },
+  {
+   "name": "update_memory",
+   "group": "Lifecycle & governance",
+   "description": "Update a durable memory object's status or dependency graph edges. Status changes record a thought_status_change receipt; edge-only patches record a memory_edge_update receipt.",
+   "leaves_receipt": true
+  },
+  {
+   "name": "update_thought_status",
+   "group": "Lifecycle & governance",
+   "description": "Update the claim_status of a captured memory thought (active, draft, in_progress, completed, superseded, verified, invalid, stale, conflicted, or deleted). The response includes memory_relic and thought.memory_relic so agents can immediately follow up with read_relic after a status transition. Also returns a receipt for governance audit consistency with capture_thought.",
+   "primary_arg": "status",
+   "leaves_receipt": true
+  },
+  {
+   "name": "write_relic",
+   "group": "Wiki, documents & artifacts",
+   "description": "Write or overwrite a wiki relic under wiki/. Use this to promote synthesis drafts to canonical pages, create new concept or entity relics, or update existing wiki content. Triggers reindex so the written content is immediately searchable via search_wiki and query_context. Records a relic_write receipt in operator_receipts for governance audit and returns that receipt with payload_json for immediate auditability.",
+   "primary_arg": "path",
+   "leaves_receipt": true
+  }
+ ]
+}
